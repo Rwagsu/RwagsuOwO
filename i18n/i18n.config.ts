@@ -1,7 +1,7 @@
 export default defineI18nConfig(() => ({
     legacy: false,
     locale: 'zh',
-    fallbackLocale: 'en',
+    fallbackLocale: 'zh',
     messages: {
         zh: {
             'RwagsuOwO': 'RwagsuOwO',
@@ -18,8 +18,9 @@ export default defineI18nConfig(() => ({
             'Pick a style and color for the docs.': '为文档选择一种样式和颜色.',
             'Color': '颜色',
 
-
             'Radius': '圆角',
+
+            'Theme': '主题',
 
             'Light': '浅色',
             'Dark': '深色',
@@ -81,8 +82,9 @@ export default defineI18nConfig(() => ({
             'Pick a style and color for the docs.': 'Pick a style and color for the docs.',
             'Color': 'Color',
 
-
             'Radius': 'Radius',
+
+            'Theme': 'Theme',
 
             'Light': 'Light',
             'Dark': 'Dark',
