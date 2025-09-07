@@ -65,7 +65,7 @@ export default defineI18nConfig(() => ({
             'Back to Top': '回到顶部',
 
             // Markdown
-            'Read more at': '在这里阅读更多: ',
+            'Read more at': '阅读更多内容: ',
         },
         en: {
             'RwagsuOwO': 'RwagsuOwO',
