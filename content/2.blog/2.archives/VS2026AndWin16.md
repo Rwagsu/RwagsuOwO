@@ -26,4 +26,4 @@ authors:
 
 (｀・ω・´)
 
-[Bilibili](https://i0.hdslb.com/bfs/new_dyn/f8f9d3362c3441fd94174564f57189f72123349162.png)
+![Bilibili](https://s21.ax1x.com/2025/09/12/pVW1A3D.png)
