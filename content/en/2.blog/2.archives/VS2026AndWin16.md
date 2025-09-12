@@ -32,4 +32,4 @@ If you'd like to help with translation, pull requests are welcome. 😘
 
 (｀・ω・´)
 
-[Bilibili](https://i0.hdslb.com/bfs/new_dyn/f8f9d3362c3441fd94174564f57189f72123349162.png)
+![Bilibili](https://i0.hdslb.com/bfs/new_dyn/f8f9d3362c3441fd94174564f57189f72123349162.png)
