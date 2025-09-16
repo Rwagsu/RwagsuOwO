@@ -144,6 +144,13 @@ export default defineAppConfig({
                     to: 'https://space.bilibili.com/2123349162',
                     target: '_blank',
                 },
+                
+                // BandLab
+                {
+                    icon: 'ri:simple-icons:bandlab',
+                    to: 'https://www.bandlab.com/rwagsu',
+                    target: '_blank',
+                },
             ],
         },
 
@@ -195,6 +202,13 @@ export default defineAppConfig({
                     target: '_blank',
                 },
 
+                // BandLab
+                {
+                    icon: 'ri:simple-icons:bandlab',
+                    to: 'https://www.bandlab.com/rwagsu',
+                    target: '_blank',
+                },
+
                 // Netease Cloud Music
                 {
                     icon: 'ri:netease-cloud-music-line',
@@ -212,7 +226,6 @@ export default defineAppConfig({
 
                 // DrownedOwO GitHub
                 {
-                    title: "DrownedOwO",
                     icon: 'mdi:github',
                     to: 'https://github.com/DrownedOwO',
                     target: '_blank',
