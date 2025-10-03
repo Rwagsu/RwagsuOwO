@@ -73,6 +73,14 @@ export default defineAppConfig({
                     ],
                 },
 
+                // Notebook
+                {
+                    title: 'Notebook',
+                    to: '/notebook',
+                    target: '_self',
+                    showLinkIcon: false,
+                },
+
                 // Blogs
                 {
                     title: 'Blog',
@@ -145,7 +153,7 @@ export default defineAppConfig({
                 
                 // BandLab
                 {
-                    icon: 'ri:simple-icons:bandlab',
+                    icon: 'simple-icons:bandlab',
                     to: 'https://www.bandlab.com/rwagsu',
                     target: '_blank',
                 },
