@@ -18,8 +18,6 @@ export default defineAppConfig({
         // Theme settings
         theme: {
             customizable: true,
-            color: 'blue',
-            radius: 0.5,
         },
 
         // Banner (TODO)
@@ -204,7 +202,7 @@ export default defineAppConfig({
 
                 // BandLab
                 {
-                    icon: 'ri:simple-icons:bandlab',
+                    icon: 'simple-icons:bandlab',
                     to: 'https://www.bandlab.com/rwagsu',
                     target: '_blank',
                 },
@@ -213,21 +211,6 @@ export default defineAppConfig({
                 {
                     icon: 'ri:netease-cloud-music-line',
                     to: 'https://y.music.163.com/m/user?id=4947833811',
-                    target: '_blank',
-                },
-
-                // DrownedOwO Bilibili
-                {
-                    title: "DrownedOwO",
-                    icon: 'mingcute:bilibili-fill',
-                    to: 'https://space.bilibili.com/527675045',
-                    target: '_blank',
-                },
-
-                // DrownedOwO GitHub
-                {
-                    icon: 'mdi:github',
-                    to: 'https://github.com/DrownedOwO',
                     target: '_blank',
                 },
             ],
