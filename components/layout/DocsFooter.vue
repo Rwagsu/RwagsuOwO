@@ -10,7 +10,7 @@
 
         <!-- giscus -->
         <Giscus repo="Rwagsu/RwagsuOwO" repo-id="R_kgDOPCVQEQ" category="Comments" category-id="DIC_kwDOPCVQEc4CsmMo"
-            mapping="pathname" strict="1" reactions-enabled="1" emit-metadata="0" input-position="top"
+            mapping="og:title" strict="1" reactions-enabled="1" emit-metadata="0" input-position="top"
             :theme="themeMode" :lang="locale === 'zh' ? 'zh-CN' : 'en'" loading="lazy" />
 
         <div class="flex">
