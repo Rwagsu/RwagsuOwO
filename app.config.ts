@@ -4,7 +4,7 @@ export default defineAppConfig({
         site: {
             name: 'RwagsuOwO',
             description: "Rwagsu's Docs & Blogs!",
-            url: 'https://rwagsu.github.io/RwagsuOwO/',
+            url: 'https://rwagsu.top/',
             // ogImage (TODO)
 
             // umami

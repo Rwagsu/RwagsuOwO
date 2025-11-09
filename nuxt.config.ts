@@ -7,9 +7,6 @@ export default defineNuxtConfig({
             langs: ['csharp', 'xml', 'kotlin', 'groovy', 'kts', 'java', 'log', 'rust', 'properties', 'toml'],
         },
     },
-    app: {
-        baseURL: '/RwagsuOwO/',
-    },
     fonts: {
         providers: {
             google: false,
@@ -34,5 +31,5 @@ export default defineNuxtConfig({
             }
         ],
     },
-    compatibilityDate: '2025-08-30',
+    compatibilityDate: '2025-11-09',
 });
