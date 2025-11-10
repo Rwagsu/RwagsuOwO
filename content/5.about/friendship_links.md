@@ -4,19 +4,18 @@ description: 好看的😈.
 icon: material-symbols:attachment
 navBadges:
   - value: 看看awa
-    type: outline
 ---
 
 ::hero
 ---
 actions:
   - name: 提交友情链接
-    to: https://www.bilibili.com/video/BV1t5411G7KR
+    to: https://github.com/Rwagsu/RwagsuOwO/issues
     target: _blank
-    variant: outline
     leftIcon: 'lucide:github'
-  - name: 千 万 别 点
+  - name: 千万别点
     to: https://www.bilibili.com/video/BV1t5411G7KR
+    variant: outline
     target: _blank
     leftIcon: '😰'
 ---
@@ -38,4 +37,8 @@ actions:
 ::div{align="center"}
 ## Starred
 
+::
+
+::alert{type="info" title="发现了有问题的链接?" icon="lucide:info"}
+  请在 [GitHub issue](https://github.com/Rwagsu/RwagsuOwO/issues) / [Bilibili](https://space.bilibili.com/2123349162) / QQ 中向我提交删除申请.
 ::
