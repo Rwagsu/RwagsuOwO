@@ -51,8 +51,7 @@ body:
         description (描述),
         content (内容),
         footer (页脚).
-      placeholder: |
-        
+      placeholder: 祝你好运 ;)
     validations:
       required: true
   
