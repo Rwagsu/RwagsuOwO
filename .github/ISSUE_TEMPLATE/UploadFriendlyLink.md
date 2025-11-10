@@ -1,8 +1,8 @@
 ---
-name: 在网站添加友链
-about: 请求将你的网站添加到友链页面.
+name: "在网站添加友链"
+about: "请求将你的网站添加到友链页面."
 title: "[友链请求]"
-labels: FriendlyLink Request
+labels: labels: ["FriendlyLink Request"]
 
 body:
   - type: markdown
@@ -11,7 +11,7 @@ body:
         > [!IMPORTANT]
         > 由于一些原因, 友链仅对与 Rwagsu 交流过的用户开放.
         > (毕竟每天审查一堆认都不认识的用户整的链接, 会疯的 (っ °Д °;)っ)
-        你的申请在  [Project](https://github.com/users/Rwagsu/projects/1/settings/access) 呆一段时间后将被添加到  [友链页面](http://rwagsu.top/about/friendship_links) 中 ;)
+        你的申请在  [Project](https://github.com/users/Rwagsu/projects/1) 呆一段时间后将被添加到  [友链页面](http://rwagsu.top/about/friendship_links) 中 ;)
         喵(
 
   - type: checkboxes
@@ -20,7 +20,7 @@ body:
       label: 你有检查过你的表单吗?
       description: 不符合表单要求的申请会被直接关闭.
       options:
-        - label: 我未在 [友链页面](http://rwagsu.top/about/friendship_links) 和 [Project](https://github.com/users/Rwagsu/projects/1/settings/access) 中找到一模一样的链接, 且确定这是我自己的链接.
+        - label: 我未在 [友链页面](http://rwagsu.top/about/friendship_links) 和 [Project](https://github.com/users/Rwagsu/projects/1) 中找到一模一样的链接, 且确定这是我自己的链接.
           required: true
 
         - label: 我知道该 issue 将对所有人公开, 无论如何都不会透露自己的个人 / 私密信息.
@@ -44,7 +44,7 @@ body:
     id: repro
     attributes:
       label: 如何联系你?
-      description: "既然认识我们应该也可以联系一下的吧😅"
+      description: "既然认识你应该也可以让我联系到的吧😅"
       placeholder: "让我看看!"
     validations:
       required: true
