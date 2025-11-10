@@ -1,6 +1,5 @@
----
 name: "在网站添加友链"
-about: "请求将你的网站添加到友链页面."
+description: "请求将你的网站添加到友链页面."
 title: "[友链请求]"
 labels: ["FriendlyLink Request"]
 
@@ -8,8 +7,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        由于一些原因, 友链仅对与 Rwagsu 交流过的用户开放.
-        (毕竟每天审查一堆认都不认识的用户整的链接, 会疯的 (っ °Д °;)っ)
+        > [!IMPORTANT]
+        > 由于一些原因, 友链仅对与 Rwagsu 交流过的用户开放.
+        > (毕竟每天审查一堆认都不认识的用户整的链接, 会疯的 (っ °Д °;)っ)
         你的申请在  [Project](https://github.com/users/Rwagsu/projects/1) 呆一段时间后将被添加到  [友链页面](http://rwagsu.top/about/friendship_links) 中 ;)
         喵(
 
@@ -47,6 +47,3 @@ body:
       placeholder: "让我看看!"
     validations:
       required: true
----
-
-
