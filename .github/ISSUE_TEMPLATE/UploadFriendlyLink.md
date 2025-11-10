@@ -2,7 +2,7 @@
 name: "在网站添加友链"
 about: "请求将你的网站添加到友链页面."
 title: "[友链请求]"
-labels: labels: ["FriendlyLink Request"]
+labels: ["FriendlyLink Request"]
 
 body:
   - type: markdown
