@@ -8,9 +8,8 @@ body:
   - type: markdown
     attributes:
       value: |
-        > [!IMPORTANT]
-        > 由于一些原因, 友链仅对与 Rwagsu 交流过的用户开放.
-        > (毕竟每天审查一堆认都不认识的用户整的链接, 会疯的 (っ °Д °;)っ)
+        由于一些原因, 友链仅对与 Rwagsu 交流过的用户开放.
+        (毕竟每天审查一堆认都不认识的用户整的链接, 会疯的 (っ °Д °;)っ)
         你的申请在  [Project](https://github.com/users/Rwagsu/projects/1) 呆一段时间后将被添加到  [友链页面](http://rwagsu.top/about/friendship_links) 中 ;)
         喵(
 
