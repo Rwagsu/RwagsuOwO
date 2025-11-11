@@ -18,7 +18,7 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Source Han Sans CN'],
-                mono: ['Geist Mono'],
+                mono: ['Source Han Mono CN'],
             },
             colors: {
                 border: 'hsl(var(--border))',
