@@ -34,9 +34,20 @@ actions:
 
 ::br
 
-::div{align="center"}
 ## Starred
 
+## Blog
+
+::card-group
+  ::card
+  ---
+  title: sakuya starry
+  icon: material-symbols:star-rounded
+  to: https://starryxyj.github.io/
+  description: just a blog QAQ
+  target: _blank
+  ---
+  ::
 ::
 
 ::alert{type="info" title="发现了有问题的链接?" icon="lucide:info"}
