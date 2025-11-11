@@ -11,9 +11,7 @@ export default defineNuxtConfig({
         providers: {
             google: false,
             googleicons: false,
-            adobe: false,
-            bunny: false
-        }
+        },
     },
     i18n: {
         defaultLocale: 'zh',
