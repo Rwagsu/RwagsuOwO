@@ -65,7 +65,12 @@ body:
     id: find
     attributes:
       label: 如何联系你?
-      description: "既然认识你应该也可以让我联系到的吧😅"
+      description: |
+        既然认识你应该也可以让我联系到的吧😅
+
+        千万别把你私人邮箱什么的写上去啊啊啊 Σ(っ °Д °;)っ
+
+        让我能联系到你就行了w
       placeholder: "让我看看!"
     validations:
       required: true
