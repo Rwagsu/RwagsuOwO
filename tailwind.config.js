@@ -17,8 +17,8 @@ export default {
         },
         extend: {
             fontFamily: {
-                sans: ['Fusion Pixel 10px Proportional SC'],
-                mono: ['Fusion Pixel 10px Monospaced SC'],
+                sans: ['Source Han Sans CN'],
+                mono: ['Geist Mono'],
             },
             colors: {
                 border: 'hsl(var(--border))',
