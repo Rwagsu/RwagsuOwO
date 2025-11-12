@@ -48,7 +48,7 @@ body:
 
         目前支持添加:
 
-        icon (图标, 但确保你的图标是从 [icones](https://icones.js.org/) 找到的图标, 且应提供类似 `tabler:brand-bandlab` 的图标唯一标识符.),
+        icon (图标, 但确保你的图标是从 [icones](https://icones.js.org/) 找到的图标, 且应提供类似 `tabler:brand-bandlab` 的图标唯一标识符.), 或者使用 Emoji 表情或提供图片链接.
         
         title (标题),
 
