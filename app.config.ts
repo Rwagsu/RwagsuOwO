@@ -24,7 +24,7 @@ export default defineAppConfig({
         banner: {
             enable: true,
             showClose: true,
-            content: 'Rwagsu 现在有自己的域名! </br> rwagsu.github.io 现在是 rwagsu.top ☆ﾐ(o*･ω･)ﾉ',
+            content: 'Rwagsu 现在有自己的域名! rwagsu.github.io/RwagsuOwO 现在是 rwagsu.top ☆ﾐ(o*･ω･)ﾉ',
             border: true,
         },
 
