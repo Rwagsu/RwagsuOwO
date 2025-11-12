@@ -22,11 +22,9 @@ export default defineAppConfig({
 
         // Banner (TODO)
         banner: {
-            enable: false,
+            enable: true,
             showClose: true,
-            content: '这里暂时没有活动 OwO (手动修改网页调出来吗? 好厉害 awa)',
-            to: 'https://github.com/Rwagsu',
-            target: '_blank',
+            content: 'Rwagsu 现在有自己的域名! </br> rwagsu.github.io 现在是 rwagsu.top ☆ﾐ(o*･ω･)ﾉ',
             border: true,
         },
 
