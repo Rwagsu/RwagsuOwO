@@ -18,6 +18,7 @@ export default defineAppConfig({
         // Theme settings
         theme: {
             customizable: true,
+            color: 'blue'
         },
 
         // Banner (TODO)
