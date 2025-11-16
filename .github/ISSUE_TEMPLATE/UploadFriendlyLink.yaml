@@ -54,9 +54,7 @@ body:
 
         description (描述),
 
-        content (内容),
-        
-        footer (页脚).
+        links (是的, 你可以添加更多链接, 但一个链接必须附上一个从 [icones](https://icones.js.org/) 找到的图标, 或 Emoji.)
       placeholder: 祝你好运 ;)
     validations:
       required: true

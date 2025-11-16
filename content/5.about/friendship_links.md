@@ -38,14 +38,39 @@ actions:
 
 ## Blog
 
-::card-group
-  ::card
+::team-card-group
+  ::team-card
   ---
-  title: sakuya starry
-  icon: material-symbols:star-rounded
-  to: https://starryxyj.github.io/
-  description: just a blog QAQ
-  target: _blank
+  avatar: material-symbols:star-rounded
+  name: sakuya starry
+  title: just a blog QAQ
+  links:
+    - icon: mdi:web
+      to: https://starryxyj.github.io/
+  ---
+  ::
+
+  ::team-card
+  ---
+  avatar: https://craftmine.fun/favicon.png
+  name: CMF Official
+  title: |
+    一个Corona Studio团队，专注于MC服务器和周边服务
+    快乐工艺（CrafMine Fun）可以 提供一系列MC服周边服务（不来看看吗w）
+  links:
+    - icon: mdi:web
+      to: https://craftmine.fun
+  ---
+  ::
+
+  ::team-card
+  ---
+  avatar: https://www.mailset.top/img/favicon.webp
+  name: mail_set的铺子
+  title: 也许是我的根据地？
+  links:
+    - icon: mdi:web
+      to: https://www.mailset.top
   ---
   ::
 ::
