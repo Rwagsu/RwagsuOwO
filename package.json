@@ -5,7 +5,7 @@
     "scripts": {
         "build": "nuxt build",
         "dev": "nuxt dev",
-        "generate": "nuxt generate",
+        "generate": "nuxt generate && echo '=== BUILD OUTPUT DIRECTORY CONTENTS ===' && ls -la dist || (echo '=== FAILED BUILD DIRECTORY ===' && ls -la && exit 1)",
         "preview": "nuxt preview",
         "postinstall": "nuxt prepare"
     },
@@ -15,5 +15,13 @@
         "shadcn-docs-nuxt": "^1.1.6",
         "vue": "^3.5.24",
         "vue-router": "^4.6.3"
-    }
+    },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+          "@parcel/watcher",
+          "esbuild",
+          "sharp",
+          "vue-demi"
+        ]
+  }
 }
