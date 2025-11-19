@@ -7,6 +7,14 @@ export default defineNuxtConfig({
             langs: ['csharp', 'xml', 'kotlin', 'groovy', 'kts', 'java', 'log', 'rust', 'properties', 'toml'],
         },
     },
+    studio: {
+        repository: {
+            provider: 'github',
+            owner: 'Rwagsu',
+            repo: 'RwagsuOwO',
+            branch: 'shadcn-docs',
+        }
+    },
     fonts: {
         providers: {
             google: false,
