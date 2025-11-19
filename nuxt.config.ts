@@ -7,6 +7,8 @@ export default defineNuxtConfig({
       highlight: {
           langs: ['csharp', 'xml', 'kotlin', 'groovy', 'kts', 'java', 'log', 'rust', 'properties', 'toml'],
       },
+
+    database: { type: 'memory' } 
   },
 
   studio: {
@@ -43,5 +45,5 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2025-11-09',
-  modules: ['nuxt-studio'],
+  modules: ['@nuxt/content', 'nuxt-studio'],
 });

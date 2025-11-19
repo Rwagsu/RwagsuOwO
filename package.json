@@ -11,8 +11,10 @@
     },
     "dependencies": {
         "@giscus/vue": "^3.1.1",
+        "@nuxt/content": "^3.8.2",
+        "better-sqlite3": "^12.4.1",
         "nuxt": "^3.20.1",
-        "nuxt-studio": "1.0.0-alpha.2",
+        "nuxt-studio": "0.0.0",
         "shadcn-docs-nuxt": "^1.1.6",
         "vue": "^3.5.24",
         "vue-router": "^4.6.3"
@@ -20,6 +22,7 @@
     "pnpm": {
         "onlyBuiltDependencies": [
             "@parcel/watcher",
+            "better-sqlite3",
             "esbuild",
             "sharp",
             "vue-demi"
