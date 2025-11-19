@@ -43,5 +43,7 @@ export default defineNuxtConfig({
     },
 
     compatibilityDate: '2025-11-09',
-    modules: ['@nuxt/content'],
+    modules: [
+        '@ztl-uwu/nuxt-content'
+    ],
 });
