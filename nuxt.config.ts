@@ -33,6 +33,15 @@ export default defineNuxtConfig({
         ],
     },
 
+    nitro: {
+        prerender: {
+            // Pre-render the homepage
+            routes: ['/'],
+            // Then crawl all the links on the page
+            crawlLinks: true
+        }
+    },
+
     compatibilityDate: '2025-11-09',
-    modules: [ '@nuxt/content' ],
+    modules: ['@nuxt/content'],
 });
