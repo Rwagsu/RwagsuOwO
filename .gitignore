@@ -6,6 +6,8 @@
 .cache
 dist
 
+pnpm-lock.yaml
+
 # Node dependencies
 node_modules
 
