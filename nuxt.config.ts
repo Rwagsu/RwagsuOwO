@@ -42,6 +42,5 @@ export default defineNuxtConfig({
         }
     },
 
-    compatibilityDate: '2025-11-09',
-    modules: ['@nuxt/content', 'nuxt-studio'],
+    compatibilityDate: '2025-11-19',
 });
