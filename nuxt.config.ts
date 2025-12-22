@@ -1,5 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    devtools: { enabled: true },
+    extends: ['shadcn-docs-nuxt'],
+
     app: {
         head: {
             meta: [
@@ -11,8 +14,17 @@ export default defineNuxtConfig({
         },
     },
 
-    devtools: { enabled: true },
-    extends: ['shadcn-docs-nuxt'],
+    site: {
+        url: 'https://rwagsu.top' // 替换为你的实际域名
+    },
+
+    sitemap: {
+        defaults: {
+            priority: 0.5,
+            changefreq: 'weekly',
+        }
+    },
+
 
     content: {
         highlight: {
@@ -54,4 +66,8 @@ export default defineNuxtConfig({
     },
 
     compatibilityDate: '2025-11-19',
+
+    modules: [
+        '@nuxtjs/sitemap'
+    ],
 });
