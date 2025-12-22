@@ -1,5 +1,6 @@
 ---
 title: Home
+description: Rwagsu's personal portfolio / blog and handy tips site — always worth checking out! ψ(｀∇´)ψ
 navigation: false
 ---
 
