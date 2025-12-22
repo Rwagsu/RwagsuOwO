@@ -1,5 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    app: {
+        head: {
+            meta: [
+                {
+                    name: 'msvalidate.01',
+                    content: '9ED23BB0F6CCE0333714D525D8170E02',
+                },
+            ],
+        },
+    },
+
     devtools: { enabled: true },
     extends: ['shadcn-docs-nuxt'],
 
