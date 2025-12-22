@@ -15,10 +15,12 @@ export default defineNuxtConfig({
     },
 
     site: {
-        url: 'https://rwagsu.top' // 替换为你的实际域名
+        url: 'https://rwagsu.top',
+        name: 'RwagsuOwO',
     },
 
     sitemap: {
+        xsl: false,
         defaults: {
             priority: 0.5,
             changefreq: 'weekly',
@@ -41,7 +43,7 @@ export default defineNuxtConfig({
 
     i18n: {
         defaultLocale: 'zh',
-
+        strategy: 'prefix_except_default',
         locales: [
             {
                 code: 'zh',
