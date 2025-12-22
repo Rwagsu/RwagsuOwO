@@ -42,7 +42,7 @@ actions:
   ::card
   ---
   title: sakuya starry
-  icon: material-symbols:star-rounded
+  icon: https://youke1.picui.cn/s1/2025/11/19/691d5ce722248.png
   to: https://starryxyj.github.io/
   description: just a blog QAQ
   target: _blank

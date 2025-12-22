@@ -41,7 +41,7 @@ actions:
 ::team-card-group
   ::team-card
   ---
-  avatar: material-symbols:star-rounded
+  avatar: https://youke1.picui.cn/s1/2025/11/19/691d5ce722248.png
   name: sakuya starry
   title: just a blog QAQ
   links:
