@@ -64,7 +64,7 @@ export default defineNuxtConfig({
             routes: ['/'],
 
             // Then crawl all the links on the page
-            crawlLinks: false,
+            crawlLinks: true,
             failOnError: false,
 
             ignore: [
