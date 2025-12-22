@@ -62,8 +62,16 @@ export default defineNuxtConfig({
         prerender: {
             // Pre-render the homepage
             routes: ['/'],
+
             // Then crawl all the links on the page
-            crawlLinks: true
+            crawlLinks: false,
+            failOnError: false,
+
+            ignore: [
+                '/**/sitemap.xml',
+                '/**/sitemap.xml.gz',
+                '/__sitemap__/**'
+            ]
         }
     },
 
