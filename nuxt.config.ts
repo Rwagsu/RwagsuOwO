@@ -33,7 +33,7 @@ export default defineNuxtConfig({
 
     content: {
         highlight: {
-            langs: ['csharp', 'xml', 'kotlin', 'groovy', 'kts', 'java', 'log', 'rust', 'properties', 'toml'],
+            langs: ['csharp', 'xml', 'kotlin', 'groovy', 'kts', 'java', 'log', 'rust', 'properties', 'toml', 'bat'],
         },
     },
 

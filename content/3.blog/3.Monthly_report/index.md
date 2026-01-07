@@ -20,6 +20,8 @@ Rwagsu 的月度报告
 ::
 
 ::div{align="center"}
+:smart-icon{name="ic:outline-question-answer" :size="60"}
+
 ## 报告有什么?
 
 每月报告包含以下内容:
@@ -27,13 +29,21 @@ Rwagsu 的月度报告
 - Rwagsu 遇到的各种事件
 - Rwagsu 遇到的各种问题的解决方案
 
-:icon{name="😴" :size="60"}
+:smart-icon{name="😴" :size="60"}
 
 ## 没看到更新?
 
-Oops, 看来 Rwagsu 忘记了 ¯\_(ツ)_/¯
+Oops, 看来 Rwagsu 忘记了 ¯\\\_(ツ)\_/¯
 
 当然也可能是太懒了或者没啥更的了()
 
 你可以在 Bilibili 催更awa
+
+:br
+
+:smart-icon{name="ic:outline-security-update-good" :size="60"}
+
+## 为什么要做这个?
+
+这样就有理由在每月的 13 - 15 日之间全职更新网站了 😋
 ::
