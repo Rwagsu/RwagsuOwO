@@ -67,7 +67,7 @@ export default defineI18nConfig(() => ({
             // Markdown
             'Read more at': '阅读更多内容: ',
         },
-        en: {
+        /*en: {
             'RwagsuOwO': 'RwagsuOwO',
             'Blog': 'Blog',
             "DrownedOwO": "DrownedOwO",
@@ -130,6 +130,6 @@ export default defineI18nConfig(() => ({
 
             // Markdown
             'Read more at': 'Read more at',
-        },
+        },*/
     },
 }))
