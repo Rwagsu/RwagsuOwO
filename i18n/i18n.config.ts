@@ -11,7 +11,7 @@ export default defineI18nConfig(() => ({
             "Rwagsu's Docs & Blogs!": "Rwagsu 的 Blog & Docs!",
             'Code copied to clipboard!': '代码已复制到剪贴板！',
 
-            'FOOTER_CREDIT': 'Copyright © 2025 - 2025 [Rwagsu](https://space.bilibili.com/2123349162) & [DrownedOwO](https://space.bilibili.com/527675045), 除非另有说明, 所有**原创内容**均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans) 许可协议进行分发.',
+            'FOOTER_CREDIT': 'Copyright © 2025 - 2026 [Rwagsu](https://space.bilibili.com/2123349162) & [DrownedOwO](https://space.bilibili.com/527675045), 除非另有说明, 所有**原创内容**均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans) 许可协议进行分发.',
 
             // Customize
             'Customize': '自定义',
