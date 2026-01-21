@@ -28,3 +28,4 @@ logs
 
 # .vscode
 .vscode/*
+.devcontainer/devcontainer.json
