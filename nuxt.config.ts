@@ -2,6 +2,11 @@
 export default defineNuxtConfig({
     extends: ['shadcn-docs-nuxt'],
 
+    image: {
+      provider: 'netlifyImageCdn',
+      domains: [] // 添加你的图床域名
+    },
+
     app: {
         head: {
             htmlAttrs: {
