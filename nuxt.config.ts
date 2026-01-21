@@ -3,25 +3,27 @@ export default defineNuxtConfig({
     extends: ['shadcn-docs-nuxt'],
 
     image: {
-        provider: 'netlify',
-        domains: [
-            // Main Image
-            's21.ax1x.com',
-            'ax1x.com',
+        provider: 'netlifyImageCdn',
+        netlifyImageCdn: {
+            domains: [
+                // Main Image
+                's21.ax1x.com',
+                'ax1x.com',
 
-            'cdn.jsdelivr.net',
+                'cdn.jsdelivr.net',
 
-            'www.github.com',
-            'github.com',
+                'www.github.com',
+                'github.com',
 
-            // Other
-            'mailset.top',
-            'www.mailset.top',
-            
-            'craftmine.fun',
+                // Other
+                'mailset.top',
+                'www.mailset.top',
 
-            'youke1.picui.cn'
-        ]
+                'craftmine.fun',
+
+                'youke1.picui.cn'
+            ]
+        }
     },
 
     app: {
