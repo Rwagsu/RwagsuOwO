@@ -3,14 +3,14 @@ export default defineNuxtConfig({
     extends: ['shadcn-docs-nuxt'],
 
     image: {
-        provider: 'netlifyImageCdn',
+        provider: 'netlify',
         domains: [
             // Main Image
             's21.ax1x.com',
             'ax1x.com',
 
             'cdn.jsdelivr.net',
-            
+
             'www.github.com',
             'github.com',
 
