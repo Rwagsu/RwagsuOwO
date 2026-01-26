@@ -1,10 +1,18 @@
-<div align="center">
+## Fumadocs BaseHub
 
-# RwagsuOwO
+This is an example to use Fumadocs with BaseHub.
 
-Rwagsu 的官方网站!
+### Setup
 
-**[Rwagsu](https://github.com/Rwagsu) 的作品**
+Sign in on [BaseHub](https://basehub.com).
 
-Tip: README 还未完成(
-</div>
+Fork the [BaseHub repository](https://basehub.com/fuma-nama/fumadocs-template/explore?fork=true), and click the "Developers" tab on sidebar (left bottom corner).
+
+Open the "Connect to Your App" guide, and copy the example `.env` to your app.
+
+Install & run development server:
+
+```bash
+pnpm i
+pnpm dev
+```

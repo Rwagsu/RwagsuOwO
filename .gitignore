@@ -1,30 +1,31 @@
-# Nuxt dev/build outputs
-.output
-.data
-.nuxt
-.nitro
-.cache
-dist
+# deps
+/node_modules
 
-# smpp
-pnpm-lock.yaml
+# generated content
+.contentlayer
+.content-collections
+.source
 
-# Node dependencies
-node_modules
+# test & build
+/coverage
+/.next/
+/out/
+/build
+*.tsbuildinfo
 
-# Logs
-logs
-*.log
-
-# Misc
+# misc
 .DS_Store
-.fleet
-.idea
+*.pem
+/.pnp
+.pnp.js
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Local env files
-.env
-.env.*
-!.env.example
+# others
+.env*.local
+.vercel
+next-env.d.ts
 
-# .vscode
-.vscode/*
+# BaseHub
+.basehub

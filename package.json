@@ -1,29 +1,28 @@
 {
-    "name": "shadcn-docs-nuxt-starter",
-    "type": "module",
-    "private": true,
-    "scripts": {
-        "build": "nuxt build",
-        "dev": "nuxt dev",
-        "generate": "nuxt generate",
-        "preview": "nuxt preview",
-        "postinstall": "nuxt prepare"
-    },
-    "dependencies": {
-        "@giscus/vue": "^3.1.1",
-        "@nuxtjs/sitemap": "^7.5.0",
-        "nuxt": "^3.20.1",
-        "shadcn-docs-nuxt": "^1.1.6",
-        "vue": "^3.5.24",
-        "vue-router": "^4.6.3"
-    },
-    "pnpm": {
-        "onlyBuiltDependencies": [
-            "@parcel/watcher",
-            "better-sqlite3",
-            "esbuild",
-            "sharp",
-            "vue-demi"
-        ]
-    }
+  "name": "fumadocs-basehub",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "dotenv -e .env.local -- basehub dev & next dev",
+    "build": "basehub && next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "basehub": "^8.0.2",
+    "fumadocs-core": "14.7.2",
+    "fumadocs-ui": "14.7.2",
+    "next": "15.5.8",
+    "react": "19.0.2",
+    "react-dom": "19.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.5",
+    "@types/react": "^19.0.4",
+    "@types/react-dom": "^19.0.2",
+    "autoprefixer": "^10.4.20",
+    "dotenv-cli": "^8.0.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3"
+  }
 }
