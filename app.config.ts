@@ -25,7 +25,7 @@ export default defineAppConfig({
         banner: {
             enable: true,
             showClose: true,
-            content: 'Rwagsu 现在有自己的域名! rwagsu.github.io/RwagsuOwO 现在是 rwagsu.top ☆ﾐ(o*･ω･)ﾉ',
+            content: 'Rwagsu 正在尝试迁移 Fumadocs ;) 可能需要数天的网站维护, 但不是现在. 放心, 到时候我们会告诉你, 就在这里😉',
             border: true,
         },
 
