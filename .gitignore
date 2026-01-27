@@ -2,8 +2,6 @@
 /node_modules
 
 # generated content
-.contentlayer
-.content-collections
 .source
 
 # test & build
@@ -26,6 +24,3 @@ yarn-error.log*
 .env*.local
 .vercel
 next-env.d.ts
-
-# BaseHub
-.basehub

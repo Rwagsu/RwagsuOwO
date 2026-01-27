@@ -1,28 +1,36 @@
 {
-  "name": "fumadocs-basehub",
+  "name": "rwagsuowo",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "dotenv -e .env.local -- basehub dev & next dev",
-    "build": "basehub && next build",
-    "start": "next start"
+    "build": "next build",
+    "dev": "next dev",
+    "start": "serve out",
+    "types:check": "fumadocs-mdx && next typegen && tsc --noEmit",
+    "postinstall": "fumadocs-mdx",
+    "lint": "eslint"
   },
   "dependencies": {
-    "basehub": "^8.0.2",
-    "fumadocs-core": "14.7.2",
-    "fumadocs-ui": "14.7.2",
-    "next": "15.5.8",
-    "react": "19.0.2",
-    "react-dom": "19.0.2"
+    "@orama/orama": "^3.1.18",
+    "fumadocs-core": "16.4.9",
+    "fumadocs-mdx": "14.2.6",
+    "fumadocs-ui": "16.4.9",
+    "lucide-react": "^0.563.0",
+    "next": "16.1.4",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   },
   "devDependencies": {
-    "@types/node": "22.10.5",
-    "@types/react": "^19.0.4",
-    "@types/react-dom": "^19.0.2",
-    "autoprefixer": "^10.4.20",
-    "dotenv-cli": "^8.0.0",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.3"
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/mdx": "^2.0.13",
+    "@types/node": "^25.0.10",
+    "@types/react": "^19.2.9",
+    "@types/react-dom": "^19.2.3",
+    "postcss": "^8.5.6",
+    "serve": "^14.2.5",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3",
+    "eslint-config-next": "16.1.4",
+    "eslint": "^9.39.2"
   }
 }
