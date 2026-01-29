@@ -1,9 +1,19 @@
 import { source } from '@/lib/source';
 import { createFromSource } from 'fumadocs-core/search/server';
+import { createTokenizer } from '@orama/tokenizers/mandarin';
 
-export const revalidate = false;
-
-export const { staticGET: GET } = createFromSource(source, {
+export const { GET } = createFromSource(source, {
   // https://docs.orama.com/docs/orama-js/supported-languages
-  language: 'english',
+  localeMap: {
+    cn: {
+      components: {
+        tokenizer: createTokenizer(),
+      },
+      search: {
+        threshold: 0,
+        tolerance: 0,
+      },
+    },
+    en: { language: 'english' },
+  },
 });
