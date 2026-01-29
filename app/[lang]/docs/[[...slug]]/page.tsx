@@ -23,12 +23,19 @@ export default async function Page({ params }: {
         branch: 'main',
     };
 
+    let lastModifiedTime: Date | null = null;
+
     // Last Update Info
-    const lastModifiedTime = await getGithubLastEdit({
-        owner: 'Rwagsu',
-        repo: 'RwagsuOwO',
-        path: `content/docs/${page.path}`,
-    });
+    try {
+        lastModifiedTime = await getGithubLastEdit({
+            owner: 'Rwagsu',
+            repo: 'RwagsuOwO',
+            path: `content/docs/${lang}/${page.path}`,
+        });
+    } catch (error) {
+        console.error('Failed to fetch GitHub data:', error);
+        lastModifiedTime = null;
+    }
 
     return (
         <DocsPage toc={page.data.toc} full={page.data.full}>
