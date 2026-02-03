@@ -1,4 +1,5 @@
 import { getPageImage, source } from '@/lib/source';
+import { githubInfo } from '@/lib/layout.shared';
 import { DocsBody, DocsDescription, DocsPage, DocsTitle, PageLastUpdate } from 'fumadocs-ui/layouts/docs/page';
 import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/mdx-components';
@@ -6,6 +7,9 @@ import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { LLMCopyButton, ViewOptions } from '@/components/ai/page-actions';
 import { getGithubLastEdit } from 'fumadocs-core/content/github';
+import { Comments } from '@/lib/giscus';
+import { useTheme } from 'next-themes';
+import { PageFooter } from '@/components/layout/docs/page/client';
 
 export default async function Page({ params }: {
     params: Promise<{ lang: string; slug?: string[] }>;
@@ -18,9 +22,9 @@ export default async function Page({ params }: {
 
     // GitHub repository configuration
     const gitConfig = {
-        user: 'Rwagsu',
-        repo: 'RwagsuOwO',
-        branch: 'main',
+        user: githubInfo.owner,
+        repo: githubInfo.repo,
+        branch: githubInfo.branch,
     };
 
     let lastModifiedTime: Date | null = null;
@@ -28,9 +32,10 @@ export default async function Page({ params }: {
     // Last Update Info
     try {
         lastModifiedTime = await getGithubLastEdit({
-            owner: 'Rwagsu',
-            repo: 'RwagsuOwO',
-            path: `content/docs/${lang}/${page.path}`,
+            owner: gitConfig.user,
+            repo: gitConfig.repo,
+            sha: gitConfig.branch,
+            path: `content/docs/${page.path}`,
         });
     } catch (error) {
         console.error('Failed to fetch GitHub data:', error);
@@ -38,7 +43,19 @@ export default async function Page({ params }: {
     }
 
     return (
-        <DocsPage toc={page.data.toc} full={page.data.full}>
+        <DocsPage toc={page.data.toc} full={page.data.full} footer={{ 
+                enabled: true, 
+                component: (
+                    <>
+                        {/* Default PageFooter */}
+                        <PageFooter />
+                        {/* Comments */}
+                        <div className="border-t pt-6 mt-6">
+                            <Comments lang={lang} />
+                        </div>
+                    </>
+                ),
+            }}>
             <DocsTitle>{page.data.title}</DocsTitle>
             <DocsDescription className="mb-0">{page.data.description}</DocsDescription>
             <div className="flex flex-row gap-2 items-center border-b pb-6">
@@ -80,4 +97,10 @@ export async function generateMetadata({ params }: {
             images: getPageImage(page).url,
         },
     };
+}
+
+export function DocsFooter({ lang }: { lang: string }) {
+    return (
+        <Comments lang={lang} />
+    )
 }

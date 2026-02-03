@@ -5,11 +5,23 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node-terminal",
+            "type": "node",
             "name": "RwagsuOwO: dev",
             "request": "launch",
-            "command": "pnpm run dev",
-            "cwd": "${workspaceFolder}"
+            "runtimeExecutable": "pnpm",
+            "runtimeArgs": [
+                "run",
+                "dev",
+                "--port",
+                "11451"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Next.js: Debug Client (Edge)",
+            "type": "msedge",
+            "request": "launch",
+            "url": "http://localhost:11451"
         }
     ]
 }

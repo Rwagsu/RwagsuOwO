@@ -11,7 +11,7 @@ export default async function Layout({ params, children }: {
 
   return (
       <DocsLayout {...baseOptions(lang)} tree={source.getPageTree(lang)}>
-        {children}
+        {children}        
       </DocsLayout>
   );
 }

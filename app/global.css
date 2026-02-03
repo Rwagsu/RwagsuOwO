@@ -1,3 +1,45 @@
 @import 'tailwindcss';
 @import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
+
+:root {
+  --fd-layout-width: 2000px;
+}
+
+@theme {
+  --color-fd-background: #FFFFFF; /* Background color */
+  --color-fd-foreground: #1F2328; /* Text Color */
+  --color-fd-muted: #EFF1F3; /* Code block background color */
+  --color-fd-muted-foreground: #1F2328; /* Subtext and icon color */
+  --color-fd-popover: #FFFFFF; /* Popup color */
+  --color-fd-popover-foreground: #0077FF; /* Sidebar folder list item color */
+  --color-fd-card: #F6F8FA; /* Sidebar and Card color */
+  --color-fd-card-foreground: #1F2328; /* Inline TOC text color */
+  --color-fd-border: #D1D9E0; /* Divider color */
+  --color-fd-primary: #0077FF; /* Accent color */
+  --color-fd-primary-foreground: #FFFFFF; /* Accent foreground color */
+  --color-fd-secondary: #F6F8FA; /* Control background color */
+  --color-fd-secondary-foreground: #1F2328; /* Control foreground color */
+  --color-fd-accent: #0077FF30; /* color when the button is pressed and the color of the theme switcher */
+  --color-fd-accent-foreground: #0077FF; /* color of the foreground and the color of the theme switcher icon when the button is pressed. */
+  --color-fd-ring: #0077FF; /* Focus ring color */
+}
+
+.dark {
+  --color-fd-background: #0D1117; /* Background color */
+  --color-fd-foreground: #F0F6FC; /* Text Color */
+  --color-fd-muted: #161B22; /* Code block background color */
+  --color-fd-muted-foreground: #9198A1; /* Subtext and icon color */
+  --color-fd-popover: #010409; /* Popup color */
+  --color-fd-popover-foreground: #0077FF; /* Sidebar folder list item color */
+  --color-fd-card: #010409; /* Sidebar and Card color */
+  --color-fd-card-foreground: #F0F6FC; /* Inline TOC text color */
+  --color-fd-border: #3D444D; /* Divider color */
+  --color-fd-primary: #0077FF; /* Accent Color */
+  --color-fd-primary-foreground: #FFFFFF; /* Accent foreground color */
+  --color-fd-secondary: #212830; /* Control background color */
+  --color-fd-secondary-foreground: #F0F6FC; /* Control foreground color */
+  --color-fd-accent: #0077FF30; /* color when the button is pressed and the color of the theme switcher */
+  --color-fd-accent-foreground: #0077FF; /* color of the foreground and the color of the theme switcher icon when the button is pressed. */
+  --color-fd-ring: #0077FF; /* Focus ring color */
+}

@@ -1,18 +1,13 @@
 import { RootProvider } from 'fumadocs-ui/provider/next';
 import { defineI18nUI } from 'fumadocs-ui/i18n';
-import { i18n } from '@/lib/i18n';
+import { i18n, zhTranslations, enTranslations } from '@/lib/i18n';
 import '../global.css';
 import { Inter } from 'next/font/google';
 
 const { provider } = defineI18nUI(i18n, {
     translations: {
-        en: {
-            displayName: 'English',
-        },
-        cn: {
-            displayName: '中文 (简体)',
-            search: '搜索文档',
-        },
+        en: enTranslations,
+        cn: zhTranslations,
     },
 });
 
