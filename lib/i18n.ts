@@ -26,11 +26,17 @@ export const enTranslations: Partial<Translations> & { displayName?: string; } =
     displayName: 'English',
 };
 
-export const tipTranslations = {
-    cn: {
-        
-    },
+export const ExpandTranslation = {
     en: {
-
+        ReadingTime: {
+            lessThanOneMinute: 'Less than 1 min',
+            minute: 'min',
+        }
+    },
+    cn: {
+        ReadingTime: {
+            lessThanOneMinute: '不到 1 分钟',
+            minute: '分钟',
+        }
     }
 };

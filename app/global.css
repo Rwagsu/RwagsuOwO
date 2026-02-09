@@ -31,15 +31,15 @@
   --color-fd-muted: #161B22; /* Code block background color */
   --color-fd-muted-foreground: #9198A1; /* Subtext and icon color */
   --color-fd-popover: #010409; /* Popup color */
-  --color-fd-popover-foreground: #0077FF; /* Sidebar folder list item color */
+  --color-fd-popover-foreground: #278CFF; /* Sidebar folder list item color */
   --color-fd-card: #010409; /* Sidebar and Card color */
   --color-fd-card-foreground: #F0F6FC; /* Inline TOC text color */
   --color-fd-border: #3D444D; /* Divider color */
-  --color-fd-primary: #0077FF; /* Accent Color */
+  --color-fd-primary: #278CFF; /* Accent Color */
   --color-fd-primary-foreground: #FFFFFF; /* Accent foreground color */
   --color-fd-secondary: #212830; /* Control background color */
   --color-fd-secondary-foreground: #F0F6FC; /* Control foreground color */
-  --color-fd-accent: #0077FF30; /* color when the button is pressed and the color of the theme switcher */
-  --color-fd-accent-foreground: #0077FF; /* color of the foreground and the color of the theme switcher icon when the button is pressed. */
-  --color-fd-ring: #0077FF; /* Focus ring color */
+  --color-fd-accent: #278CFF30; /* color when the button is pressed and the color of the theme switcher */
+  --color-fd-accent-foreground: #278CFF; /* color of the foreground and the color of the theme switcher icon when the button is pressed. */
+  --color-fd-ring: #278CFF; /* Focus ring color */
 }

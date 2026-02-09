@@ -101,4 +101,21 @@ export const navLinks : LinkItemType[] = [
         text: 'About',
         url: '/docs/about',
     },
-]
+];
+
+export const avatars = [
+    {
+        id: 'rwagsu',
+        name: 'Rwagsu',
+        description: 'A developer and designer',
+        iconLink: 'https://github.com/Rwagsu.png',
+        link: 'https://github.com/Rwagsu'
+    },
+    {
+        id: 'drownedowo',
+        name: 'DrownedOwO',
+        description: 'WTF',
+        iconLink: 'https://github.com/DrownedOwO.png',
+        link: 'https://github.com/DrownedOwO'
+    }
+];
