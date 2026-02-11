@@ -1,0 +1,113 @@
+---
+title: HACS 万恶的 could_not_register
+description: 我只是因为这破玩意才决定开的 Notebook 你知道吗
+---
+
+当初我就是被这玩意气疯的, 以至于到现在过去 114514 秒都没缓过来(恼)
+
+![HACS01](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/20251005142146146.png)
+
+## 解决方案
+
+<div className='fd-steps [&_h3]:fd-step'>
+    ### 打开设置 > 系统
+    
+    <Callout type="warning">
+        在报错发生后立马打开日志, 否则时间一久可能混入其它的日志.
+    </Callout>
+    
+    ![HACS02](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/20251005151144726.png)
+    
+    ### 点击日志
+    
+    ![HACS03](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/20251005151545952.png)
+    
+    ### 定位日志
+    
+    查找带有 **HACS (自定义集成) 的错误**, 然后查看具体的错误信息.
+    
+    如果你有看到 [DNS server returned general failure] 的字样, 那么恭喜你, 你适用该教程! 🥳🥳🥳
+    
+    如果没看到, 那么你估计只能找别的教程拉...... (悲)
+    
+    ![HACS04](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/20251005151829066.png)
+    
+    当然, 你可以点开来查看更详细的报错日志, 前提你能看懂(
+    
+    如果你发现在外面的报错日志看不全, 也可以在这里看.
+    
+    ![HACS05](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/20251005152142520.png)
+    
+    是的, 这 byd Home Assistant 用的自家的 DNS, 老是抽风导致 HACS 无法安装(恼)
+    
+    当然, 解决方法非常简单, 换一个 DNS 就解决了(
+    
+    ### 更换 DNS
+    
+    在确认你适用这个解决方案后, 打开 HAOS 终端.
+    
+    输入这行命令:
+    
+    ```bash
+    # 更换 DNS 为 114.114.114.114(好臭啊(恼))
+    dns options --servers dns://114.114.114.114
+    ```
+    
+    <Callout type="warning">
+    不要把命令改成这样:
+    
+    ```bash
+    ha dns options --servers dns://114.114.114.114
+    ```
+    
+    这会导致它会开一个新进程然后设置然后直接关掉这个进程(就是没设置上), 这样将不生效!
+    </Callout>
+    
+    ![HACS06](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/20251005160355047.png)
+    
+    DNS 并非只有这一种, 我选它只是因为它是 HOMO 先辈专用 114514 DNS(恼)
+    
+    它有非常小的概率会成为你家刚好用不了的 DNS, 这时候你应该换别家的 DNS(
+    
+    目前 Rwagsu 已知的 DNS 列表:
+    
+    - 114.114.114.114 (恶臭 DNS)
+    - 1.1.1.1 (在几年前据说是全世界最快的 DNS, 但那时候在我这里慢的一批)
+    - 8.8.8.8 (Google 家的 DNS)
+    - 223.5.5.5 (阿里云的DNS, 在我这边挺快, 但我懒得换(记不住(。・ω・。)))
+    - 8.8.4.4 (还是 Google 家的 DNS)
+    - 4.2.2.2 (微软没用提供过公共 DNS 这是 Lumen 的还有那是个谣言你知道吗)
+    
+    ### 寻找最适合的 DNS
+    
+    DNS 没有绝对的快和慢, 和你家用的是谁家的宽带还有你所在的地区位置和你在用的代理以及各种玄学原因都有一定关系(
+    
+    那么如何查看你家最适合用哪个 DNS 呢?
+    
+    1. 打开你的电脑 (你都会用 Home Assistant 了我就不信你没有电脑(雾))
+    2. 输入 这行指令:
+    
+    ```bash
+    ping <你的 DNS 地址> -t
+    
+    # 例如:
+    ping 114.114.114.114 -t
+    ```
+    如果你不加 `-t`, 它只会输出 4 行结果, 如果你加了, 它就会一直输出直到你关闭终端或按下 :shortcut{value="meta"} :shortcut{value="C"}
+    
+    这时, 你就可以通过 "时间" (各个系统有不同的叫法, 你应该注意末尾带 `ms` 的数字) 来查看这个 DNS 的延迟了, 一般来说, 越快越好.
+    
+    <Callout type="info">
+        注意 DNS 污染, 建议选大厂的 DNS, 毕竟你可不想突然跳转到别的什么奇奇怪怪的网站对吧😰
+    </Callout>
+    
+    ![HACS07](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/20251005155550903.png)
+    
+    <Callout type="info">
+        像我这么慢其实不正常哦, 我家的网超级超级烂, 嗷! ♪(^∇^*💢)
+    </Callout>
+    
+    总之设置完后再设置一遍 HACS, 应该就不会遇到刚刚的问题了(
+    
+    如果还是不行的话, 那就要找别的教程了(悲)
+</div>

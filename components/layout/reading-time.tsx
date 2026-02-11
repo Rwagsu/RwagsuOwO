@@ -12,7 +12,7 @@ export function ReadingTime({ stats, lang }: { stats: ReadTimeResults, lang: str
     
     return (
         <Flex gap="2" align="center" style={{ lineHeight: 1 }}>
-            <IoMdBook style={{ alignSelf: 'center', fontSize: '20px' }}/>
+            <IoMdBook style={{ alignSelf: 'center', fontSize: '20px', marginTop: '-1px' }}/>
             <Text weight="medium" trim="both" style={{ lineHeight: 1 }}>{displayText}</Text>
         </Flex>
     );

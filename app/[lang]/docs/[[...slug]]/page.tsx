@@ -10,31 +10,7 @@ import { getGithubLastEdit } from 'fumadocs-core/content/github';
 import { Comments } from '@/lib/giscus';
 import { useTheme } from 'next-themes';
 import { PageFooter } from '@/components/layout/docs/page/client';
-import AvatarsView from '@/components/layout/avatars-view';
-import LastUpdate from '@/components/layout/last-update';
-import { ReadingTime } from '@/components/layout/reading-time';
-import { Flex } from '@radix-ui/themes';
-import Image from 'next/image';
-
-// Header components with different image options
-interface HeaderProps {
-    title: string;
-    description?: string;
-    avatars?: string[];
-    time?: any;
-    readingTime?: any;
-    lang: string;
-    url: string;
-    gitConfig: {
-        user: string;
-        repo: string;
-        branch: string;
-    };
-    imageInfo?: {
-        alt: string;
-        src: string;
-    };
-}
+import { HeaderWithImage } from '@/components/layout/header-with-image';
 
 export default async function Page({ params }: {
     params: Promise<{ lang: string; slug?: string[] }>;
@@ -69,6 +45,26 @@ export default async function Page({ params }: {
         lastModifiedTime = null;
     }
 
+    var currentPageComponent : React.ReactNode | null = null;
+
+    switch (page.data.type) {
+        case 'base':
+            currentPageComponent = (
+            <HeaderWithImage
+                title={page.data.title}
+                description={page.data.description}
+                avatars={page.data.avatars}
+                time={page.data.time}
+                readingTime={readingTime}
+                lang={lang}
+                url={page.url}
+                gitConfig={gitConfig}
+                imageInfo={page.data.headerImage}
+            />
+        );
+        break;
+    }
+
     return (
         <DocsPage toc={page.data.toc} full={page.data.full} footer={{
             enabled: true,
@@ -83,18 +79,7 @@ export default async function Page({ params }: {
                 </>
             ),
         }}>
-
-            <HeaderWithImage
-                title={page.data.title}
-                description={page.data.description}
-                avatars={page.data.avatars}
-                time={page.data.time}
-                readingTime={readingTime}
-                lang={lang}
-                url={page.url}
-                gitConfig={gitConfig}
-                imageInfo={page.data.image}
-            />
+            {currentPageComponent}
 
 
             <DocsBody>
@@ -110,47 +95,6 @@ export default async function Page({ params }: {
     );
 }
 
-async function HeaderWithImage({ title, description, avatars, time, readingTime, lang, url, gitConfig, imageInfo }: HeaderProps) {
-    return (
-        <>
-            {imageInfo && (
-                <div className="relative w-full h-64 overflow-hidden rounded-lg mb-6">
-                    <Image
-                        alt={imageInfo.alt}
-                        fill
-                        style={{ objectFit: 'cover' }}
-                        src={imageInfo.src}
-                        className="rounded-lg"
-                    />
-                </div>
-            )}
-            <DocsTitle>{title}</DocsTitle>
-            <DocsDescription className="mb-0">{description}</DocsDescription>
-
-            {/* Avatars */}
-            {avatars && <AvatarsView avatarIds={avatars} className="mb-2 pl-3" />}
-
-            {/* Page Infos and Actions - Responsive layout */}
-            <Flex direction={{ initial: 'column', md: 'row' }} justify={{ initial: 'start', md: 'between' }} gap={{ initial: '3', md: '4' }} align={{ initial: 'start', md: 'center' }} width="100%" className="border-b pb-4 pt-2">
-                {/* Page Infos - Left side on desktop, top on mobile */}
-                <Flex direction="row" gap="8" align="center" className="pb-0 pl-1">
-                    {time && <LastUpdate time={time} lang={lang} />}
-                    {readingTime && <ReadingTime stats={readingTime} lang={lang} />}
-                </Flex>
-
-                {/* Page Actions - Right side on desktop, left on mobile */}
-                <Flex direction="row" gap="2" align="center" width={{ initial: '100%', md: 'auto' }}>
-                    <LLMCopyButton markdownUrl={`${url}.mdx`} />
-                    <ViewOptions
-                        markdownUrl={`${url}.mdx`}
-                        // update it to match your repo
-                        githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/docs/content/docs/${url.replace('/docs/', '')}`}
-                    />
-                </Flex>
-            </Flex>
-        </>
-    );
-}
 
 export async function generateStaticParams() {
     return source.generateParams();

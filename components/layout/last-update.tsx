@@ -5,7 +5,7 @@ export default function LastUpdate({ time, lang }: { time: Date, lang: string })
 
     return (
         <Flex gap="2" align="center" style={{ lineHeight: 1 }}>
-            <FaRegClock style={{ alignSelf: 'center', marginTop: '-1px' }} />
+            <FaRegClock style={{ alignSelf: 'center', marginTop: '-2px' }} />
             <Text weight="medium" trim="both" style={{ lineHeight: 1 }}>{time.toLocaleDateString(lang === "en" ? "en-US" : "zh-CN")}</Text>
         </Flex>
     )

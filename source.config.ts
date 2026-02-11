@@ -2,6 +2,7 @@ import { applyMdxPreset, defineConfig, defineDocs, frontmatterSchema, metaSchema
 import { z } from 'zod';
 import lastModified from 'fumadocs-mdx/plugins/last-modified';
 import { remarkReadingTime } from './lib/remark-reading-time';
+import { remarkImage } from 'fumadocs-core/mdx-plugins/remark-image';
 
 // Define the Zod schema first
 const pageTagSchema = z.object({
@@ -10,10 +11,33 @@ const pageTagSchema = z.object({
     icon: z.any().optional() // IconType is difficult to represent in Zod, using z.any() as a workaround
 });
 
-const pageImageSchema = z.object({
+// Define the image schema for page frontmatter
+const pageHeaderImageSchema = z.object({
     alt: z.string(),
     src: z.string()
 });
+
+// TODO: 还未完成...
+const imageTypeSchema = z.object({
+    alt: z.string(),
+    src: z.string()
+});
+
+const videoTypeSchema = z.object({
+    alt: z.string(),
+    src: z.string()
+});
+
+const audioTypeSchema = z.object({
+    alt: z.string(),
+    src: z.string()
+});
+
+const codeTypeSchema = z.object({
+    alt: z.string(),
+    src: z.string()
+});
+// ENDTODO
 
 
 // You can customise Zod schemas for frontmatter and `meta.json` here
@@ -22,18 +46,30 @@ export const docs = defineDocs({
     dir: 'content/docs',
     docs: {
         schema: frontmatterSchema.extend({
-            // other props
+            // base props
             avatars: z.array(z.string()).optional(),
             time: z.date().optional(),
             props: z.array(pageTagSchema).optional(),
-            image: pageImageSchema.optional(),
+            headerImage: pageHeaderImageSchema.optional(),
+            type: z.enum(['base', 'image', 'video', 'audio', 'code', 'none']).default('base'),
+
+            // docs type props
+            image: imageTypeSchema.optional(),
+            video: videoTypeSchema.optional(),
+            audio: audioTypeSchema.optional(),
+            code: codeTypeSchema.optional()
         }),
         postprocess: {
             includeProcessedMarkdown: true,
             valueToExport: ['readingTime'],
         },
         mdxOptions: applyMdxPreset({
-            remarkPlugins: [remarkReadingTime],
+            remarkPlugins: [
+                remarkReadingTime,
+                [remarkImage, {
+                    onError: "ignore"  // 忽略图片获取错误
+                }]
+            ]
         }),
     },
     meta: {

@@ -1,9 +1,45 @@
 @import 'tailwindcss';
 @import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
   --fd-layout-width: 2000px;
+  --radius: 0.625rem;
+  --background: #FFFFFF;
+  --foreground: #1F2328;
+  --card: #FFFFFF;
+  --card-foreground: #1F2328;
+  --popover: #FFFFFF;
+  --popover-foreground: #1F2328;
+  --primary: #0077FF;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F6F8Fa;
+  --secondary-foreground: #1F2328;
+  --muted: #F6F8Fa;
+  --muted-foreground: #1F2328;
+  --accent: #0077FF30;
+  --accent-foreground: #1F2328;
+  --destructive: #FF0000;
+  --border: #D1D9E0;
+  --input: #D1D9E0;
+  --ring: #D1D9E0;
+  --chart-1: #FF0000;
+  --chart-2: #0077FF;
+  --chart-3: #00a000;
+  --chart-4: #FFD900;
+  --chart-5: #FE9A00;
+  --sidebar: #F6F8FA;
+  --sidebar-foreground: #1F2328;
+  --sidebar-primary: #0077FF;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #0077FF30;
+  --sidebar-accent-foreground: #0077FF;
+  --sidebar-border: #D1D9E0;
+  --sidebar-ring: #FFFFFF;
 }
 
 @theme {
@@ -42,4 +78,87 @@
   --color-fd-accent: #278CFF30; /* color when the button is pressed and the color of the theme switcher */
   --color-fd-accent-foreground: #278CFF; /* color of the foreground and the color of the theme switcher icon when the button is pressed. */
   --color-fd-ring: #278CFF; /* Focus ring color */
+
+  /* Shadcn/ui css */
+  --background: #0D1117;
+  --foreground: #F0F6FC;
+  --card: #010409;
+  --card-foreground: #F0F6FC;
+  --popover: #010409;
+  --popover-foreground: #F0F6FC;
+  --primary: #278CFF;
+  --primary-foreground: #FFFFFF;
+  --secondary: #212830;
+  --secondary-foreground: #F0F6FC;
+  --muted: #161B22;
+  --muted-foreground: #9198A1;
+  --accent: #278CFF30;
+  --accent-foreground: #278CFF;
+  --destructive: #FF4444;
+  --border: #3D444D;
+  --input: #3D444D;
+  --ring: #278CFF;
+  --chart-1: #FF0000;
+  --chart-2: #278CFF;
+  --chart-3: #2fd62f;
+  --chart-4: #ffe13a;
+  --chart-5: #ffac30;
+  --sidebar: #010409;
+  --sidebar-foreground: #F0F6FC;
+  --sidebar-primary: #278CFF;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #278CFF30;
+  --sidebar-accent-foreground: #278CFF;
+  --sidebar-border: #3D444D;
+  --sidebar-ring: #278CFF;
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
