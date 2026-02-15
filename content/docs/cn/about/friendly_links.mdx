@@ -1,0 +1,54 @@
+---
+title: 友情链接
+description: 好看的😈.
+type: none
+---
+
+import FriendlyLinksPage from '@/components/layout/page/friendly-links-page';
+import { Star, Archive } from 'lucide-react';
+import { Image } from 'fumadocs-core/framework';
+
+export const tags = [
+    {
+        id: "blog",
+        title: "Blog",
+        icon: <Star/>
+    }
+]
+
+export const friendlyLinks = [
+    {
+        title: "sakuya starry", // 网站标题
+        description: "just a blog QAQ", // 网站描述
+        cta: "TO!", // 网站链接的标题
+        href: "https://rwagsu.top/blog/starred/was_toast", // 网站链接
+        iconSrc: "https://youke1.picui.cn/s1/2025/11/19/691d5ce722248.png", // 网站图标 (iconSrc 和 iconFallback 之间至少一个或全选)
+        iconFallback: <Archive/>, // 网站图标加载失败时显示的图标 (从 Lucide Icons / React Icons 选择或者一个文字)
+        iconFallbackColor: 'blue', // 网站加载失败时的颜色 (可选, 默认蓝色)
+        tag: "blog", // 网站标签 (目前只有 Blog, 可根据类型扩展)
+        background: <Image alt="OWOWOWOD" src="https://youke1.picui.cn/s1/2025/11/19/691d5ce722248.png" className="mt-0 mb-0" />, // 网站头图(至少也给一个纯色 QAQ)
+    },
+    {
+        title: "CMF Official",
+        description: "一个Corona Studio团队，专注于MC服务器和周边服务 快乐工艺（CrafMine Fun）可以 提供一系列MC服周边服务（不来看看吗w）",
+        cta: "TOOOL!",
+        href: " https://craftmine.fun",
+        iconSrc: "https://craftmine.fun/favicon.png",
+        iconFallback: <Archive/>,
+        iconFallbackColor: 'pink',
+        tag: "blog",
+        background: <Image alt="OWOWOWOD" src="https://s21.ax1x.com/2024/05/19/pkuT110.png" className="mt-0 mb-0" />,
+    },
+    {
+        title: "mail_set的铺子",
+        description: "也许是我的根据地？",
+        cta: "FOIDHS!",
+        href: "https://www.mailset.top",
+        iconSrc: "https://www.mailset.top/img/favicon.webp",
+        iconFallback: <Star/>,
+        tag: "blog",
+        background: <Image alt="OWOWOWOD" src="https://s21.ax1x.com/2024/05/19/pkuT110.png" className="mt-0 mb-0" />,
+    }
+]
+
+<FriendlyLinksPage title="友情链接 🥳🥳🥳" description="其它的网站也有好东西!" submitLink="https://github.com/Rwagsu/RwagsuOwO/issues" links={friendlyLinks} tags={tags} lang="cn"/>

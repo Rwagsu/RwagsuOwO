@@ -1,14 +1,31 @@
 ---
-title: Hello World
-description: Your first document
-time: 2023-01-01
+title: Rwagsu Blog!
+description: 什么都有 Blog ヽ(*・ω・)ﾉ
+type: none
 ---
 
-Welcome to the docs! You can start writing documents in `/content/docs`.
+import BlogMainPage from '@/components/layout/page/blog-mainpage';
+import { Star, Archive } from 'lucide-react';
 
-## What is Next?
+export const blogFolders = [
+    {
+        path: 'starred',
+        icon: <Star />,
+        title: '星标 Blog',
+        isStarred: true
+    },
+    {
+        path: 'archives',
+        icon: <Archive />,
+        title: '归档 Blog',
+        isStarred: false
+    }
+];
 
-<Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.dev" />
-</Cards>
+<BlogMainPage
+    title="Rwagsu Blog!"
+    description="什么都有 Blog ヽ(*・ω・)ﾉ "
+    blogFolders={blogFolders}
+    blogPathBase='/docs/blog/'
+    lang='cn'
+/>

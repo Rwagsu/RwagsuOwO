@@ -8,7 +8,7 @@ import { remarkImage } from 'fumadocs-core/mdx-plugins/remark-image';
 const pageTagSchema = z.object({
     text: z.string(),
     value: z.string().optional(),
-    icon: z.any().optional() // IconType is difficult to represent in Zod, using z.any() as a workaround
+    icon: z.string().optional()
 });
 
 // Define the image schema for page frontmatter
@@ -39,7 +39,6 @@ const codeTypeSchema = z.object({
 });
 // ENDTODO
 
-
 // You can customise Zod schemas for frontmatter and `meta.json` here
 // see https://fumadocs.dev/docs/mdx/collections
 export const docs = defineDocs({
@@ -49,7 +48,7 @@ export const docs = defineDocs({
             // base props
             avatars: z.array(z.string()).optional(),
             time: z.date().optional(),
-            props: z.array(pageTagSchema).optional(),
+            tags: z.array(pageTagSchema).optional(),
             headerImage: pageHeaderImageSchema.optional(),
             type: z.enum(['base', 'image', 'video', 'audio', 'code', 'none']).default('base'),
 
@@ -57,7 +56,7 @@ export const docs = defineDocs({
             image: imageTypeSchema.optional(),
             video: videoTypeSchema.optional(),
             audio: audioTypeSchema.optional(),
-            code: codeTypeSchema.optional()
+            code: codeTypeSchema.optional(),
         }),
         postprocess: {
             includeProcessedMarkdown: true,

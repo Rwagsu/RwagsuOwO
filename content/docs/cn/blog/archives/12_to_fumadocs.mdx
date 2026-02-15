@@ -1,0 +1,190 @@
+---
+title: 又换成 Fumadocs 了
+description: 这是个大型连续剧......
+
+time: 2026-02-12
+avatars: ["rwagsu"]
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+为了压缩下内容, 把那两期的内容全塞过来了()
+
+<Tabs items={['VitePress (2025-08-20)', 'shadcn-docs-nuxt (2025-08-30)', 'Fumadocs (2026-02-12)']}>
+    <Tab value="VitePress (2025-08-20)">
+        虽然但是, VitePress 的 Blogs 插件真的惊艳到我了()
+
+        所以, Starlight 在用了不到一个月后宣告结束()
+
+        BYE! qwq
+    </Tab>
+
+    <Tab value="shadcn-docs-nuxt (2025-08-30)">
+        {"^@&@#^#*&GEE)@E*@)#(I#_)P<>"} VitePress 我谢谢你
+
+        [VitePress Blog](https://chunge16.github.io/vitepress-blogs-theme/zh/) 支持的的版本低到离谱, 且隔壁 [VitePress Theme Mild](https://theme.hacxy.cn/) 也没2.0.0
+
+        啊哈哈哈哈哈所以 shadcn-docs-nuxt 我来啦 (疯了(ﾉ´･ω･)ﾉ ﾐ ┸━┸)
+    </Tab>
+
+    <Tab value="Fumadocs (2026-02-12)">
+        受不了了, 也太难自定义了 😵
+        
+        这是 Grok 重磅推荐的库, 希望能用的久一点
+
+        毕竟这个自定义的很多, 而且开发难度也比前两个小QAQ
+
+        连续剧到此完结...... 应该吧?
+    </Tab>
+</Tabs>
+
+真就换一堆()
+
+## 更换过程
+
+<Steps>
+    <Step>
+        ### VitePress
+
+        发现自 BlessingTA(已迁移), 在当时才感受到写网站也不是那么难()
+
+        太久没用 VitePress 了, 现在感觉当时怎么样我也忘了()
+
+        最后因为感觉有点无聊放弃 😴
+
+        <Cards>
+            <Card href="https://github.com/Lunova-Studio/lunova-studio.github.io/tree/vitepress" title="lunova-studio.github.io: vitepress"/>
+            <Card href="https://github.com/Rwagsu/StarseaDB" title="StarseaDB(老仓库)"/>
+            <Card href="https://vitepress.dev/zh/" title="VitePress 官网"/>
+        </Cards>
+    </Step>
+    
+    <Step>
+        ### Docusaurus
+
+        在一个 VitePress 教程中发现, 当时群友力荐 React, 且当时感觉 Docusaurus 还行且自定义程度更高还有 Blog, 开始迁移, 结果最终都没有正式页面 🤣
+
+        感觉不如其它漂亮, 而且自定义也有点难受, 文档中文和没有没啥区别
+
+        但是隔壁 BlessingTA 被我迁移到了 Docusaurus 中, 成为了 Blessing Docs 然后又到变成了 Lunova Docs (组织所有者的 2FA 没备份账号丢了 😭)
+
+        <Cards>
+            <Card href="https://github.com/Lunova-Studio/lunova-studio.github.io/tree/docusaurus" title="lunova-studio.github.io: docusaurus"/>
+            <Card href="https://docusaurus.io/zh-CN/" title="Docusaurus 官网"/>
+        </Cards>
+    </Step>
+
+    <Step>
+        ### Starlight
+
+        蓝鲸鱼力荐 Astro, 查看后感觉最热门的主题就是 Starlight, 遂迁移
+
+        Starlight 看起来不错, 虽然有些地方默认直角, 还有点丑, 但好在官方有个主题集和插件集, 和一个很好看的主题 [starlight-theme-nova](https://github.com/ocavue/starlight-theme-nova)
+
+        同时, 它还有个非常方便的插槽显示!
+
+        最后因为 Starlight 顶栏没有导航链接且插件有点难用, 大多还是 vercel.app 这种 TIMEOUT 网站, 虽然 starlight-theme-nova 能够在顶栏添加导航链接, 但还是有点丑 :(
+
+        Lunova Docs 这次没给我改过去.
+
+        <Cards>
+            <Card href="https://github.com/Rwagsu/RwagsuOwO/tree/VitePress" title="RwagsuOwO VitePress 分支"/>
+            <Card href="https://starlight.astro.build/zh-cn/" title="Starlight 官网"/>
+            <Card href="https://starlight-theme-nova.pages.dev/zh-CN/" title="Starlight Theme Nova"/>
+        </Cards>
+    </Step>
+
+    <Step>
+        ### VitePress (我又回去了)
+
+        来自 [MCHMR 官网](https://doc.dooper.top/), 虽然现在他们已经更到 shadcn-docs-nuxt 了()
+
+        但是我能看到许多有趣的插件, 比如间距修改, 创作者等有趣的功能, 整个网站非常漂亮, 且还找到了个非常非常喜欢的 Blog 插件和 VitePress Theme Mild 主题插件()
+
+        最后因为几个插件全部不兼容 2.0.0, 版本更改后还有一堆不兼容 (其中就包括最重要的 Blog / VitePress Theme Mild 插件), 其中一个翻开 GitHub 看, 好像不更新了, 网站开发未半而中道崩掉, 残次品()
+
+        Lunova Docs 的 Docusaurus 依然存活()
+
+        <Cards>
+            <Card href="https://github.com/Rwagsu/RwagsuOwO/tree/Starlight" title="RwagsuOwO Starlight 分支"/>
+            <Card href="https://theme.hacxy.cn/" title="VitePress Theme Mild 主题"/>
+            <Card href="https://chunge16.github.io/vitepress-blogs-theme/zh/" title="VitePress Blog 插件"/>
+        </Cards>
+    </Step>
+
+    <Step>
+        ### shadcn-docs-nuxt
+
+        群友 Far1sh 推荐, 真的好看()
+
+        这是自上面几个以来最好看的, 而且功能超级多, 非常棒! 效果是最棒之一!
+
+        但是嘛......
+
+        1. shadcn-docs-nuxt 要求每个页面都要有一个对应的本地化页面, `pnpm run build` 命令我没试过, 但 `pnpm run generate` (生成用于静态网页的文件) 会直接报错.
+        2. shadcn-docs-nuxt 官网用的著名的 vercel.app TIMEOUT 域名, 进不去QAQ
+        3. shadcn-docs-nuxt 在开发的时候就老是连接 TIMEOUT 域名, Google 的还是什么的都有, 导致开发速度很慢, 因为要等连接那个()
+        4. shadcn-docs-nuxt 官方维护有点慢 :(
+        5. WebStorm 不 支 持 MDC
+        6. 自定义还是稍显逊色
+        7. 目前只找到个 Nuxt Studio 能当 CMS, 老版本 CMS 和这个貌似有兼容问题, 新版本还不支持这个东西
+
+        但是还是掩盖不了它的好()
+        1. 使用 Shadcn / ui 保持极致的美观性
+        2. 提供丰富的颜色选择界面
+        3. 在一堆地方添加自己的东西
+        4. 使用 icones 作为图标库, 全的很()
+        5. 支持快捷键显示, 还能在任何地方使用主页 ui
+        6. MDC 在编写文档时能提供相当的便利性
+        7. 支持图像缩放
+        8. Vue 支持
+        9. 方便的插槽
+
+        最后因为开发太卡, 放弃 :( 但如果你能接受或不接触相关问题, 它非常非常适合你 ;)
+
+        总共有两个网站被我~~骗到~~推到 shadcn-docs-nuxt:
+
+        <Cards>
+            <Card href="https://github.com/Rwagsu/RwagsuOwO/tree/shadcn-docs" title="RwagsuOwO shadcn-docs 分支"/>
+            <Card href="https://github.com/Lunova-Studio/lunova-studio.github.io/" title="lunova-studio.github.io: shadcn-docs"/>
+            <Card href="https://docs.lunova.studio/" title="Lunova Docs"/>
+            <Card href="https://doc.dooper.top/" title="McHMR 官网"/>
+            <Card href="https://github.com/ZTL-UwU/shadcn-docs-nuxt" title="shadcn-docs-nuxt GitHub"/>
+            <Card href="https://shadcn-docs-nuxt.vercel.app/" title="shadcn-docs-nuxt 官网 (进不去)"/>
+        </Cards>
+    </Step>
+
+    <Step>
+        ### Fumadocs (NOW)
+
+        最自由的文档库, 由 Grok 强力推荐 :)
+
+        那么它的特点是:
+        1. 最极致的自定义, 网站的任何东西都随你改, 我把它改成了 GitHub 样, 更改相比前面几个简单很多, Qwen 也会()
+        2. 最全的功能, 功能本身还好, 但你可以自己加 Radix UI 和 Shadcn/ui 之类的, 三者可以互不打扰, 想加什么加什么, 甚至 Fluent UI 都理论可加!
+        3. 非常不错的 UI, 相比 shadcn-docs-nuxt 还是稍显逊色, 所以只能是非常不错 :(
+        4. 超频繁的更新, 堪比地铁站的更新!
+        5. 文档中的 AI, 用过 Spaceship 之后我才知道专一 AI 它的好 (Spaceship 那个 AI 太厉害了), 虽然 Fumadocs 和这个比逊色一些, 但还是能查找到一些内容() 
+        6. React 支持, 实际和 Vue 差不了多少()
+        7. Shadcn/ui 官方文档也在用这个文档库(没想到吧)
+        8. 支持 Obsidian 接入(虽然我没试过)
+        9. 支持超多 CMS!
+
+        缺点也不少啊QAQ
+        1. 至今没搞懂 Fumadocs 在**静态的 Next** 中咋搞 i18n > 还是没搞懂
+        2. 自带的可缩放图片要是请求中没图像宽高信息会宕机(jsDelivr CDN 或 GitHub 用户专享, Next 的锅) > 我的网站已解决()
+        3. 自定义太多导致主页每个正经的控件, 要自己造
+        4. 需要在配置文件中指定每一个外部图片的域名
+        5. GitHubInfo 组件要是在前期访问不了整个网站会宕机
+        6. 侧边栏排序需要一点时间研究
+        7. Next 有可能会抽风刷新失败, 需要手动删除 `.next` 文件夹
+        8. 文档页面好像只有侧边栏, 和传统的文档站不太一样(小问题)
+
+        Rwagsu 要累瘫了啊, 已经浪费万把代码在这方面了, 不要换了QAQ
+
+        <Cards>
+            <Card href="https://github.com/Rwagsu/RwagsuOwO/" title="RwagsuOwO Fumadocs 分支"/>
+            <Card href="hhttps://www.fumadocs.dev/" title="Fumadocs 官网 (EN)"/>
+        </Cards>
+    </Step>
+</Steps>

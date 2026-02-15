@@ -40,6 +40,13 @@
   --sidebar-accent-foreground: #0077FF;
   --sidebar-border: #D1D9E0;
   --sidebar-ring: #FFFFFF;
+
+  /* Color Button */
+  --color-1: oklch(66.2% 0.225 25.9);
+  --color-2: oklch(60.4% 0.26 302);
+  --color-3: oklch(69.6% 0.165 251);
+  --color-4: oklch(80.2% 0.134 225);
+  --color-5: oklch(90.7% 0.231 133);
 }
 
 @theme {
@@ -88,12 +95,12 @@
   --popover-foreground: #F0F6FC;
   --primary: #278CFF;
   --primary-foreground: #FFFFFF;
-  --secondary: #212830;
+  --secondary: #161b22;
   --secondary-foreground: #F0F6FC;
-  --muted: #161B22;
+  --muted: #161b22;
   --muted-foreground: #9198A1;
   --accent: #278CFF30;
-  --accent-foreground: #278CFF;
+  --accent-foreground: #F0F6FC;
   --destructive: #FF4444;
   --border: #3D444D;
   --input: #3D444D;
@@ -111,6 +118,11 @@
   --sidebar-accent-foreground: #278CFF;
   --sidebar-border: #3D444D;
   --sidebar-ring: #278CFF;
+  --color-1: oklch(66.2% 0.225 25.9);
+  --color-2: oklch(60.4% 0.26 302);
+  --color-3: oklch(69.6% 0.165 251);
+  --color-4: oklch(80.2% 0.134 225);
+  --color-5: oklch(90.7% 0.231 133);
 }
 
 @theme inline {
@@ -152,7 +164,30 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-}
+  --animate-rainbow: rainbow var(--speed, 2s) infinite linear;
+  --color-color-5: var(--color-5);
+  --color-color-4: var(--color-4);
+  --color-color-3: var(--color-3);
+  --color-color-2: var(--color-2);
+  --color-color-1: var(--color-1);
+  @keyframes rainbow {
+  0% {
+    background-position: 0%;
+    }
+  100% {
+    background-position: 200%;
+    }
+  }
+  --animate-blink-cursor: blink-cursor 1.2s step-end infinite
+;
+  @keyframes blink-cursor {
+  0%, 49% {
+    opacity: 1;
+    }
+  50%, 100% {
+    opacity: 0;
+    }
+  }}
 
 @layer base {
   * {

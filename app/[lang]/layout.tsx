@@ -3,6 +3,7 @@ import { defineI18nUI } from 'fumadocs-ui/i18n';
 import { i18n, zhTranslations, enTranslations } from '@/lib/i18n';
 import '../global.css';
 import { Inter } from 'next/font/google';
+import { Toaster } from 'sonner'
 import { ThemeWrapper } from '@/components/theme-provider';
 
 const { provider } = defineI18nUI(i18n, {
@@ -27,6 +28,7 @@ export default async function RootLayout({ params, children }: {
             <body className="flex flex-col min-h-screen">
                 <ThemeWrapper>
                     <RootProvider i18n={provider(lang)}>
+                        <Toaster richColors/>
                         {children}
                     </RootProvider>
                 </ThemeWrapper>

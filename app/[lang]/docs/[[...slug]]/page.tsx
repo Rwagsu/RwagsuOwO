@@ -1,16 +1,15 @@
 import { getPageImage, source } from '@/lib/source';
 import { githubInfo } from '@/lib/layout.shared';
-import { DocsBody, DocsDescription, DocsPage, DocsTitle, PageLastUpdate } from 'fumadocs-ui/layouts/docs/page';
+import { DocsBody, DocsPage, PageLastUpdate } from 'fumadocs-ui/layouts/docs/page';
 import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/mdx-components';
 import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
-import { LLMCopyButton, ViewOptions } from '@/components/ai/page-actions';
 import { getGithubLastEdit } from 'fumadocs-core/content/github';
 import { Comments } from '@/lib/giscus';
-import { useTheme } from 'next-themes';
 import { PageFooter } from '@/components/layout/docs/page/client';
-import { HeaderWithImage } from '@/components/layout/header-with-image';
+import { HeaderWithImage } from '@/components/layout/page/header-with-image';
+import { LightRays } from '@/components/ui/light-rays';
 
 export default async function Page({ params }: {
     params: Promise<{ lang: string; slug?: string[] }>;
@@ -19,8 +18,8 @@ export default async function Page({ params }: {
     const page = source.getPage(slug, lang);
     if (!page) { notFound(); }
 
+    // Content
     const MDX = page.data.body;
-
     const readingTime = (page.data as any)._exports?.readingTime;
 
     // GitHub repository configuration
@@ -50,19 +49,19 @@ export default async function Page({ params }: {
     switch (page.data.type) {
         case 'base':
             currentPageComponent = (
-            <HeaderWithImage
-                title={page.data.title}
-                description={page.data.description}
-                avatars={page.data.avatars}
-                time={page.data.time}
-                readingTime={readingTime}
-                lang={lang}
-                url={page.url}
-                gitConfig={gitConfig}
-                imageInfo={page.data.headerImage}
-            />
-        );
-        break;
+                <HeaderWithImage
+                    title={page.data.title}
+                    description={page.data.description}
+                    avatars={page.data.avatars}
+                    time={page.data.time}
+                    readingTime={readingTime}
+                    lang={lang}
+                    url={page.url}
+                    gitConfig={gitConfig}
+                    imageInfo={page.data.headerImage}
+                />
+            );
+            break;
     }
 
     return (
@@ -81,6 +80,7 @@ export default async function Page({ params }: {
         }}>
             {currentPageComponent}
 
+            <LightRays />
 
             <DocsBody>
                 <MDX

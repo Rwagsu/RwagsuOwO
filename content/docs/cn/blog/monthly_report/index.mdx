@@ -1,0 +1,58 @@
+---
+title: Rwagsu 月度报告
+description: 刚好解决遇到小问题没处发的困扰 ()
+type: none
+---
+
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { getPageTreePeers } from 'fumadocs-core/page-tree';
+import { FaBilibili } from "react-icons/fa6";
+import BlogMainPage from '@/components/layout/page/blog-mainpage';
+import { CalendarCheck } from 'lucide-react';
+import { source } from '@/lib/source';
+
+export const blogFolders = {
+    path: 'monthly_report',
+    icon: <CalendarCheck />,
+    title: '月度报告'
+};
+
+export const buttonLinks = [
+    {
+        href: 'https://space.bilibili.com/2123349162/dynamic',
+        icon: <FaBilibili />,
+        title: '在 Bilibili 动态查看 Rwagsu'
+    }
+];
+
+<BlogMainPage
+    title="Rwagsu 月度报告"
+    description={ "每月 13 日更新, 对最近一个月遇到的好玩的小东西 / 事件 / 问题的解决方案进行总结.\n刚好解决遇到小问题没处发的困扰 ()" }
+    blogFolders={ [blogFolders] }
+    buttons={ buttonLinks }
+    blogPathBase='/docs/blog/'
+    lang='cn'
+>
+    ## Quesions
+
+    <Accordions type="multiple" className="w-full">
+        <Accordion title="报告有什么?">
+            每月报告包含以下内容:
+            - Rwagsu 遇到的各种有趣的小玩意
+            - Rwagsu 遇到的各种事件
+            - Rwagsu 遇到的各种问题的解决方案
+        </Accordion>
+
+        <Accordion title="没看到更新?">
+            Oops, 看来 Rwagsu 忘记了 ¯\\\_(ツ)\_/¯
+
+            当然也可能是太懒了或者没啥更的了()
+
+            你可以在 Bilibili 催更awa
+        </Accordion>
+
+        <Accordion title="为什么要做这个?">
+            这样就有理由在每月的 13 - 15 日之间全职更新网站了 😋
+        </Accordion>
+    </Accordions>
+</BlogMainPage>
