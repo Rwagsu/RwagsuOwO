@@ -10,6 +10,8 @@ import { Comments } from '@/lib/giscus';
 import { PageFooter } from '@/components/layout/docs/page/client';
 import { HeaderWithImage } from '@/components/layout/page/header-with-image';
 import { LightRays } from '@/components/ui/light-rays';
+import SubHeroPage from '@/components/layout/page/subhero-page';
+import CodePage from '@/components/layout/page/code-page';
 
 export default async function Page({ params }: {
     params: Promise<{ lang: string; slug?: string[] }>;
@@ -62,6 +64,42 @@ export default async function Page({ params }: {
                 />
             );
             break;
+        case 'subHero':
+            currentPageComponent = (
+                <SubHeroPage
+                    title={page.data.title}
+                    description={page.data.description}
+                    avatars={page.data.avatars}
+                    time={page.data.time}
+                    buttons={page.data.hero?.buttons}
+                    readingTime={readingTime}
+                    lang={lang}
+                    url={page.url}
+                    gitConfig={gitConfig}
+                    imageInfo={page.data.headerImage}
+                    iconInfo={page.data.hero?.icon}
+                />
+            );
+            break;
+        case 'code':
+            currentPageComponent = (
+                <CodePage
+                    title={page.data.title}
+                    description={page.data.description}
+                    tags={page.data.tags}
+                    avatars={page.data.avatars}
+                    time={page.data.time}
+                    buttons={page.data.code?.buttons}
+                    readingTime={readingTime}
+                    lang={lang}
+                    url={page.url}
+                    gitConfig={gitConfig}
+                    repositoryConfig={page.data.code?.githubInfo}
+                    maintenanceLevel={page.data.code?.maintenanceLevel}
+                    imageInfo={page.data.headerImage}
+                    iconInfo={page.data.code?.icon}
+                />
+            );
     }
 
     return (

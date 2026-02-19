@@ -11,7 +11,6 @@ import { flattenTree } from 'fumadocs-core/page-tree';
 import { source } from '@/lib/source';
 import { toast } from "sonner";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { IconType } from "react-icons/lib";
 import { Card, Cards } from "fumadocs-ui/components/card";
 import { Badge } from "@/components/ui/badge";
 import { ReactNode } from "react";

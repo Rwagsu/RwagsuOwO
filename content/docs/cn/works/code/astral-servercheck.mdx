@@ -1,0 +1,97 @@
+---
+title: Astral_ServerChecker
+description: 前两周联机发现 Astral 的服务器延迟检测砍掉了导致没联机用一气之下写了个这玩意
+time: 2026-01-13
+type: code
+avatars: ["rwagsu"]
+
+tags:
+  - text: Windows
+    icon: material-symbols:code-rounded
+  - text: macOS
+    icon: material-symbols:code-rounded
+  - text: Linux
+    icon: material-symbols:code-rounded
+
+code:
+    maintenanceLevel: G1
+    githubInfo:
+        user: Rwagsu
+        repo: Astral_ServerChecker
+        branch: main
+    buttons:
+      - text: GitHub
+        href: https://github.com/Rwagsu/Astral_ServerChecker
+        icon: mdi:github
+---
+
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+## 系统支持
+
+- Windows 10+
+- macOS 12+
+- 现代 Linux (具体版本号我也不到QAQ)
+
+## 使用
+<Callout type="warn">
+    在开始之前, 务必安装 .NET 10 运行时环境.
+
+    在 .NET 官网, 找到 .NET 运行时, 选择适合自己的架构和系统的安装包, 点击下载, 然后安装.
+    
+    <Card href="https://dotnet.microsoft.com/zh-cn/download/dotnet/10.0" title="安装 .NET"/>
+</Callout>
+
+1. 从 [Release](https://github.com/Rwagsu/Astral_ServerChecker/releases) 下载对应你系统和架构的压缩包.
+2. 解压后运行压缩包中的可执行文件.
+
+## 启动参数
+
+Astral_ServerChecker 有一些启动参数可用, 你可以像这样使用它:
+
+```bat
+Astral_ServerChecker.exe <参数>
+
+# 或者指定多个参数:
+Astral_ServerChecker.exe <参数1> <参数2> ...
+```
+<TypeTable
+  type={{
+    "--local": {
+      description: '使用内嵌的服务器列表, 而不是从 GitHub 的 Astral 存储库获取. 适用于无法访问 GitHub 或 json 格式变化的情况.',
+      type: 'parameter'
+    },
+    "--top \<number\>": {
+      description: '指定单个服务器的检测次数, 默认为 12 次. 更多的检测次数可以更准确的反映服务器的稳定性, 但会增加非常多的检测时间.',
+      type: 'parameter int'
+    },
+    "-count \<number\>": {
+      description: '使指定在最后输出时输出的最佳服务器数量, 默认 5 个.',
+      type: 'parameter int'
+    },
+    "--interval \<number\>": {
+      description: '指定每次检测的间隔时间 (ms), 默认为 500ms. 更少的间隔时间可以加快检测速度, 但可能会因为瞬时请求过多被远程服务器封禁.',
+      type: 'parameter int'
+    },
+    "--timeout \<number\>": {
+      description: '指定检测时服务器在请求多长时间 (ms) 未响应后被判断为超时.',
+      type: 'parameter int'
+    },
+  }}
+/>
+
+## 构建
+
+这只是简单的控制台程序, 所以你在 `git clone` 后可以直接使用命令构建:
+
+```bat
+dotnet build
+```
+
+## 引用
+
+没有引用任何库()
+
+但是贴出来 .NET.
+
+<Card href="https://github.com/microsoft/dotnet" title="dotnet - GitHub"/>

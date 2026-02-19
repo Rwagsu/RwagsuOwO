@@ -1,5 +1,5 @@
 import { Flex, Grid } from "@radix-ui/themes";
-import { DocsDescription, DocsTitle } from 'fumadocs-ui/layouts/docs/page';
+import { DocsDescription, DocsTitle } from "fumadocs-ui/layouts/docs/page";
 import { BlurFade } from "@/components/ui/blur-fade"
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { ExpandTranslation } from "@/lib/i18n";
@@ -17,9 +17,10 @@ interface FriendlyLink {
     href: string,
     iconSrc?: string,
     iconFallback: NonNullable<ReactNode>
-    iconFallbackColor?: 'gray' | 'gold' | 'bronze' | 'brown' | 'yellow' | 'amber' | 'orange' | 'tomato' | 'red' | 'ruby' | 'crimson' | 'pink' | 'plum' | 'purple' | 'violet' | 'iris' | 'indigo' | 'blue' | 'cyan' | 'teal' | 'jade' | 'green' | 'grass' | 'lime' | 'mint' | 'sky',
+    iconFallbackColor?: "gray" | "gold" | "bronze" | "brown" | "yellow" | "amber" | "orange" | "tomato" | "red" | "ruby" | "crimson" | "pink" | "plum" | "purple" | "violet" | "iris" | "indigo" | "blue" | "cyan" | "teal" | "jade" | "green" | "grass" | "lime" | "mint" | "sky",
     tag: string,
-    background: ReactNode,
+    backgroundType: "solid" | "image",
+    background: string,
     className: string;
 }
 
@@ -38,7 +39,7 @@ export default function FriendlyLinksPage({ title, description, links, tags, sub
     lang: string,
     children?: React.ReactNode
 }) {
-    const translations = lang === 'en' ? ExpandTranslation.en.FriendlyLinksPage : ExpandTranslation.cn.FriendlyLinksPage;
+    const translations = lang === "en" ? ExpandTranslation.en.FriendlyLinksPage : ExpandTranslation.cn.FriendlyLinksPage;
     const goodLink = "https://www.bilibili.com/video/BV1t5411G7KR/";
 
     return (
@@ -82,7 +83,7 @@ export default function FriendlyLinksPage({ title, description, links, tags, sub
                 )}
 
                 {/* Blog List */}
-                <Tabs className="mt-24 w-full" defaultValue="all">
+                <Tabs className="mt-24" defaultValue="all">
                     <div className="flex justify-center">
                         <TabsList>
                             {/* All */}
@@ -102,7 +103,7 @@ export default function FriendlyLinksPage({ title, description, links, tags, sub
                     </div>
 
                     <TabsContent value="all">
-                        <Grid gap="4" columns={{ initial: "1", sm: "1", md: "2", lg: "3" }} align="start">
+                        <Grid gap="4" columns={{ initial: "1", sm: "1", md: "2", lg: "3" }}>
                             {links.map((item, index) => (
                                 <LinkCard
                                     key={index}
@@ -113,6 +114,7 @@ export default function FriendlyLinksPage({ title, description, links, tags, sub
                                     iconFallbackColor={item.iconFallbackColor}
                                     cta={item.cta}
                                     href={item.href}
+                                    backgroundType={item.backgroundType}
                                     background={item.background} />
                             ))}
                         </Grid>
@@ -121,7 +123,7 @@ export default function FriendlyLinksPage({ title, description, links, tags, sub
                     {tags.map(tag => {
                         return (
                             <TabsContent key={tag.id} value={tag.id}>
-                                <Grid gap="4" columns={{ initial: "1", sm: "1", md: "2", lg: "3" }} align="start">
+                                <Grid gap="4" columns={{ initial: "1", sm: "1", md: "2", lg: "3" }}>
                                     {links
                                         .filter(item => item.tag === tag.id)
                                         .map((item, index) => (
@@ -134,6 +136,7 @@ export default function FriendlyLinksPage({ title, description, links, tags, sub
                                                 iconFallbackColor={item.iconFallbackColor}
                                                 cta={item.cta}
                                                 href={item.href}
+                                                backgroundType={item.backgroundType}
                                                 background={item.background}/>
                                         ))}
                                 </Grid>

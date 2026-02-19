@@ -42,7 +42,7 @@ export function HeaderWithImage({
     return (
         <>
             {imageInfo && (
-                <div className="relative w-full h-64 overflow-hidden rounded-lg mb-6">
+                <div className="relative w-full h-82 overflow-hidden rounded-lg mb-6">
                     <Image
                         alt={imageInfo.alt}
                         fill

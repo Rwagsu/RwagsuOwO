@@ -24,9 +24,8 @@ export default function HomePage() {
                     cta="TD!" 
                     href="/" 
                     iconFallback={<Archive/>}
-                    background={
-                        <Image alt="OwO" src="https://s21.ax1x.com/2024/05/19/pkuT110.png"/>
-                    }>
+                    backgroundType="image"
+                    background="https://s21.ax1x.com/2024/05/19/pkuT110.png">
                 </LinkCard>
             </div>
         </div>

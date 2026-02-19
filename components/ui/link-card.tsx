@@ -1,55 +1,28 @@
 import { Avatar, Box, Card, Inset } from "@radix-ui/themes";
-import { ReactNode, isValidElement, cloneElement } from "react";
-import { Image as FumadocsImage, Link } from 'fumadocs-core/framework';
+import { ReactNode } from "react";
+import { Link } from "fumadocs-core/framework";
 import { ArrowRightIcon } from "lucide-react";
-import { PropDef } from "@radix-ui/themes/dist/esm/props/prop-def.js";
-import { accentColors } from "@radix-ui/themes/src/props/color.prop.js";
+import Image from "next/image";
 
-// Define the props type for the Image component
-interface ImageProps {
-  src: string;
-  alt: string;
-  width?: number;
-  height?: number;
-  [key: string]: any;
-}
-
-export default function LinkCard({ title, description, cta, href, iconSrc, iconFallbackColor, iconFallback, background }: {
+export default function LinkCard({ title, description, cta, href, iconSrc, iconFallbackColor, iconFallback, backgroundType, background }: {
     title: string,
     description: string,
     cta: string,
     href: string,
     iconSrc?: string,
-    iconFallbackColor?: 'gray' | 'gold' | 'bronze' | 'brown' | 'yellow' | 'amber' | 'orange' | 'tomato' | 'red' | 'ruby' | 'crimson' | 'pink' | 'plum' | 'purple' | 'violet' | 'iris' | 'indigo' | 'blue' | 'cyan' | 'teal' | 'jade' | 'green' | 'grass' | 'lime' | 'mint' | 'sky',
+    iconFallbackColor?: "gray" | "gold" | "bronze" | "brown" | "yellow" | "amber" | "orange" | "tomato" | "red" | "ruby" | "crimson" | "pink" | "plum" | "purple" | "violet" | "iris" | "indigo" | "blue" | "cyan" | "teal" | "jade" | "green" | "grass" | "lime" | "mint" | "sky",
     iconFallback: NonNullable<ReactNode>,
-    background: ReactNode
+    backgroundType: "solid" | "image"
+    background: string
 }) {
-    // Check whether the background is a valid React element
-    let processedBackground = background;
-
-    if (isValidElement<any>(background)) {
-        // Check whether the component is FumadocsImage
-        if (background.type === FumadocsImage) {
-            const imageProps = background.props as ImageProps;
-            processedBackground = cloneElement(background, {
-                width: imageProps.width || 300,
-                height: imageProps.height || 100,
-                ...imageProps
-            });
-        } else {
-            // Directly use the source component
-            processedBackground = background;
-        }
-    }
-
     return (
-        <Box width="270px">
+        <Box width={{ initial: "280px", sm: "300px", md: "320px", lg: "270px" }}>
             <Card className="group relative overflow-hidden rounded-xl bg-background transform-gpu transition-all duration-300 hover:shadow-lg">
                 {/* Background */}
                 <Inset clip="padding-box" side="top" pb="current">
                     <Box height="120px" position="relative">
-                        <div className="transform-gpu transition-transform duration-300 group-hover:scale-110">
-                            {processedBackground}
+                        <div className="transform-gpu transition-transform duration-300 group-hover:scale-110 h-full">
+                            <CardBackground type={backgroundType} src={background} alt={title} />
                         </div>
                     </Box>
                 </Inset>
@@ -88,4 +61,22 @@ export default function LinkCard({ title, description, cta, href, iconSrc, iconF
             </Card>
         </Box>
     )
+}
+
+function CardBackground({type, src, alt}: {
+    type: "solid" | "image",
+    src: string,
+    alt: string
+}) {
+    if (type === "solid") {
+        return (
+            <div  className="w-full h-full" style={{ backgroundColor: src }} />
+        );
+    } 
+    else if (type === "image") {
+        return (
+            <Image height={120} width={270} src={src} alt={alt} className="mt-0 mb-0 w-full h-full" style={{ objectFit: "cover", height: "120px" }} />
+        );
+    }
+    return null;
 }
