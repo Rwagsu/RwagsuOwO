@@ -10,8 +10,10 @@ export default async function Layout({ params, children }: {
     const { lang } = await params;
     const options = baseOptions(lang);
 
+    const localeNavLinks = lang === "en" ? navLinks.en : navLinks.cn;
+
     // Merge the social media links and top bar links from layout.shared.tsx
-    const combinedLinks: LinkItemType[] = [...navLinks, ...(options.links ?? [])];
+    const combinedLinks: LinkItemType[] = [...localeNavLinks, ...(options.links ?? [])];
 
     return <HomeLayout {...options} links={combinedLinks}>{children}</HomeLayout>;
 }

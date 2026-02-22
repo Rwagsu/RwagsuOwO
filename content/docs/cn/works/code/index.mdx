@@ -1,0 +1,26 @@
+---
+title: Code
+description: Rwagsu 之前的本职, 但已被绘画 / 剪辑 / 3D 带偏, 现在优先级很低 x)
+type: none
+icon: code
+---
+
+import CodeMainPage from '@/components/layout/page/code-mainpage';
+import { FaGithub } from "react-icons/fa";
+
+export const buttons = [
+    {
+        title: "Rwagsu 的 GitHub",
+        icon: <FaGithub />,
+        href: "https://github.com/Rwagsu"
+    }
+]
+
+<CodeMainPage
+    title="Rwagsu Code!"
+    description="Rwagsu 之前的本职, 但已被绘画 / 剪辑 / 3D 带偏, 现在优先级很低 x)"
+    buttons={buttons}
+    folderPath="/docs/works/code"
+    lang="cn"
+    maintenanceLevel="G3"
+/>

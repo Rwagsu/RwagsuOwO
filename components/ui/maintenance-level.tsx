@@ -123,7 +123,7 @@ export default function MaintenanceLevel({
 
         default:
             title = translations.ErrorLevelTitle
-            description = translations.ErrorLevelDescription
+            description = translations.errorLevelDescription
     }
 
     return (
@@ -147,12 +147,12 @@ export default function MaintenanceLevel({
                                 <>
                                     {isMaxLevel ? (
 
-                                        <TextAnimate className="font-bold text-lg" animation="slideLeft" by="character">
+                                        <TextAnimate className={cn("font-bold text-lg", className)} animation="slideLeft" by="character">
                                             {title}
                                         </TextAnimate>
 
                                     ) : (
-                                        <TextAnimate className={cn("font-bold text-lg", TEXT_COLOR)} animation="slideLeft" by="character">
+                                        <TextAnimate className={cn("font-bold text-lg", TEXT_COLOR, className)} animation="slideLeft" by="character">
                                             {title}
                                         </TextAnimate>
                                     )}
@@ -164,12 +164,12 @@ export default function MaintenanceLevel({
                                 <>
                                     {isMaxLevel ? (
 
-                                        <TextAnimate className="font-bold text-sm" animation="slideLeft" by="character">
+                                        <TextAnimate className={cn("font-bold text-sm", className)} animation="slideLeft" by="character">
                                             {description}
                                         </TextAnimate>
 
                                     ) : (
-                                        <TextAnimate className={cn("font-bold text-sm", TEXT_COLOR)} animation="slideLeft" by="character">
+                                        <TextAnimate className={cn("font-bold text-sm", TEXT_COLOR, className)} animation="slideLeft" by="character">
                                             {description}
                                         </TextAnimate>
                                     )}
@@ -185,7 +185,7 @@ export default function MaintenanceLevel({
     )
 }
 
-function LevelText({ isMaxLevel, prefix, number }: { isMaxLevel: boolean, prefix: string, number: number }) {
+function LevelText({ isMaxLevel, prefix, number, className }: { isMaxLevel: boolean, prefix: string, number: number, className?: string }) {
     return (
         <CardContent className="flex items-center justify-center gap-1 p-0" >
             {isMaxLevel ? (
@@ -195,15 +195,15 @@ function LevelText({ isMaxLevel, prefix, number }: { isMaxLevel: boolean, prefix
                     sparklesCount={3}
                 >
                     <div className="flex items-center gap-1 leading-none">
-                        <span className="text-4xl font-semibold>{prefix}</span>
-                        <span className="text-4xl font-bold>{number}</span>
+                        <span className={cn("text-4xl font-semibold", className)}>{prefix}</span>
+                        <span className={cn("text-4xl font-bold", className)}>{number}</span>
                     </div>
                 </SparklesText>
 
             ) : (
                 <>
-                    <span className={cn("text-4xl font-semibold", TEXT_COLOR)}>{prefix}</span>
-                    <span className={cn("text-4xl font-bold", TEXT_COLOR)}>{number}</span>
+                    <span className={cn("text-4xl font-semibold", TEXT_COLOR, className)}>{prefix}</span>
+                    <span className={cn("text-4xl font-bold", TEXT_COLOR, className)}>{number}</span>
                 </>
             )}
         </CardContent>

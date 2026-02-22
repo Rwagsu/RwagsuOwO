@@ -24,6 +24,7 @@
     "@radix-ui/themes": "^3.3.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cobe": "^0.6.5",
     "fumadocs-core": "16.4.9",
     "fumadocs-mdx": "14.2.6",
     "fumadocs-ui": "16.4.9",

@@ -81,7 +81,7 @@ export default function CodePage({ title, description, tags, avatars, time, read
     maintenanceLevel?: MaintenanceLevelType
 }) {
     // translations
-    const translations = lang === "en" ? ExpandTranslation.en.codePage : ExpandTranslation.cn.codePage;
+    const translations = lang === "en" ? ExpandTranslation.en.CodePage : ExpandTranslation.cn.CodePage;
 
     const [repositoryInfo, setRepositoryInfo] = useState<RepositoryInfo | null>(null);
     const [loading, setLoading] = useState(true);
