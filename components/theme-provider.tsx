@@ -1,6 +1,7 @@
 'use client';
 
 import { Theme } from '@radix-ui/themes';
+import '@radix-ui/themes/styles.css';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 

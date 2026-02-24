@@ -32,7 +32,7 @@ export default async function RootLayout({ params, children }: {
                 <ThemeWrapper>
                     <RootProvider i18n={provider(lang)}>
                         {/* Banner */}
-                        <Banner id="UpdateTip"
+                        <Banner
                             variant="rainbow"
                             rainbowColors={[
                                 '#0077FF',

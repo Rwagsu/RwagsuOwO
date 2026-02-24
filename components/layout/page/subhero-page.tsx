@@ -9,6 +9,7 @@ import { Icon } from '@iconify/react';
 import { LLMCopyButton, ViewOptions } from "@/components/ai/page-actions";
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
+import { Badge } from "@/components/ui/badge";
 
 interface ButtonInfo {
     text: string,
@@ -17,7 +18,7 @@ interface ButtonInfo {
     icon?: string
 }
 
-export default function SubHeroPage({ title, description, buttons, lang, avatars, time, imageInfo, iconInfo, readingTime, gitConfig, url }: {
+export default function SubHeroPage({ title, description, buttons, lang, avatars, time, imageInfo, iconInfo, readingTime, gitConfig, tags, url }: {
     title: string,
     description: string | undefined,
     buttons: ButtonInfo[] | undefined,
@@ -29,6 +30,11 @@ export default function SubHeroPage({ title, description, buttons, lang, avatars
         repo: string,
         branch: string
     },
+    tags?: {
+        text: string,
+        icon?: string,
+        variant?: "outline" | "ghost" | "link" | "default" | "secondary" | "destructive"
+    }[]
     imageInfo?: {
         alt: string;
         src: string;
@@ -57,6 +63,20 @@ export default function SubHeroPage({ title, description, buttons, lang, avatars
 
                 {/* Description */}
                 <DocsDescription className="text-center mt-0 mb-0">{description}</DocsDescription>
+
+                {/* Tags */}
+                {tags && (
+                    <Flex gap="4" className="mb-4">
+                        {tags.map((tag, index) => (
+                            <Badge key={index} variant={tag.variant}>
+                                <Flex align="center" gap="2">
+                                    {tag.icon && <Icon icon={tag.icon} />}
+                                    {tag.text}
+                                </Flex>
+                            </Badge>
+                        ))}
+                    </Flex>
+                )} 
 
                 {/* Avatars */}
                 {avatars && <AvatarsView avatarIds={avatars} className="mb-2 pl-3" />}

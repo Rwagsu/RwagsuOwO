@@ -14,6 +14,7 @@ import { RetroGrid } from "@/components/ui/retro-grid";
 import { TypingAnimation } from "@/components/ui/typing-animation";
 import MaintenanceLevel, { MaintenanceLevelType } from "@/components/ui/maintenance-level";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 interface ExpandButton {
     icon: ReactNode | undefined,
@@ -113,6 +114,8 @@ export default function CodeMainPage({ title, description, folderPath, buttons, 
 }
 
 function toRandomPage(path: string, onError: () => void) {
+    const router = useRouter();
+    
     // Filter pages that belong to the specified paths
     const pageLinks = getPageTreePeers(source.getPageTree(), path).map((peer) => peer.url);
 
@@ -126,5 +129,5 @@ function toRandomPage(path: string, onError: () => void) {
     const randomItem = pageLinks[Math.floor(Math.random() * pageLinks.length)];
 
     // Navigate to page
-    window.open(randomItem, '_self', 'noopener,noreferrer');
+    router.push(randomItem);
 }

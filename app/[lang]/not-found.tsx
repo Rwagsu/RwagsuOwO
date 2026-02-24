@@ -9,6 +9,8 @@ import { useParams } from 'next/navigation';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { InfoIcon } from "lucide-react"
 import { Link } from 'fumadocs-core/framework';
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
+import { Button } from '@/components/ui/button';
 
 export default function NotFound() {
     // Theme
@@ -60,35 +62,71 @@ export default function NotFound() {
                     <AlertTitle>{translations.tempLinkTipTitle}</AlertTitle>
                     <AlertDescription>
                         {translations.tempLinkTipDescription}
-                        <ul>
-                            {/* Home Assistant */}
-                            <li>{translations.tempLinkHomeAssistant} 
-                                <Link href="/docs/notebook/home_assistant">
-                                    Home Assistant
-                                </Link>
-                            </li>
 
-                            {/* Astral Q&A */}
-                            <li>{translations.tempLinkAstralQnA} 
-                                <Link href="/docs/blog/archives/11_astral_qna">
-                                    Astral Q&A
-                                </Link>
-                            </li>
+                        {/* Dialog button */}
+                        <ToOtherPageDialog className="mt-4" translations={translations}/>
 
-                            {/* Astral_ServerChecker */}
-                            <li>{translations.tempLinkAstral_ServerChecker} 
-                                <Link href="/docs/works/code/astral-servercheck">
-                                    Astral_ServerChecker
-                                </Link>
-                            </li>
-                        </ul>
-
-                        {/* Delete Tip */}
+                        {/* Delete tip */}
                         <h2 className="text-1xl font-semibold mt-4">{translations.deleteTip}</h2>
+                        <h2 className="text-1xl font-semibold">{translations.tempTip}</h2>
                     </AlertDescription>
                 </Alert>
-
             </div>
         </Theme>
+    );
+}
+
+function ToOtherPageDialog({ translations, className }: { translations: any, className?: string }) {
+    return (
+        <AlertDialog>
+            {/* Alert trigger button */}
+            <AlertDialogTrigger asChild>
+                <Button variant="outline" className={className}>{translations.toPageDialogButton}</Button>
+            </AlertDialogTrigger>
+
+            {/* Content */}
+            <AlertDialogContent>
+                {/* Header */}
+                <AlertDialogHeader>
+                    {/* Title and description */}
+                    <AlertDialogTitle>{translations.toPageDialogTitle}</AlertDialogTitle>
+                    <AlertDialogDescription>
+                        {translations.toPageDialogDescription}
+                    </AlertDialogDescription>
+
+                    {/* TempTip */}
+                    <div className="text-muted-foreground text-sm mt-2">
+                        <span className="font-semibold">{translations.tempTip}</span>
+                    </div>
+                </AlertDialogHeader>
+
+                {/* Footer */}
+                <AlertDialogFooter>
+                    {/* HomeAssistant button */}
+                    <AlertDialogAction asChild>
+                        <Link href="/docs/notebook/home_assistant">
+                            {translations.toPageDialogHomeAssistant}
+                        </Link>
+                    </AlertDialogAction>
+
+                    {/* Astral QnA button */}
+                    <AlertDialogAction asChild>
+                        <Link href="/docs/blog/archives/11_astral_qna">
+                            {translations.toPageDialogAstralQnA}
+                        </Link>
+                    </AlertDialogAction>
+
+                    {/* Astral QnA button */}
+                    <AlertDialogAction asChild>
+                        <Link href="/docs/works/code/astral-servercheck">
+                            {translations.toPageDialogAstralQnA}
+                        </Link>
+                    </AlertDialogAction>
+
+                    {/* Cancel button */}
+                    <AlertDialogCancel>{translations.toPageDialogCancel}</AlertDialogCancel>
+                </AlertDialogFooter>
+            </AlertDialogContent>
+        </AlertDialog>
     );
 }

@@ -14,6 +14,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, Cards } from "fumadocs-ui/components/card";
 import { Badge } from "@/components/ui/badge";
 import { ReactNode } from "react";
+import { useRouter } from "next/navigation";
 
 interface BlogFolder {
     path: string,
@@ -145,6 +146,7 @@ export default function BlogMainPage({ title, description, blogFolders, blogPath
 
 
 function toRandomPage(paths: string[], errorTip: string) {
+    const router = useRouter();
     let pageLinks: string[] = [];
 
     // Get the full page tree and flatten it
@@ -170,5 +172,5 @@ function toRandomPage(paths: string[], errorTip: string) {
     const randomItem = pageLinks[Math.floor(Math.random() * pageLinks.length)];
 
     // Navigate to page
-    window.open(randomItem, '_self', 'noopener,noreferrer');
+    router.push(randomItem);
 }

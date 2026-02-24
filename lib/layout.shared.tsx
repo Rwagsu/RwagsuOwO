@@ -1,52 +1,50 @@
 import type { BaseLayoutProps, LinkItemType } from 'fumadocs-ui/layouts/shared';
 import * as Fa6Icon from "react-icons/fa6";
-import * as TbIcon from "react-icons/tb";
 import * as SiIcon from "react-icons/si";
-import {i18n} from "@/lib/i18n";
+import { i18n } from "@/lib/i18n";
+import { DonateDialog } from '@/components/ui/donate-dialog';
 
 export interface LocaleNavLinks {
     cn: LinkItemType[];
     en: LinkItemType[];
 }
 
-export function baseOptions(locale : string) : BaseLayoutProps {
-  return {
-    // i18n Support
-    i18n,
+export function baseOptions(locale: string): BaseLayoutProps {
+    return {
+        // i18n Support
+        i18n,
 
-    // Navbar Options
-    nav: {
-      title: 'RwagsuOwO',
-    },
+        // Navbar Options
+        nav: {
+            title: 'RwagsuOwO',
+        },
 
-    // GitHub Link
-    githubUrl: 'https://github.com/Rwagsu',
+        // GitHub Link
+        githubUrl: 'https://github.com/Rwagsu',
 
-    // Social Links
-    links: [
-        {
-            type: 'icon',
-            label: 'Bilibili',
-            icon: <Fa6Icon.FaBilibili/>,
-            text: 'Bilibili',
-            url: 'https://space.bilibili.com/2123349162',
-        },
-        {
-            type: 'icon',
-            label: 'BandLab',
-            icon: <SiIcon.SiBandlab/>,
-            text: 'BandLab',
-            url: 'https://www.bandlab.com/rwagsu',
-        },
-        {
-            type: 'icon',
-            label: 'Afdian',
-            icon: <TbIcon.TbHeartDollar />,
-            text: 'Afdian',
-            url: 'https://afdian.com/a/Rwagsu',
-        },
-    ]
-  };
+        // Social Links
+        links: [
+            {
+                type: 'icon',
+                label: 'Bilibili',
+                icon: <Fa6Icon.FaBilibili />,
+                text: 'Bilibili',
+                url: 'https://space.bilibili.com/2123349162',
+            },
+            {
+                type: 'icon',
+                label: 'BandLab',
+                icon: <SiIcon.SiBandlab />,
+                text: 'BandLab',
+                url: 'https://www.bandlab.com/rwagsu',
+            },
+            {
+                type: 'custom',
+                children: <DonateDialog lang={locale} />,
+                secondary: true,
+            },
+        ]
+    };
 }
 
 export const githubInfo = {
@@ -56,7 +54,7 @@ export const githubInfo = {
 }
 
 // Top Navigation Bar Links
-export const navLinks : LocaleNavLinks = {
+export const navLinks: LocaleNavLinks = {
     cn: [
         {
             type: 'menu',

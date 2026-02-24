@@ -56,6 +56,7 @@ export default async function Page({ params }: {
                     description={page.data.description}
                     avatars={page.data.avatars}
                     time={page.data.time}
+                    tags={page.data.tags}
                     readingTime={readingTime}
                     lang={lang}
                     url={page.url}
@@ -74,6 +75,7 @@ export default async function Page({ params }: {
                     buttons={page.data.hero?.buttons}
                     readingTime={readingTime}
                     lang={lang}
+                    tags={page.data.tags}
                     url={page.url}
                     gitConfig={gitConfig}
                     imageInfo={page.data.headerImage}

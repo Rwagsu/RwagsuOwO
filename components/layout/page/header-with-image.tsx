@@ -7,6 +7,8 @@ import LastUpdate from '@/components/layout/last-update';
 import { ReadingTime } from '@/components/layout/reading-time';
 import { Flex } from '@radix-ui/themes';
 import Image from 'next/image';
+import { Badge } from '@/components/ui/badge';
+import { Icon } from '@iconify/react';
 
 // Header components with different image options
 export interface HeaderWithImageProps {
@@ -22,6 +24,11 @@ export interface HeaderWithImageProps {
         repo: string;
         branch: string;
     };
+    tags?: {
+        text: string,
+        icon?: string,
+        variant?: "outline" | "ghost" | "link" | "default" | "secondary" | "destructive"
+    }[]
     imageInfo?: {
         alt: string;
         src: string;
@@ -36,6 +43,7 @@ export function HeaderWithImage({
     readingTime, 
     lang, 
     url, 
+    tags, 
     gitConfig, 
     imageInfo 
 }: HeaderWithImageProps) {
@@ -54,6 +62,20 @@ export function HeaderWithImage({
             )}
             <DocsTitle>{title}</DocsTitle>
             <DocsDescription className="mb-0">{description}</DocsDescription>
+
+            {/* Tags */}
+            {tags && (
+                <Flex gap="4" className="mb-4">
+                    {tags.map((tag, index) => (
+                        <Badge key={index} variant={tag.variant}>
+                            <Flex align="center" gap="2">
+                                {tag.icon && <Icon icon={tag.icon} />}
+                                {tag.text}
+                            </Flex>
+                        </Badge>
+                    ))}
+                </Flex>
+            )} 
 
             {/* Avatars */}
             {avatars && <AvatarsView avatarIds={avatars} className="mb-2 pl-3" />}
