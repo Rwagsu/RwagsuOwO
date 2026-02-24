@@ -9,6 +9,8 @@ import { Button } from '@/components/ui/button';
 import { source } from '@/lib/source';
 import { flattenTree } from 'fumadocs-core/page-tree';
 import { RandomPageButton } from '@/components/ui/random-page-button';
+import { FaBilibili } from 'react-icons/fa6';
+import { ExternalLink } from 'lucide-react';
 
 export default async function HomePage(props: {
     params: Promise<{ lang: string }>;
@@ -42,11 +44,13 @@ export default async function HomePage(props: {
                         {/* Buttons */}
                         <Flex justify="center" gap="4" className="mt-8">
                             <RandomPageButton pageLinks={pageLinks}>
+                                <ExternalLink />
                                 {translations.MainPage.randomPageButtonText}
                             </RandomPageButton>
                             
                             <Button size="lg" asChild>
                                 <Link href="https://space.bilibili.com/2123349162" className="no-underline hover:no-underline">
+                                    <FaBilibili />
                                     {translations.MainPage.bilibiliButtonText}
                                 </Link>
                             </Button>
