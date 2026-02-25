@@ -24,8 +24,7 @@ export default defineAppConfig({
         // Banner (TODO)
         banner: {
             enable: true,
-            showClose: true,
-            content: 'Rwagsu 正在尝试迁移 Fumadocs ;) 可能需要数天的网站维护, 但不是现在. 放心, 到时候我们会告诉你, 就在这里😉',
+            content: '网站马上开始维护, 从 2025-02-25 开始, 维护期间无法访问网站, 维护完成后来看看更棒的网站! awa',
             border: true,
         },
 
