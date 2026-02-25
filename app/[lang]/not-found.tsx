@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/drawer";
 import { Button } from '@/components/ui/button';
 import { useParams } from 'next/navigation';
+import { Flex } from '@radix-ui/themes';
 
 export default function NotFound() {
     // Theme
