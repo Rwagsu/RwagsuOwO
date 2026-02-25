@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { HomeLayout } from 'fumadocs-ui/layouts/home';
 import { baseOptions, navLinks } from '@/lib/layout.shared';
-import { LinkItemType } from 'fumadocs-ui/layouts/shared';
+import type { LinkItemType } from '@/components/layout/link-item';
 import { NavDonateButton } from '@/components/layout/nav-donate-button';
 
 export default async function Layout({ params, children }: {

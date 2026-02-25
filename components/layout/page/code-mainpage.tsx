@@ -34,6 +34,7 @@ export default function CodeMainPage({ title, description, folderPath, buttons, 
     // TODO: 把 Blog MainPage 搬过来
     const translations = lang === 'en' ? ExpandTranslation.en.CodeMainPage : ExpandTranslation.cn.CodeMainPage;
     const [showNoPageError, setShowNoPageError] = useState(false);
+    const toRandomPage = useRandomPage(folderPath, () => setShowNoPageError(true));
 
     useEffect(() => {
         if (showNoPageError) {
@@ -67,9 +68,7 @@ export default function CodeMainPage({ title, description, folderPath, buttons, 
                     {/* Random Button */}
                     <RainbowButton variant="outline" asChild>
                         <button
-                            onClick={() =>
-                                toRandomPage(folderPath, () => setShowNoPageError(true))
-                            }
+                            onClick={toRandomPage}
                         >
                             {translations.randomPage}
                         </button>
@@ -113,21 +112,23 @@ export default function CodeMainPage({ title, description, folderPath, buttons, 
     );
 }
 
-function toRandomPage(path: string, onError: () => void) {
+function useRandomPage(path: string, onError: () => void) {
     const router = useRouter();
-    
+
     // Filter pages that belong to the specified paths
     const pageLinks = getPageTreePeers(source.getPageTree(), path).map((peer) => peer.url);
 
-    // If pageLinks is Empty, show error
-    if (pageLinks.length == 0) {
-        onError();
-        return;
-    }
+    return () => {
+        // If pageLinks is Empty, show error
+        if (pageLinks.length == 0) {
+            onError();
+            return;
+        }
 
-    // Get random item
-    const randomItem = pageLinks[Math.floor(Math.random() * pageLinks.length)];
+        // Get random item
+        const randomItem = pageLinks[Math.floor(Math.random() * pageLinks.length)];
 
-    // Navigate to page
-    router.push(randomItem);
+        // Navigate to page
+        router.push(randomItem);
+    };
 }

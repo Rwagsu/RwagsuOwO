@@ -39,6 +39,10 @@ export default function BlogMainPage({ title, description, blogFolders, blogPath
     children?: React.ReactNode
 }) {
     const translations = lang === 'en' ? ExpandTranslation.en.BlogMainPage : ExpandTranslation.cn.BlogMainPage;
+    const toRandomPage = useRandomPage(
+        blogFolders?.map(folder => blogPathBase + folder.path),
+        translations.noPageErrorTip
+    );
 
     // Get the full page tree and flatten it
     const pageTree = source.getPageTree();
@@ -64,12 +68,7 @@ export default function BlogMainPage({ title, description, blogFolders, blogPath
                     {/* Random Button */}
                     <RainbowButton variant="outline" asChild>
                         <button
-                            onClick={() =>
-                                toRandomPage(
-                                    blogFolders?.map(folder => blogPathBase + folder.path),
-                                    translations.noPageErrorTip
-                                )
-                            }
+                            onClick={toRandomPage}
                         >
                             {translations.randomButtonTitle}
                         </button>
@@ -145,7 +144,7 @@ export default function BlogMainPage({ title, description, blogFolders, blogPath
 }
 
 
-function toRandomPage(paths: string[], errorTip: string) {
+function useRandomPage(paths: string[], errorTip: string) {
     const router = useRouter();
     let pageLinks: string[] = [];
 
@@ -162,15 +161,17 @@ function toRandomPage(paths: string[], errorTip: string) {
         pageLinks = pageLinks.concat(links);
     }
 
-    // If pageLinks is Empty, show error
-    if (pageLinks.length == 0) {
-        toast.error(errorTip);
-        return;
-    }
+    return () => {
+        // If pageLinks is Empty, show error
+        if (pageLinks.length == 0) {
+            toast.error(errorTip);
+            return;
+        }
 
-    // Get random item
-    const randomItem = pageLinks[Math.floor(Math.random() * pageLinks.length)];
+        // Get random item
+        const randomItem = pageLinks[Math.floor(Math.random() * pageLinks.length)];
 
-    // Navigate to page
-    router.push(randomItem);
+        // Navigate to page
+        router.push(randomItem);
+    };
 }

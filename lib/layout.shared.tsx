@@ -1,4 +1,5 @@
-import type { BaseLayoutProps, LinkItemType } from 'fumadocs-ui/layouts/shared';
+import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import type { LinkItemType } from '@/components/layout/link-item';
 import * as Fa6Icon from "react-icons/fa6";
 import * as SiIcon from "react-icons/si";
 import { i18n } from "@/lib/i18n";

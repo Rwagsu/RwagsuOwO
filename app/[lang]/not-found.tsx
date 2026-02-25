@@ -7,7 +7,16 @@ import { ExpandTranslation } from '@/lib/i18n';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { InfoIcon } from "lucide-react"
 import { Link } from 'fumadocs-core/framework';
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 import { Button } from '@/components/ui/button';
 import { useParams } from 'next/navigation';
 
@@ -60,55 +69,53 @@ export default function NotFound() {
 
 function ToOtherPageDialog({ translations, className }: { translations: any, className?: string }) {
     return (
-        <AlertDialog>
-            {/* Alert trigger button */}
-            <AlertDialogTrigger asChild>
-                <Button variant="outline" className={className}>{translations.toPageDialogButton}</Button>
-            </AlertDialogTrigger>
-
+        <Drawer>
+            {/* Drawer trigger button */}
+            <DrawerTrigger asChild><Button variant="outline" className={className}>{translations.toPageDialogButton}</Button></DrawerTrigger>
             {/* Content */}
-            <AlertDialogContent>
+            <DrawerContent className="items-center">
                 {/* Header */}
-                <AlertDialogHeader>
+                <DrawerHeader>
                     {/* Title and description */}
-                    <AlertDialogTitle>{translations.toPageDialogTitle}</AlertDialogTitle>
-                    <AlertDialogDescription>
-                        {translations.toPageDialogDescription}
-                    </AlertDialogDescription>
+                    <DrawerTitle>{translations.toPageDialogTitle}</DrawerTitle>
+                    <DrawerDescription>{translations.toPageDialogDescription}</DrawerDescription>
+                </DrawerHeader>
 
-                    {/* TempTip */}
-                    <div className="text-muted-foreground text-sm mt-2">
-                        <span className="font-semibold">{translations.tempTip}</span>
-                    </div>
-                </AlertDialogHeader>
+                {/* TempTip */}
+                <div className="text-muted-foreground justify-center text-sm mt-2">
+                    <span className="font-semibold">{translations.tempTip}</span>
+                </div>
 
                 {/* Footer */}
-                <AlertDialogFooter>
-                    {/* HomeAssistant button */}
-                    <AlertDialogAction asChild>
-                        <Link href="/docs/notebook/home_assistant">
-                            {translations.toPageDialogHomeAssistant}
-                        </Link>
-                    </AlertDialogAction>
+                <DrawerFooter>
+                    <Flex className="gap-2" direction={{ initial: 'column', md: 'row' }} justify="center" >
+                        {/* HomeAssistant button */}
+                        <Button asChild>
+                            <Link href="/docs/notebook/home_assistant">
+                                {translations.toPageDialogHomeAssistant}
+                            </Link>
+                        </Button>
 
-                    {/* Astral QnA button */}
-                    <AlertDialogAction asChild>
-                        <Link href="/docs/blog/archives/11_astral_qna">
-                            {translations.toPageDialogAstralQnA}
-                        </Link>
-                    </AlertDialogAction>
+                        {/* Astral QnA button */}
+                        <Button asChild>
+                            <Link href="/docs/blog/archives/11_astral_qna">
+                                {translations.toPageDialogAstralQnA}
+                            </Link>
+                        </Button>
 
-                    {/* Astral QnA button */}
-                    <AlertDialogAction asChild>
-                        <Link href="/docs/works/code/astral-servercheck">
-                            {translations.toPageDialogAstralQnA}
-                        </Link>
-                    </AlertDialogAction>
-
-                    {/* Cancel button */}
-                    <AlertDialogCancel>{translations.toPageDialogCancel}</AlertDialogCancel>
-                </AlertDialogFooter>
-            </AlertDialogContent>
-        </AlertDialog>
+                        {/* Astral_ServerChecker button */}
+                        <Button asChild>
+                            <Link href="/docs/works/code/astral-servercheck">
+                                {translations.toPageDialogAstral_ServerChecker}
+                            </Link>
+                        </Button>
+                        
+                        <DrawerClose asChild>
+                            <Button variant="outline">{translations.toPageDialogCancel}</Button>
+                        </DrawerClose>
+                    </Flex>
+                </DrawerFooter>
+            </DrawerContent>
+        </Drawer>
     );
 }
