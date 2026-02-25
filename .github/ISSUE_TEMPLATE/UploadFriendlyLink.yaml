@@ -1,0 +1,84 @@
+name: "在网站添加友链"
+description: "请求将你的网站添加到友链页面."
+title: "[友链请求]"
+labels: ["FriendlyLink Request"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > [!IMPORTANT]
+        > 由于一些原因, 友链仅对与 Rwagsu 交流过的用户开放.
+        > (毕竟每天审查一堆认都不认识的用户整的链接, 会疯的 (っ °Д °;)っ)
+        你的申请在  [Project](https://github.com/users/Rwagsu/projects/1) 呆一段时间后将被添加到  [友链页面](http://rwagsu.top/about/friendship_links) 中 ;)
+        喵(
+
+  - type: checkboxes
+    id: check
+    attributes:
+      label: 你有检查过你的表单吗?
+      description: 不符合表单要求的申请会被直接关闭.
+      options:
+        - label: 我未在 [友链页面](http://rwagsu.top/about/friendship_links) 和 [Project](https://github.com/users/Rwagsu/projects/1) 中找到一模一样的链接, 且确定这是我自己的链接.
+          required: true
+
+        - label: 我知道该 issue 将对所有人公开, 无论如何都不会透露自己的个人 / 私密信息.
+          required: true
+
+        - label: 我知道只有与 Rwagsu 交流才能添加友链.
+          required: true
+
+        - label: 如果可以, 我想要被添加到 Starred.
+
+  - type: input
+    id: website
+    attributes:
+      label: 网站链接
+      description: "你的网站"
+      placeholder: "https://example.com"
+    validations:
+      required: true
+
+  - type: textarea
+    id: card
+    attributes:
+      label: 如何装饰你的卡片?
+      description: |
+        Rwagsu 会尽可能在一张卡片中塞下你要的内容.
+
+        (带 * 的是必填项.)
+
+        目前支持添加:
+        ├─ *title (标题)
+        │
+        ├─ *description (描述)
+        │
+        ├─ cta (默认值: "访问此网站", 访问网站的链接的文本)
+        │
+        ├─ *最低二选一, 也可以全选:
+        │   ├─ iconSrc: 图标, 需要是一个图片链接.
+        │   │
+        │   └─ iconFallBack: 默认值: 网站的标题的首个字符, 当 iconSrc 未指定或加载失败时显示, 可以是一个字符, 或者来自 [react-icons](https://react-icons.github.io/react-icons/) / [Lucide Icons](https://lucide.dev/) / [Iconify](https://icon-sets.iconify.design/) 的图标名称, 或者一个字符(Emoji 也可以), 甚至是一个图片链接也可以.
+        │      │
+        │      └─ iconFallbackColor: 默认值: "blue", 前提是必须指定 iconFallBack, 表示 iconFallBack 的颜色. [查看支持的颜色](https://www.radix-ui.com/themes/docs/theme/color), 默认为蓝色.
+        │
+        ├─ *tag: 标签, 你可以在友情链接页面看到现有的标签, 你也可以添加新的标签, 但当标签的意思与现有标签相似, 标签将被合并.
+        │
+        └─ background: 默认值: "#0077FF 纯色背景", 你可以指定一个十六进制色号 (例如 #0077FF), 或者一个图片链接.
+      placeholder: 祝你好运 ;)
+    validations:
+      required: true
+  
+  - type: textarea
+    id: find
+    attributes:
+      label: 如何联系你?
+      description: |
+        既然认识你应该也可以让我联系到的吧😅
+
+        千万别把你私人邮箱什么的写上去啊啊啊 Σ(っ °Д °;)っ
+
+        让我能联系到你就行了w
+      placeholder: "让我看看!"
+    validations:
+      required: true
