@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { HomeLayout } from 'fumadocs-ui/layouts/home';
-import { baseOptions, navLinks } from '@/lib/layout.shared';
+import { baseOptions, navLinks, socialLinks } from '@/lib/layout.shared';
 import type { LinkItemType } from '@/components/layout/link-item';
 import { NavDonateButton } from '@/components/layout/nav-donate-button';
 
@@ -21,7 +21,7 @@ export default async function Layout({ params, children }: {
     };
 
     // Merge the social media links and top bar links from layout.shared.tsx
-    const combinedLinks: LinkItemType[] = [...(options.links ?? []), ...localeNavLinks, donateItem];
+    const combinedLinks: LinkItemType[] = [...localeNavLinks, donateItem, ...socialLinks];
 
     return <HomeLayout links={combinedLinks} {...options}>{children}</HomeLayout>;
 }

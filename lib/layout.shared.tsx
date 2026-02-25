@@ -21,24 +21,6 @@ export function baseOptions(locale: string): BaseLayoutProps {
 
         // GitHub Link
         githubUrl: 'https://github.com/Rwagsu',
-
-        // Social Links
-        links: [
-            {
-                type: 'icon',
-                label: 'Bilibili',
-                icon: <Fa6Icon.FaBilibili />,
-                text: 'Bilibili',
-                url: 'https://space.bilibili.com/2123349162',
-            },
-            {
-                type: 'icon',
-                label: 'BandLab',
-                icon: <SiIcon.SiBandlab />,
-                text: 'BandLab',
-                url: 'https://www.bandlab.com/rwagsu',
-            }
-        ]
     };
 }
 
@@ -48,6 +30,24 @@ export const githubInfo = {
     repo: 'RwagsuOwO',
     branch: 'Fumadocs',
 }
+
+// Social Links
+export const socialLinks: LinkItemType[] = [
+    {
+        type: 'icon',
+        label: 'Bilibili',
+        icon: <Fa6Icon.FaBilibili />,
+        text: 'Bilibili',
+        url: 'https://space.bilibili.com/2123349162',
+    },
+    {
+        type: 'icon',
+        label: 'BandLab',
+        icon: <SiIcon.SiBandlab />,
+        text: 'BandLab',
+        url: 'https://www.bandlab.com/rwagsu',
+    }
+]
 
 // Top Navigation Bar Links
 export const navLinks: LocaleNavLinks = {

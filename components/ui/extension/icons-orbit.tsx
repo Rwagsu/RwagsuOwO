@@ -12,6 +12,7 @@ const icons = [
     'Compressor',
     'Davinci_Resolve',
     'Final_Cut_Pro',
+    'Freeform',
     'GitHub_Desktop',
     'GitHub',
     'Godot',
