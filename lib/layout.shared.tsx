@@ -2,8 +2,6 @@ import type { BaseLayoutProps, LinkItemType } from 'fumadocs-ui/layouts/shared';
 import * as Fa6Icon from "react-icons/fa6";
 import * as SiIcon from "react-icons/si";
 import { i18n } from "@/lib/i18n";
-import { DonateDialog } from '@/components/ui/extension/donate-dialog';
-import { useMediaQuery } from 'fumadocs-core/utils/use-media-query';
 
 export interface LocaleNavLinks {
     cn: LinkItemType[];
@@ -111,13 +109,6 @@ export const navLinks: LocaleNavLinks = {
             text: '关于',
             url: '/docs/about',
         },
-
-        // Donate Button
-        {
-            type: 'custom',
-            children: <DonateDialog type="normal" lang="cn" />,
-            secondary: true,
-        },
     ],
     en: [
         // Docs
@@ -177,13 +168,6 @@ export const navLinks: LocaleNavLinks = {
         {
             text: 'About',
             url: '/docs/about',
-        },
-
-        // Donate Button
-        {
-            type: 'custom',
-            children: <DonateDialog type="normal" lang="en" />,
-            secondary: true,
         },
     ],
 };

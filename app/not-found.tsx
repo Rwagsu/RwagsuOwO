@@ -1,5 +1,6 @@
 'use client';
 
+import { Theme } from '@radix-ui/themes';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
@@ -9,52 +10,68 @@ import { InfoIcon } from "lucide-react"
 import { Link } from 'fumadocs-core/framework';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
 import { Button } from '@/components/ui/button';
-import { useParams } from 'next/navigation';
+import '@radix-ui/themes/styles.css';
+import './global.css';
+
+// Default language for root not-found
+const DEFAULT_LANG = 'cn';
 
 export default function NotFound() {
     // Theme
     const { resolvedTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
 
-    // Languages - useParams in Next.js 15 returns plain object, not Promise
-    const params = useParams();
-    const currentLang = (params?.lang as string) || 'cn';
-
     useEffect(() => {
         setMounted(true);
     }, []);
 
-    // Translations
-    const translations = currentLang === "en" ? ExpandTranslation.en.NotFound : ExpandTranslation.cn.NotFound;
+    // Translations - use default language
+    const translations = ExpandTranslation[DEFAULT_LANG as keyof typeof ExpandTranslation].NotFound;
+
+    let currentTheme: "inherit" | "light" | "dark" = "light";
+
+    switch (resolvedTheme) {
+        case "system":
+            currentTheme = "inherit";
+            break;
+        case "light":
+            currentTheme = "light";
+            break;
+        case "dark":
+            currentTheme = "dark";
+            break;
+    }
 
     if (!mounted) {
         return null;
     }
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen gap-4 ml-6 mr-6">
-            <Image width={3508} height={2481} src="/images/NoFile.png" alt={translations.tempImageLicense} className="rounded-xl w-full max-w-[600px] h-auto" />
-            <p className="text-muted-foreground mb-12">
-                {translations.tempImageLicense}
-            </p>
+        <Theme accentColor="blue" appearance={currentTheme} scaling="100%">
+            <div className="flex flex-col items-center justify-center min-h-screen gap-4 ml-6 mr-6">
+                <Image width={3508} height={2481} src="/images/NoFile.png" alt={translations.tempImageLicense} className="rounded-xl w-full max-w-[600px] h-auto" />
+                <p className="text-muted-foreground mb-12">
+                    {translations.tempImageLicense}
+                </p>
 
-            <h1 className="text-6xl font-bold text-primary">ERROR 404 (ﾉД`) </h1>
-            <h2 className="text-2xl font-semibold mt-4">{translations.description}</h2>
-            <Alert className="border-amber-200 bg-amber-50 text-amber-900 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-50 max-w-3xl mt-6">
-                <InfoIcon />
-                <AlertTitle>{translations.tempLinkTipTitle}</AlertTitle>
-                <AlertDescription>
-                    {translations.tempLinkTipDescription}
+                <h1 className="text-6xl font-bold text-primary">ERROR 404 (ﾉД`) </h1>
+                <h2 className="text-2xl font-semibold mt-4">{translations.description}</h2>
+                <Alert className="border-amber-200 bg-amber-50 text-amber-900 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-50 max-w-3xl mt-6">
+                    <InfoIcon />
+                    <AlertTitle>{translations.tempLinkTipTitle}</AlertTitle>
+                    <AlertDescription>
+                        {translations.tempLinkTipDescription}
 
-                    {/* Dialog button */}
-                    <ToOtherPageDialog className="mt-4" translations={translations}/>
+                        {/* Dialog button */}
+                        <ToOtherPageDialog className="mt-4" translations={translations}/>
 
-                    {/* Delete tip */}
-                    <h2 className="text-1xl font-semibold mt-4">{translations.deleteTip}</h2>
-                    <h2 className="text-1xl font-semibold">{translations.tempTip}</h2>
-                </AlertDescription>
-            </Alert>
-        </div>
+                        {/* Delete tip */}
+                        <h2 className="text-1xl font-semibold mt-4">{translations.deleteTip}</h2>
+                        <h2 className="text-1xl font-semibold">{translations.tempTip}</h2>
+                    </AlertDescription>
+                </Alert>
+            </div>
+        </Theme>
     );
 }
 

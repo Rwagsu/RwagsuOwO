@@ -11,9 +11,8 @@ import {
     AlertDialogMedia,
     AlertDialogTitle,
     AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
-import { PulsatingButton } from "../pulsating-button"
-import { ExpandTranslation } from "@/lib/i18n"
+} from "@/components/ui/alert-dialog";
+import { ExpandTranslation } from "@/lib/i18n";
 import { HeartPlus } from "lucide-react";
 import { Flex } from "@radix-ui/themes";
 import { Button } from "../button";

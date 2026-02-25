@@ -47,7 +47,7 @@ export const ExpandTranslation = {
                         {" "}<Highlighter action="underline" color="#FF0000">
                             Furry 控
                         </Highlighter>{" "}
-                        制作 (｀・ω・´)”
+                        制作 (｀・ω・´)"
                     </p>
                     
                     <p>
@@ -88,13 +88,13 @@ export const ExpandTranslation = {
                     <p>
                         Copyright © 2025 - {new Date().getFullYear()}
 
-                        {" "}<Link target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://space.bilibili.com/2123349162">
+                        {" "}<Link target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://space.bilibili.com/2123349162  ">
                             Rwagsu
                         </Link>{" "}
 
                         &
 
-                        {" "}<Link target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://space.bilibili.com/527675045">
+                        {" "}<Link target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://space.bilibili.com/527675045  ">
                             DrownedOwO
                         </Link>{" "}
 
@@ -103,7 +103,7 @@ export const ExpandTranslation = {
                     <p>
                         在没有特殊说明的情况下, 使用任何原创内容都记得遵守
 
-                        {" "}<Link target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans">
+                        {" "}<Link target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans  ">
                             CC BY-NC-SA 4.0
                         </Link>{" "}
 
@@ -112,7 +112,7 @@ export const ExpandTranslation = {
                     <p>
                         网站基于
 
-                        {" "}<Link target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://www.fumadocs.dev/">
+                        {" "}<Link target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://www.fumadocs.dev/  ">
                             Fumadocs
                         </Link>{" "}
 
@@ -200,75 +200,88 @@ export const ExpandTranslation = {
             title: "RwagsuOwO!",
             description: () => (
                 <>
-                    哈喽! |･ω･) 来看看任何东西, 由啥都会的
-                    {" "}<Highlighter action="underline" color="#0077FF">
-                        Rwagsu / DrownedOwO
-                    </Highlighter>{" "}
-                    这俩
-                    {" "}<Highlighter action="underline" color="#FF0000">
-                        Furry 控
-                    </Highlighter>{" "}
-                    制作 (｀・ω・´)”
-                    <br />
-                    包括视频 / 音频 / 代码 (累死我了不写了QAQ) /
-                    {" "}<Highlighter action="highlight" color="#87CEFA">
-                        绘画 / 3D
-                    </Highlighter>{" "}
-                    等乱七八糟的东西, 统统都能在这里找到() ヽ( ･∀･)ﾉ_θ彡☆Σ(ノ `Д´)ノ
+                    <p>
+                        Hello! |･ω･) Come check out all sorts of stuff created by the all-rounder
+                        {" "}<Highlighter action="underline" color="#0077FF">
+                            Rwagsu / DrownedOwO
+                        </Highlighter>{" "}
+                        — these two
+                        {" "}<Highlighter action="underline" color="#FF0000">
+                            Furry enthusiasts
+                        </Highlighter>{" "}
+                        (｀・ω・´)"
+                    </p>
+                    
+                    <p>
+                        Including videos / audio / code (I'm exhausted, not writing anymore QAQ) /
+                        {" "}<Highlighter action="highlight" color="#87CEFA">
+                            Art / 3D
+                        </Highlighter>{" "}
+                        and all kinds of random stuff, you can find it all here () ヽ( ･∀･)ﾉ_θ彡☆Σ(ノ `Д´)ノ
+                    </p>
                 </>
             ),
-            randomPageButtonText: "试试手气! (ﾉ≧∀≦)ﾉ ",
-            randomPageErrorTip: "好像随机出错了 ()",
-            bilibiliButtonText: "Rwagsu 的 Bilibili",
+            randomPageButtonText: "Try your luck! (ﾉ≧∀≦)ﾉ",
+            randomPageErrorTip: "Looks like a random error occurred ()",
+            bilibiliButtonText: "Rwagsu's Bilibili",
 
-            notSourceTitle: "页面缺少资源 :(",
+            notSourceTitle: "Page missing resources :(",
             notSourceDescription: () => (
                 <>
-                    嗯...... 你们也知道的, Rwagsu 的电脑出了亿点萧问题, 这就导致所有项目 (除了代码) 全部停滞 ( ; ω ; )
-                    <br />
-                    所以那个 MacBook Pro 到底啥时候出啊急死我了QAQ 我的网站还是频道啥也没有就是因为那个啊, 电脑坏了啊 (ﾉД`)
+                    <span>
+                        Well... as you know, Rwagsu's computer has run into
+                        {" "}<Highlighter action="highlight" color="#FFB0B0">
+                            a teensy-weensy little problem
+                        </Highlighter>
+                        , which has caused all projects (except code) to come to a complete halt ( ; ω ; )
+                    </span>
+
+                    <p>
+                        So when is that MacBook Pro coming out already, I'm dying of anxiety QAQ My website and channel have nothing on them because of that — my computer broke (ﾉД`)
+                    </p>
                 </>
             ),
-            toBlogButtonText: "查看详细情况 (我的电脑( ; ω ; )) (没写完)",
+            toBlogButtonText: "View details (my computer ( ; ω ; )) (Not finished)",
+
             footerContent: () => (
                 <>
-                    <Flex justify="center">
-                        <Text>
-                            Copyright © 2025 - {new Date().getFullYear()}
-                        </Text>
+                    <p>
+                        Copyright © 2025 - {new Date().getFullYear()}
 
-                        <Link className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://space.bilibili.com/2123349162">
+                        {" "}<Link target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://space.bilibili.com/2123349162  ">
                             Rwagsu
-                        </Link>
+                        </Link>{" "}
 
-                        <Text>
-                            &
-                        </Text>
+                        &
 
-                        <Link className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://space.bilibili.com/527675045">
+                        {" "}<Link target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://space.bilibili.com/527675045  ">
                             DrownedOwO
-                        </Link>
+                        </Link>{" "}
 
-                        <Text>
-                            ヽ( ･∀･)ﾉ_θ彡☆Σ(ノ `Д´)ノ
-                        </Text>
-                    </Flex>
-                    <Flex justify="center">
-                        <Text>
-                            在没有特殊说明的情况下, 使用任何原创内容都记得遵守
-                        </Text>
+                        ヽ( ･∀･)ﾉ_θ彡☆Σ(ノ `Д´)ノ
+                    </p>
+                    <p>
+                        Unless otherwise specified, please remember to comply with
 
-                        <Link className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans">
+                        {" "}<Link target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans  ">
                             CC BY-NC-SA 4.0
-                        </Link>
+                        </Link>{" "}
 
-                        <Text>
-                            ;)
-                        </Text>
-                    </Flex>
+                        when using any original content ;)
+                    </p>
+                    <p>
+                        This website is built with
+
+                        {" "}<Link target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://www.fumadocs.dev/  ">
+                            Fumadocs
+                        </Link>{" "}
+
+                        (Hope this is the last time switching QAQ)
+                    </p>
                 </>
             ),
         },
+
         BannerTitle: "RwagsuOwO is now based on Fumadocs! (ﾉ≧∀≦)ﾉ  The page paths have changed significantly, so I hope to give a heads-up about comments on the old links and such XD",
         NotFound: {
             tempImageLicense: "Source Not Finished - By Rwagsu. Images will be added to the Works section later; currently using CC BY-NC-SA 4.0 as the image license.",
@@ -333,13 +346,13 @@ export const ExpandTranslation = {
             randomPageErrorTip: "Seems like a random error occurred ()",
         },
         DonateDialog: {
-            buttonText: "给 Rwagsu 买杯咖啡!",
-            dialogTitle: "在哪里支持 Rwagsu?",
-            dialogDescription: "给 Rwagsu 买杯咖啡吧！(ﾉ≧∀≦)ﾉ",
-            dialogCancel: "取消 ( ; ω ; )",
-            dialogBiliBili: "BiliBili 充电 (没搞完)",
-            dialogAFdian: "爱发电",
-            dialogGitHubSponsor: "GitHub Sponsor (也许以后?)",
+            buttonText: "Donate!",
+            dialogTitle: "Where to support Rwagsu?",
+            dialogDescription: "Buy Rwagsu a coffee! (ﾉ≧∀≦)ﾉ",
+            dialogCancel: "Cancel ( ; ω ; )",
+            dialogBiliBili: "BiliBili Charging (Not finished)",
+            dialogAFdian: "Afdian",
+            dialogGitHubSponsor: "GitHub Sponsor",
         }
     },
 };
