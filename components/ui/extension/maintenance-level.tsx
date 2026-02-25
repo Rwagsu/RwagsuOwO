@@ -5,11 +5,11 @@ import { useEffect, useState } from "react"
 import { useMotionValue, useSpring } from "motion/react"
 import { cn } from "@/lib/utils"
 import { Card, CardContent } from "@/components/ui/card"
-import { ShineBorder } from "./shine-border"
-import { SparklesText } from "./sparkles-text"
+import { ShineBorder } from "../shine-border"
+import { SparklesText } from "../sparkles-text"
 import { ExpandTranslation } from "@/lib/i18n"
 import { Flex } from "@radix-ui/themes"
-import { TextAnimate } from "./text-animate"
+import { TextAnimate } from "../text-animate"
 
 export type MaintenanceLevelType = "X0" | "G1" | "G2" | "G3" | "B4" | "B5" | "R6" | "R7" | "Q8" | "Q9" | "C10"
 
@@ -122,7 +122,7 @@ export default function MaintenanceLevel({
             break;
 
         default:
-            title = translations.ErrorLevelTitle
+            title = translations.errorLevelTitle
             description = translations.errorLevelDescription
     }
 

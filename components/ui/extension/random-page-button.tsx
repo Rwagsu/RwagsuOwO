@@ -22,7 +22,7 @@ export function RandomPageButton({ children, pageLinks, variant = 'rainbow' }: R
     const ButtonComponent = variant === 'rainbow' ? RainbowButton : Button;
 
     return (
-        <ButtonComponent onClick={handleRandomNavigate}>
+        <ButtonComponent variant={variant === "rainbow" ? "outline" : "default"} onClick={handleRandomNavigate}>
             {children}
         </ButtonComponent>
     );

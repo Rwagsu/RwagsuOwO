@@ -8,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ReactNode } from "react";
 import { TypingAnimation } from "@/components/ui/typing-animation";
 import { Button } from "@/components/ui/button";
-import LinkCard from "@/components/ui/link-card";
+import LinkCard from "@/components/ui/extension/link-card";
 
 interface FriendlyLink {
     title: string,

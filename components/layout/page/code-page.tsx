@@ -1,7 +1,7 @@
 "use client";
 
 import { BlurFade } from "@/components/ui/blur-fade";
-import MaintenanceLevelComponent, { MaintenanceLevelType } from "@/components/ui/maintenance-level"
+import MaintenanceLevelComponent, { MaintenanceLevelType } from "@/components/ui/extension/maintenance-level"
 import { Flex } from "@radix-ui/themes";
 import { DocsDescription, DocsTitle } from "fumadocs-ui/layouts/docs/page";
 import AvatarsView from "../avatars-view";
@@ -16,7 +16,7 @@ import { LLMCopyButton, ViewOptions } from "@/components/ai/page-actions";
 import { Octokit } from "@octokit/rest";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import LanguageBar from "@/components/ui/language-bar";
+import LanguageBar from "@/components/ui/extension/language-bar";
 import { toast } from "sonner";
 import { ExpandTranslation } from "@/lib/i18n";
 import { useEffect, useState } from "react";

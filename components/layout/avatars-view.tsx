@@ -1,5 +1,5 @@
 import { avatars } from "@/lib/layout.shared";
-import AvatarButton from "../ui/avatar-button";
+import AvatarButton from "../ui/extension/avatar-button";
 import { Flex } from "@radix-ui/themes";
 
 export default function AvatarsView({ avatarIds, className }: { avatarIds: string[]; className?: string }) {

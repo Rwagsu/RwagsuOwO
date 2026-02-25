@@ -2,7 +2,8 @@ import type { BaseLayoutProps, LinkItemType } from 'fumadocs-ui/layouts/shared';
 import * as Fa6Icon from "react-icons/fa6";
 import * as SiIcon from "react-icons/si";
 import { i18n } from "@/lib/i18n";
-import { DonateDialog } from '@/components/ui/donate-dialog';
+import { DonateDialog } from '@/components/ui/extension/donate-dialog';
+import { useMediaQuery } from 'fumadocs-core/utils/use-media-query';
 
 export interface LocaleNavLinks {
     cn: LinkItemType[];
@@ -37,16 +38,12 @@ export function baseOptions(locale: string): BaseLayoutProps {
                 icon: <SiIcon.SiBandlab />,
                 text: 'BandLab',
                 url: 'https://www.bandlab.com/rwagsu',
-            },
-            {
-                type: 'custom',
-                children: <DonateDialog lang={locale} />,
-                secondary: true,
-            },
+            }
         ]
     };
 }
 
+// GitHub Info
 export const githubInfo = {
     owner: 'Rwagsu',
     repo: 'RwagsuOwO',
@@ -56,6 +53,7 @@ export const githubInfo = {
 // Top Navigation Bar Links
 export const navLinks: LocaleNavLinks = {
     cn: [
+        // Docs
         {
             type: 'menu',
             text: '文档',
@@ -67,6 +65,8 @@ export const navLinks: LocaleNavLinks = {
                 },
             ],
         },
+
+        // Works
         {
             type: 'menu',
             text: 'Rwagsu 的作品',
@@ -93,20 +93,34 @@ export const navLinks: LocaleNavLinks = {
                 },
             ],
         },
+
+        // Notebook
         {
             text: 'Notebook',
             url: '/docs/notebook/',
         },
+
+        // Blog
         {
             text: 'Blog',
             url: '/docs/blog',
         },
+
+        // About
         {
-            text: 'About',
+            text: '关于',
             url: '/docs/about',
+        },
+
+        // Donate Button
+        {
+            type: 'custom',
+            children: <DonateDialog type="normal" lang="cn" />,
+            secondary: true,
         },
     ],
     en: [
+        // Docs
         {
             type: 'menu',
             text: 'Docs',
@@ -118,6 +132,8 @@ export const navLinks: LocaleNavLinks = {
                 },
             ],
         },
+
+        // Works
         {
             type: 'menu',
             text: "Rwagsu's Works",
@@ -144,21 +160,35 @@ export const navLinks: LocaleNavLinks = {
                 },
             ],
         },
+
+        // Notebook
         {
             text: 'Notebook',
             url: '/docs/notebook/',
         },
+
+        // Blog
         {
             text: 'Blog',
             url: '/docs/blog',
         },
+
+        // About
         {
             text: 'About',
             url: '/docs/about',
         },
+
+        // Donate Button
+        {
+            type: 'custom',
+            children: <DonateDialog type="normal" lang="en" />,
+            secondary: true,
+        },
     ],
 };
 
+// Avatars
 export const avatars = [
     {
         id: 'rwagsu',

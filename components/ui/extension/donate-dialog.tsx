@@ -1,3 +1,5 @@
+"use client";
+
 import {
     AlertDialog,
     AlertDialogAction,
@@ -10,23 +12,28 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
-import { PulsatingButton } from "./pulsating-button"
+import { PulsatingButton } from "../pulsating-button"
 import { ExpandTranslation } from "@/lib/i18n"
 import { HeartPlus } from "lucide-react";
 import { Flex } from "@radix-ui/themes";
-import { Button } from "./button";
+import { Button } from "../button";
 import Link from "next/link";
+import { useMediaQuery } from "fumadocs-core/utils/use-media-query";
 
-export function DonateDialog({ lang }: { lang: string }) {
+export function DonateDialog({ lang, type }: { lang: string, type: "normal" | "icon" }) {
     const translations = lang === "en" ? ExpandTranslation.en.DonateDialog : ExpandTranslation.cn.DonateDialog;
+    
+    const isLg = useMediaQuery('(min-width: 1024px)')
+    const buttonType = isLg ? 'normal' : 'icon'
+
     return (
         <AlertDialog>
             {/* Trigger */}
             <AlertDialogTrigger asChild>
-                <Button>
+                <Button size={type === "icon" || buttonType === "icon" ? "icon" : "default"}>
                     <Flex className="items-center" gap="2">
                         <HeartPlus />
-                        <span className="hidden xl:inline">{translations.buttonText}</span>
+                        {type === "normal" && buttonType === "normal"  && translations.buttonText}
                     </Flex>
                 </Button>
             </AlertDialogTrigger>

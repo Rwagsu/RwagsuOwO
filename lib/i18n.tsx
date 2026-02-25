@@ -38,7 +38,7 @@ export const ExpandTranslation = {
             title: "RwagsuOwO!",
             description: () => (
                 <>
-                    <span>
+                    <p>
                         哈喽! |･ω･) 来看看任何东西, 由啥都会的
                         {" "}<Highlighter action="underline" color="#0077FF">
                             Rwagsu / DrownedOwO
@@ -48,15 +48,15 @@ export const ExpandTranslation = {
                             Furry 控
                         </Highlighter>{" "}
                         制作 (｀・ω・´)”
-                    </span>
+                    </p>
                     
-                    <span>
+                    <p>
                         包括视频 / 音频 / 代码 (累死我了不写了QAQ) /
                         {" "}<Highlighter action="highlight" color="#87CEFA">
                             绘画 / 3D
                         </Highlighter>{" "}
                         等乱七八糟的东西, 统统都能在这里找到() ヽ( ･∀･)ﾉ_θ彡☆Σ(ノ `Д´)ノ
-                    </span>
+                    </p>
                 </>
             ),
             randomPageButtonText: "试试手气! (ﾉ≧∀≦)ﾉ ",

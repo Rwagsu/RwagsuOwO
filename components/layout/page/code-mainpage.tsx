@@ -12,7 +12,7 @@ import { Card, Cards } from "fumadocs-ui/components/card";
 import { ReactNode, useEffect, useState } from "react";
 import { RetroGrid } from "@/components/ui/retro-grid";
 import { TypingAnimation } from "@/components/ui/typing-animation";
-import MaintenanceLevel, { MaintenanceLevelType } from "@/components/ui/maintenance-level";
+import MaintenanceLevel, { MaintenanceLevelType } from "@/components/ui/extension/maintenance-level";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
