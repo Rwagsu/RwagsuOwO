@@ -1,5 +1,6 @@
 {
-  "title": "About",
-  "description": "Not only About, but also many other things.",
-  "root": true
+    "title": "About",
+    "description": "Not only About, but also many other things.",
+    "icon": "Info",
+    "root": true
 }

@@ -94,7 +94,7 @@ export function HeaderWithImage({
                     <ViewOptions
                         markdownUrl={`${url}.mdx`}
                         // update it to match your repo
-                        githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/docs/content/docs/${url.replace('/docs/', '')}`}
+                        githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${lang}/${url.replace('/docs/', '')}`}
                     />
                 </Flex>
             </Flex>

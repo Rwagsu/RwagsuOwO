@@ -1,6 +1,6 @@
 {
-  "title": "Rwagsu 的作品",
-  "description": "包含几乎全部的作品以及对应的许可证! ヾ(^▽^*)))",
-  "root": true,
-  "icon": "Box"
+    "title": "Rwagsu 的作品",
+    "description": "包含几乎全部的作品以及对应的许可证! ヾ(^▽^*)))",
+    "icon": "Box",
+    "root": true
 }

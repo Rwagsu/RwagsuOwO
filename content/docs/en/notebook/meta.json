@@ -1,5 +1,6 @@
 {
-  "title": "Notebook",
-  "description": "Notes for larger products",
-  "root": true
+    "title": "Notebook",
+    "description": "Notes for larger products",
+    "icon": "ScrollText",
+    "root": true
 }

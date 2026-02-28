@@ -1,5 +1,6 @@
 {
-  "title": "Blog",
-  "description": "Rwagsu's Blog",
-  "root": true
+    "title": "Blog",
+    "description": "Rwagsu's Blog",
+    "icon": "Gamepad",
+    "root": true
 }

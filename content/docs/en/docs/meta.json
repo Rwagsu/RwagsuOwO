@@ -1,5 +1,6 @@
 {
-  "title": "Docs",
-  "description": "Documentation for the work",
-  "root": true
+    "title": "Docs",
+    "description": "Documentation for the work",
+    "icon": "BookMarked",
+    "root": true
 }

@@ -193,6 +193,10 @@ export const ExpandTranslation = {
             dialogBiliBili: "BiliBili 充电 (没搞完)",
             dialogAFdian: "爱发电",
             dialogGitHubSponsor: "GitHub Sponsor",
+        },
+        NotTranslation: {
+            title: "啊, 页面好像没有翻译. :(",
+            description: "现在显示的是页面的原始语言版本. ¯\\_(ツ)_/¯",
         }
     },
     en: {
@@ -353,6 +357,10 @@ export const ExpandTranslation = {
             dialogBiliBili: "BiliBili Charging (Not finished)",
             dialogAFdian: "Afdian",
             dialogGitHubSponsor: "GitHub Sponsor",
+        },
+        NotTranslation: {
+            title: "Oh, it seems the page hasn't been translated. :(",
+            description: "The page is currently displayed in its original language version. ¯\\_(ツ)_/¯",
         }
     },
 };

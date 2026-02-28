@@ -12,6 +12,9 @@ import { HeaderWithImage } from '@/components/layout/page/header-with-image';
 import { LightRays } from '@/components/ui/light-rays';
 import SubHeroPage from '@/components/layout/page/subhero-page';
 import CodePage from '@/components/layout/page/code-page';
+import { ExpandTranslation, i18n } from '@/lib/i18n';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { AlertTriangleIcon } from 'lucide-react';
 
 export default async function Page({ params }: {
     params: Promise<{ lang: string; slug?: string[] }>;
@@ -23,6 +26,8 @@ export default async function Page({ params }: {
     // Content
     const MDX = page.data.body;
     const readingTime = (page.data as any)._exports?.readingTime;
+
+    const translations = lang === "en" ? ExpandTranslation.en : ExpandTranslation.cn;
 
     // GitHub repository configuration
     const gitConfig = {
@@ -46,7 +51,19 @@ export default async function Page({ params }: {
         lastModifiedTime = null;
     }
 
-    var currentPageComponent : React.ReactNode | null = null;
+    let pageLang = lang;
+    const pathParts = page.path?.split('/') ?? [];
+
+    if (pathParts.some(item => item === "en")) {
+        pageLang = "en";
+    } else {
+        pageLang = "cn";
+    }
+
+    // 4. 检测是否发生了 fallback
+    const isFallback = lang !== pageLang;
+
+    var currentPageComponent: React.ReactNode | null = null;
 
     switch (page.data.type) {
         case 'base':
@@ -118,6 +135,16 @@ export default async function Page({ params }: {
                 </>
             ),
         }}>
+            {isFallback && (
+                <Alert className="mx-auto max-w-md border-amber-200 bg-amber-50 text-amber-900 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-50">
+                    <AlertTriangleIcon />
+                    <AlertTitle>{translations.NotTranslation.title}</AlertTitle>
+                    <AlertDescription>
+                        {translations.NotTranslation.description}
+                    </AlertDescription>
+                </Alert>
+            )}
+            
             {currentPageComponent}
 
             <LightRays />

@@ -1,17 +1,15 @@
 "use client";
 
 import {
-    AlertDialog,
-    AlertDialogAction,
-    AlertDialogCancel,
-    AlertDialogContent,
-    AlertDialogDescription,
-    AlertDialogFooter,
-    AlertDialogHeader,
-    AlertDialogMedia,
-    AlertDialogTitle,
-    AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+    Drawer,
+    DrawerClose,
+    DrawerContent,
+    DrawerDescription,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerTitle,
+    DrawerTrigger,
+} from "@/components/ui/drawer";
 import { ExpandTranslation } from "@/lib/i18n";
 import { HeartPlus } from "lucide-react";
 import { Flex } from "@radix-ui/themes";
@@ -21,65 +19,69 @@ import { useMediaQuery } from "fumadocs-core/utils/use-media-query";
 
 export function DonateDialog({ lang, type }: { lang: string, type: "normal" | "icon" }) {
     const translations = lang === "en" ? ExpandTranslation.en.DonateDialog : ExpandTranslation.cn.DonateDialog;
-    
+
     const isLg = useMediaQuery('(min-width: 1024px)')
     const buttonType = isLg ? 'normal' : 'icon'
 
     return (
-        <AlertDialog>
+        <Drawer>
             {/* Trigger */}
-            <AlertDialogTrigger asChild>
+            <DrawerTrigger asChild>
                 <Button size={type === "icon" || buttonType === "icon" ? "icon" : "default"}>
                     <Flex className="items-center" gap="2">
                         <HeartPlus />
                         {type === "normal" && buttonType === "normal"  && translations.buttonText}
                     </Flex>
                 </Button>
-            </AlertDialogTrigger>
+            </DrawerTrigger>
 
-            {/* Cpntent */}
-            <AlertDialogContent>
-                <AlertDialogHeader>
+            {/* Content */}
+            <DrawerContent className="items-center">
+                <DrawerHeader>
                     {/* Icon */}
-                    <AlertDialogMedia>
+                    <DrawerTitle className="flex items-center justify-center gap-2">
                         <HeartPlus />
-                    </AlertDialogMedia>
+                    </DrawerTitle>
 
                     {/* Title */}
-                    <AlertDialogTitle>{translations.dialogTitle}</AlertDialogTitle>
+                    <DrawerTitle>{translations.dialogTitle}</DrawerTitle>
 
                     {/* Description */}
-                    <AlertDialogDescription>
+                    <DrawerDescription>
                         {translations.dialogDescription}
-                    </AlertDialogDescription>
-                </AlertDialogHeader>
-                <AlertDialogFooter>
-                    {/* Cancel Button */}
-                    <AlertDialogCancel>{translations.dialogCancel}</AlertDialogCancel>
+                    </DrawerDescription>
+                </DrawerHeader>
+                <DrawerFooter>
+                    <Flex className="gap-2" direction={{ initial: 'column', md: 'row' }} justify="center">
+                        {/* Cancel Button */}
+                        <DrawerClose asChild>
+                            <Button variant="outline">{translations.dialogCancel}</Button>
+                        </DrawerClose>
 
-                    {/* TODO: Donate button */}
-                    {/* Bilibili */}
-                    <AlertDialogAction disabled>
-                        <Link target="_blank" href="/" className="no-underline hover:no-underline">
-                            {translations.dialogBiliBili}
-                        </Link>
-                    </AlertDialogAction>
+                        {/* TODO: Donate button */}
+                        {/* Bilibili */}
+                        <Button disabled>
+                            <Link target="_blank" href="/" className="no-underline hover:no-underline">
+                                {translations.dialogBiliBili}
+                            </Link>
+                        </Button>
 
-                    {/* AFdian */}
-                    <AlertDialogAction asChild>
-                        <Link target="_blank" href="https://afdian.com/a/Rwagsu" className="no-underline hover:no-underline">
-                            {translations.dialogAFdian}
-                        </Link>
-                    </AlertDialogAction>
+                        {/* AFdian */}
+                        <Button asChild>
+                            <Link target="_blank" href="https://afdian.com/a/Rwagsu" className="no-underline hover:no-underline">
+                                {translations.dialogAFdian}
+                            </Link>
+                        </Button>
 
-                    {/* GitHub Sponsor */}
-                    <AlertDialogAction disabled>
-                        <Link target="_blank" href="/" className="no-underline hover:no-underline">
-                            {translations.dialogGitHubSponsor}
-                        </Link>
-                    </AlertDialogAction>
-                </AlertDialogFooter>
-            </AlertDialogContent>
-        </AlertDialog>
+                        {/* GitHub Sponsor */}
+                        <Button disabled>
+                            <Link target="_blank" href="/" className="no-underline hover:no-underline">
+                                {translations.dialogGitHubSponsor}
+                            </Link>
+                        </Button>
+                    </Flex>
+                </DrawerFooter>
+            </DrawerContent>
+        </Drawer>
     )
 }

@@ -1,5 +1,6 @@
 {
-  "title": "Rwagsu's Work",
-  "description": "Most works, as well as licenses!",
-  "root": true
+    "title": "Rwagsu's Works",
+    "description": "Most works, as well as licenses!",
+    "icon": "Box",
+    "root": true
 }

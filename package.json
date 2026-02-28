@@ -13,6 +13,9 @@
   "dependencies": {
     "@giscus/react": "^3.1.0",
     "@iconify/react": "^6.0.2",
+    "@keystatic/core": "^0.5.48",
+    "@keystatic/next": "^5.0.4",
+    "@markdoc/markdoc": "^0.5.4",
     "@octokit/rest": "^22.0.1",
     "@orama/tokenizers": "^3.1.18",
     "@radix-ui/react-collapsible": "^1.1.12",
