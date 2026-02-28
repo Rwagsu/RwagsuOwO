@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google';
 import { Toaster } from 'sonner'
 import { ThemeWrapper } from '@/components/theme-provider';
 import { Banner } from '@/components/banner';
+import { Analytics } from '@vercel/analytics/next';
 
 const { provider } = defineI18nUI(i18n, {
     translations: {
@@ -48,6 +49,7 @@ export default async function RootLayout({ params, children }: {
                         {children}
                     </RootProvider>
                 </ThemeWrapper>
+                <Analytics />
             </body>
         </html>
     );
