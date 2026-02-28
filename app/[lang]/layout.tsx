@@ -8,6 +8,7 @@ import { ThemeWrapper } from '@/components/theme-provider';
 import { Banner } from '@/components/banner';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import Script from 'next/script';
 
 const { provider } = defineI18nUI(i18n, {
     translations: {
@@ -50,8 +51,17 @@ export default async function RootLayout({ params, children }: {
                         {children}
                     </RootProvider>
                 </ThemeWrapper>
+
+                {/* Vercel */}
                 <Analytics />
                 <SpeedInsights />
+
+                {/* Umami */}
+                <Script
+                    src="https://cloud.umami.is/script.js"
+                    strategy="afterInteractive"
+                    data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+                />
             </body>
         </html>
     );
