@@ -7,6 +7,7 @@ import { Toaster } from 'sonner'
 import { ThemeWrapper } from '@/components/theme-provider';
 import { Banner } from '@/components/banner';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const { provider } = defineI18nUI(i18n, {
     translations: {
@@ -50,6 +51,7 @@ export default async function RootLayout({ params, children }: {
                     </RootProvider>
                 </ThemeWrapper>
                 <Analytics />
+                <SpeedInsights />
             </body>
         </html>
     );
