@@ -2,5 +2,5 @@
   "title": "Home Assistant",
   "description": "Home Assistant 的坑爹笔记 (σ｀д′)σ",
   "icon": "HouseWifi",
-  "pages": ["virtual_machine", "install_haos", "install_hacs"]
+  "pages": ["virtual_machine", "install_haos", "qna"]
 }

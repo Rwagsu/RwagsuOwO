@@ -1,5 +1,6 @@
 {
   "title": "Q&A",
   "description": "超级疑难解答",
-  "icon": "CircleQuestionMark"
+  "icon": "CircleQuestionMark",
+  "pages": ["hacs_could_not_register", "haos_disk"]
 }
