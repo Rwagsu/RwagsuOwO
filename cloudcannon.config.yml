@@ -3,15 +3,8 @@ paths:
   uploads: public/images/docsImages
   collections: content
 
-_editables:
-  mdx:
-    input: mdx
-    allow_blocks: true
-    allow_inline: true
+timezone: Asia/Shanghai
 
-_snippets_imports:
-  mdx: true
-  
 collections_config:
   docs_cn_about:
     path: content/docs/cn/about
@@ -25,7 +18,6 @@ collections_config:
     schemas:
       default:
         path: schemas/default-frontmatter.mdx
-
   docs_cn_blog:
     path: content/docs/cn/blog
     name: Blog (cn)
@@ -38,7 +30,6 @@ collections_config:
     schemas:
       default:
         path: schemas/default-frontmatter.mdx
-
   docs_cn_docs:
     path: content/docs/cn/docs
     name: 文档 (cn)
@@ -51,7 +42,6 @@ collections_config:
     schemas:
       default:
         path: schemas/default-frontmatter.mdx
- 
   docs_cn_notebook:
     path: content/docs/cn/notebook
     name: Notebook (cn)
@@ -64,7 +54,6 @@ collections_config:
     schemas:
       default:
         path: schemas/default-frontmatter.mdx
-
   docs_cn_works:
     path: content/docs/cn/works
     name: Rwagsu 的作品 (cn)
@@ -77,7 +66,6 @@ collections_config:
     schemas:
       default:
         path: schemas/default-frontmatter.mdx
-
   docs_en_about:
     path: content/docs/en/about
     name: About (en)
@@ -90,7 +78,6 @@ collections_config:
     schemas:
       default:
         path: schemas/default-frontmatter.mdx
-
   docs_en_blog:
     path: content/docs/en/blog
     name: Blog (en)
@@ -103,7 +90,6 @@ collections_config:
     schemas:
       default:
         path: schemas/default-frontmatter.mdx
-
   docs_en_docs:
     path: content/docs/en/docs
     name: Docs (en)
@@ -116,7 +102,6 @@ collections_config:
     schemas:
       default:
         path: schemas/default-frontmatter.mdx
-
   docs_en_notebook:
     path: content/docs/en/notebook
     name: Notebook (en)
@@ -129,7 +114,6 @@ collections_config:
     schemas:
       default:
         path: schemas/default-frontmatter.mdx
-
   docs_en_works:
     path: content/docs/en/works
     name: Rwagsu's Works
@@ -147,15 +131,12 @@ _inputs:
   title:
     type: text
     comment: Title
-
   description:
     type: text
     comment: Description
-
   icon:
     type: text
     comment: Icon (Lucide Icon)
-
   avatars:
     type: multiselect
     comment: 作者 (ID)
@@ -166,30 +147,26 @@ _inputs:
       values_labels:
         rwagsu: "Rwagsu - 全能 Furry 控"
         drownedowo: "DrownedOwO - 被绑架来的 QAQ"
-
   time:
     type: date
     comment: 创建时间
-
   tags:
     type: array
     comment: 标签
     options:
       structures: _structures.tag
-
   headerImage:
     type: object
     comment: Header 图片 (Link)
     options:
       collapsed: true
-    _inputs:
-      alt:
-        type: text
-        comment: Alt 文本
-      src:
-        type: image   # 改用 image 类型，更方便选图
-        comment: 图片路径（建议用上传）
-
+      subtype: object
+  "headerImage.alt":
+    type: text
+    comment: Alt 文本
+  "headerImage.src":
+    type: image
+    comment: 图片路径（建议用上传）
   type:
     type: select
     comment: 文档类型
@@ -203,121 +180,111 @@ _inputs:
         - subHero
         - none
       default: base
-
   image:
     type: object
     comment: IMAGE 配置（仅当 type=image 时填写，其他忽略）
     options:
       collapsed: true
-    _inputs:
-      alt:
-        type: text
-      src:
-        type: image
-        options:
-          width: 1200
-          resize_style: crop
-
+      subtype: object
+  "image.alt":
+    type: text
+  "image.src":
+    type: image
+    options:
+      width: 1200
+      resize_style: crop
   video:
     type: object
     comment: VIDEO 配置（仅当 type=video 时填写，其他忽略）
     options:
       collapsed: true
-    _inputs:
-      alt:
-        type: text
-      src:
-        type: text
-        comment: 视频 URL 或相对路径
-
+      subtype: object
+  "video.alt":
+    type: text
+  "video.src":
+    type: text
+    comment: 视频 URL 或相对路径
   audio:
     type: object
     comment: AUDIO 配置（仅当 type=audio 时填写，其他忽略）
     options:
       collapsed: true
-    _inputs:
-      alt:
-        type: text
-      src:
-        type: file
-        comment: 音频文件路径
-
+      subtype: object
+  "audio.alt":
+    type: text
+  "audio.src":
+    type: file
+    comment: 音频文件路径
   code:
     type: object
     comment: Code 配置（仅当 type=code 时填写，其他忽略）
     options:
       collapsed: true
-    _inputs:
-      maintenanceLevel:
-        type: select
-        comment: 维护等级
-        options:
-          values:
-            - X0
-            - G1
-            - G2
-            - G3
-            - B4
-            - B5
-            - R6
-            - R7
-            - Q8
-            - Q9
-            - C10
-          default: G3
-      githubInfo:
-        type: object
-        comment: GitHub 信息
-        _inputs:
-          user:
-            type: text
-            comment: GitHub 所有者
-          repo:
-            type: text
-            comment: 存储库
-          branch:
-            type: text
-            comment: 分支
-            instance_value: main
-      icon:
-        type: object
-        comment: Icon (Link)
-        _inputs:
-          alt:
-            type: text
-            comment: Alt 文本
-          src:
-            type: image   # 改成 image 类型
-            comment: 图标路径
-      buttons:
-        type: array
-        comment: 按钮
-        options:
-          structures: _structures.button
-
+      subtype: object
+  "code.maintenanceLevel":
+    type: select
+    comment: 维护等级
+    options:
+      values:
+        - X0
+        - G1
+        - G2
+        - G3
+        - B4
+        - B5
+        - R6
+        - R7
+        - Q8
+        - Q9
+        - C10
+      default: G3
+  "code.githubInfo":
+    type: object
+    comment: GitHub 信息
+  "code.githubInfo.user":
+    type: text
+    comment: GitHub 所有者
+  "code.githubInfo.repo":
+    type: text
+    comment: 存储库
+  "code.githubInfo.branch":
+    type: text
+    comment: 分支
+    instance_value: main
+  "code.icon":
+    type: object
+    comment: Icon (Link)
+  "code.icon.alt":
+    type: text
+    comment: Alt 文本
+  "code.icon.src":
+    type: image
+    comment: 图标路径
+  "code.buttons":
+    type: array
+    comment: 按钮
+    options:
+      structures: _structures.button
   hero:
     type: object
     comment: SubHero 配置（仅当 type=subHero 时填写，其他忽略）
     options:
       collapsed: true
-    _inputs:
-      buttons:
-        type: array
-        comment: 按钮
-        options:
-          structures: _structures.button
-      icon:
-        type: object
-        comment: 图标 (Link)
-        _inputs:
-          alt:
-            type: text
-            comment: Alt 文本
-          src:
-            type: image
-            comment: 图标路径
-          
-timezone: Asia/Shanghai
+      subtype: object
+  "hero.buttons":
+    type: array
+    comment: 按钮
+    options:
+      structures: _structures.button
+  "hero.icon":
+    type: object
+    comment: 图标 (Link)
+  "hero.icon.alt":
+    type: text
+    comment: Alt 文本
+  "hero.icon.src":
+    type: image
+    comment: 图标路径
 
 markdown:
   engine: commonmark
@@ -358,7 +325,6 @@ _structures:
             - default
             - secondary
             - destructive
-
   button:
     label: 按钮
     icon: smart_button
@@ -378,10 +344,17 @@ _structures:
             - default
             - secondary
             - destructive
-      
-_snippets:
-  # ── Fumadocs 核心 MDX 组件 ──
 
+_snippets_imports:
+  mdx: true
+
+_editables:
+  mdx:
+    input: mdx
+    allow_blocks: true
+    allow_inline: true
+
+_snippets:
   fumadocs_card:
     template: mdx_paired_component
     label: Card (Fumadocs)
@@ -389,11 +362,10 @@ _snippets:
     value:
       component: Card
       props:
-        icon: ""          # 可以是 <Icon /> 或字符串
+        icon: ""
         href: ""
         title: ""
-      children: ""        # 内容占位
-
+      children: ""
   fumadocs_callout:
     template: mdx_paired_component
     label: Callout (Fumadocs)
@@ -402,18 +374,17 @@ _snippets:
       component: Callout
       props:
         title: ""
-        type: info        # info | warning | error | success | idea
+        type: info
       children: ""
-
   fumadocs_steps:
-    template: markdown
+    template: mdx_paired_component
     label: Steps Wrapper (Fumadocs)
     icon: format_list_numbered
-    value: |
-      <div className="fd-steps [&_h2]:fd-step [&_h3]:fd-step">
-          
-      </div>
-
+    value:
+      component: div
+      props:
+        className: "fd-steps [&_h2]:fd-step [&_h3]:fd-step"
+      children: "## 第一步\n\n描述内容...\n\n## 第二步\n\n更多描述..."
   fumadocs_accordion:
     template: mdx_paired_component
     label: Accordion (Fumadocs)
@@ -421,64 +392,65 @@ _snippets:
     value:
       component: Accordion
       props:
-        type: single       # single | multiple
+        type: single
         collapsible: true
-        defaultValue: ""
-      children: ""         # 里面放 <AccordionItem value="one">...</AccordionItem>
-
+      children: ""
   fumadocs_tabs:
-    template: markdown
-    label: Tabs (Fumadocs - 用代码块方式)
+    template: mdx_paired_component
+    label: Tabs (Fumadocs 示例)
     icon: tab
-    value: |
-      ```ts tab="Tab 1"
-      
-      ```
+    value:
+      component: fragment
+      children: |
+        ```ts tab="Tab 1"
+        // 内容...
+        ```
 
-      ```ts tab="Tab 2"
-      
-      ```
-
-  # ── 代码块增强（Fumadocs 特殊语法） ──
-
+        ```ts tab="Tab 2"
+        // 内容...
+        ```
   fumadocs_code_linenumbers:
-    template: markdown
+    template: mdx_component
     label: Code block with lineNumbers
     icon: numbers
-    value: "``` lineNumbers\n\n```"
-
+    value:
+      component: code
+      children: "```tsx lineNumbers\n你的代码在这里\n```"
   fumadocs_code_twoslash:
-    template: markdown
+    template: mdx_component
     label: Code block with Twoslash
     icon: code
-    value: "``` twoslash\n\n```"
-
+    value:
+      component: code
+      children: "```tsx twoslash\n你的代码在这里\n```"
   fumadocs_code_highlight:
-    template: markdown
-    label: "[!code highlight]"
+    template: mdx_component
+    label: [!code highlight]
     icon: highlight
-    value: "// [!code highlight]"
-
+    value:
+      component: text
+      children: "// [!code highlight]"
   fumadocs_code_add:
-    template: markdown
-    label: "[!code ++] 添加行"
+    template: mdx_component
+    label: [!code ++] 添加行
     icon: add
-    value: "// [!code ++]"
-
+    value:
+      component: text
+      children: "// [!code ++]"
   fumadocs_code_remove:
-    template: markdown
-    label: "[!code --] 删除行"
+    template: mdx_component
+    label: [!code --] 删除行
     icon: remove
-    value: "// [!code --]"
-
+    value:
+      component: text
+      children: "// [!code --]"
   fumadocs_code_focus:
-    template: markdown
-    label: "[!code focus] 聚焦行"
+    template: mdx_component
+    label: [!code focus] 聚焦行
     icon: center_focus_strong
-    value: "// [!code focus]"
-
-  # ── 其他 Fumadocs 实用组件 ──
-
+    value:
+      component: text
+      children: "// [!code focus]"
   fumadocs_files:
     template: mdx_paired_component
     label: Files / Folder Tree
@@ -490,7 +462,6 @@ _snippets:
         <Folder name="src" defaultOpen>
             <File name="index.tsx" />
         </Folder>
-
   fumadocs_github_info:
     template: mdx_component
     label: GitHub Info
@@ -498,20 +469,16 @@ _snippets:
     value:
       component: GithubInfo
       props:
-        owner: "fuma-nama"
-        repo: "fumadocs"
-        # token: process.env.GITHUB_TOKEN  # 可选，注释掉或留空
-
+        owner: ""
+        repo: ""
   fumadocs_type_table:
     template: mdx_component
     label: Type Table
     icon: table_chart
     value:
       component: TypeTable
-      props:
-        # 通常 children 是表格内容，或通过其他方式传入类型
+      props: {}
       children: ""
-
   fumadocs_auto_type_table:
     template: mdx_component
     label: Auto Type Table
@@ -521,21 +488,20 @@ _snippets:
       props:
         path: "./path/to/your-file.ts"
         name: "YourTypeName"
-
-  # ── 其他你提到的简单标签 ──
-
   fumadocs_no_toc:
-    template: markdown
-    label: "No TOC [!toc]"
+    template: mdx_component
+    label: No TOC [!toc]
     icon: toc
-    value: "<[!toc]"
-
+    value:
+      component: text
+      children: "<[!toc]"
   fumadocs_slug_anchor:
-    template: markdown
+    template: mdx_component
     label: Custom Slug Anchor [#slug]
     icon: anchor
-    value: "[#$1]"
-
+    value:
+      component: text
+      children: "[#slug]"
   fumadocs_include:
     template: mdx_component
     label: Include File
@@ -543,4 +509,4 @@ _snippets:
     value:
       component: include
       props: {}
-      children: "$1"   # 文件路径
+      children: ""
