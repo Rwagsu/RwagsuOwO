@@ -2,6 +2,7 @@ paths:
   static: public
   uploads: public/images/docsImages
   collections: content
+  
 collections_config:
   docs_cn_about:
     path: content/docs/cn/about
@@ -12,13 +13,7 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
-    schemas:
-      default:
-        path: schemas/docs.md
-        reorder_inputs: true
-        hide_extra_inputs: false
-        remove_empty_inputs: false
-        remove_extra_inputs: true
+
   docs_cn_blog:
     path: content/docs/cn/blog
     name: Blog (cn)
@@ -28,13 +23,7 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
-    schemas:
-      default:
-        path: schemas/docs.md
-        reorder_inputs: true
-        hide_extra_inputs: false
-        remove_empty_inputs: false
-        remove_extra_inputs: true
+
   docs_cn_docs:
     path: content/docs/cn/docs
     name: 文档 (cn)
@@ -44,13 +33,7 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
-    schemas:
-      default:
-        path: schemas/docs.md
-        reorder_inputs: true
-        hide_extra_inputs: false
-        remove_empty_inputs: false
-        remove_extra_inputs: true
+ 
   docs_cn_notebook:
     path: content/docs/cn/notebook
     name: Notebook (cn)
@@ -60,13 +43,7 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
-    schemas:
-      default:
-        path: schemas/docs.md
-        reorder_inputs: true
-        hide_extra_inputs: false
-        remove_empty_inputs: false
-        remove_extra_inputs: true
+
   docs_cn_works:
     path: content/docs/cn/works
     name: Rwagsu 的作品 (cn)
@@ -76,13 +53,7 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
-    schemas:
-      default:
-        path: schemas/docs.md
-        reorder_inputs: true
-        hide_extra_inputs: false
-        remove_empty_inputs: false
-        remove_extra_inputs: true
+
   docs_en_about:
     path: content/docs/en/about
     name: About (en)
@@ -92,13 +63,7 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
-    schemas:
-      default:
-        path: schemas/docs.md
-        reorder_inputs: true
-        hide_extra_inputs: false
-        remove_empty_inputs: false
-        remove_extra_inputs: true
+
   docs_en_blog:
     path: content/docs/en/blog
     name: Blog (en)
@@ -108,13 +73,7 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
-    schemas:
-      default:
-        path: schemas/docs.md
-        reorder_inputs: true
-        hide_extra_inputs: false
-        remove_empty_inputs: false
-        remove_extra_inputs: true
+
   docs_en_docs:
     path: content/docs/en/docs
     name: Docs (en)
@@ -124,13 +83,7 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
-    schemas:
-      default:
-        path: schemas/docs.md
-        reorder_inputs: true
-        hide_extra_inputs: false
-        remove_empty_inputs: false
-        remove_extra_inputs: true
+
   docs_en_notebook:
     path: content/docs/en/notebook
     name: Notebook (en)
@@ -140,13 +93,7 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
-    schemas:
-      default:
-        path: schemas/docs.md
-        reorder_inputs: true
-        hide_extra_inputs: false
-        remove_empty_inputs: false
-        remove_extra_inputs: true
+
   docs_en_works:
     path: content/docs/en/works
     name: Rwagsu's Works
@@ -156,19 +103,183 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
-    schemas:
-      default:
-        path: schemas/docs.md
-        reorder_inputs: true
-        hide_extra_inputs: false
-        remove_empty_inputs: false
-        remove_extra_inputs: true
+
 _inputs:
-  date:
-    comment: 文档发布日期
-    instance_value: now
-    cascade: true
+  title:
+    type: text
+    comment: Title
+
+  description:
+    type: text
+    comment: Description
+
+  icon:
+    type: text
+    comment: Icon (Lucide Icon)
+
+  avatars:
+    type: multiselect
+    comment: 作者 (ID)
+    options:
+      values:
+        - rwagsu
+        - drownedowo
+      values_labels:
+        rwagsu: "Rwagsu - 全能 Furry 控"
+        drownedowo: "DrownedOwO - 被绑架来的 QAQ"
+
+  time:
+    type: date
+    comment: 创建时间
+
+  tags:
+    type: array
+    comment: 标签
+    options:
+      structures: _structures.tag
+
+  headerImage:
+    type: object
+    comment: Header 图片 (Link)
+    options:
+      collapsed: true
+    _inputs:
+      alt:
+        type: text
+        comment: Alt 文本
+      src:
+        type: image   # 改用 image 类型，更方便选图
+        comment: 图片路径（建议用上传）
+
+  type:
+    type: select
+    comment: 文档类型
+    options:
+      values:
+        - base
+        - image
+        - video
+        - audio
+        - code
+        - subHero
+        - none
+      default: base
+
+  image:
+    type: object
+    comment: IMAGE 配置（仅当 type=image 时填写，其他忽略）
+    options:
+      collapsed: true
+    _inputs:
+      alt:
+        type: text
+      src:
+        type: image
+        options:
+          width: 1200
+          resize_style: crop
+
+  video:
+    type: object
+    comment: VIDEO 配置（仅当 type=video 时填写，其他忽略）
+    options:
+      collapsed: true
+    _inputs:
+      alt:
+        type: text
+      src:
+        type: text
+        comment: 视频 URL 或相对路径
+
+  audio:
+    type: object
+    comment: AUDIO 配置（仅当 type=audio 时填写，其他忽略）
+    options:
+      collapsed: true
+    _inputs:
+      alt:
+        type: text
+      src:
+        type: file
+        comment: 音频文件路径
+
+  code:
+    type: object
+    comment: Code 配置（仅当 type=code 时填写，其他忽略）
+    options:
+      collapsed: true
+    _inputs:
+      maintenanceLevel:
+        type: select
+        comment: 维护等级
+        options:
+          values:
+            - X0
+            - G1
+            - G2
+            - G3
+            - B4
+            - B5
+            - R6
+            - R7
+            - Q8
+            - Q9
+            - C10
+          default: G3
+      githubInfo:
+        type: object
+        comment: GitHub 信息
+        _inputs:
+          user:
+            type: text
+            comment: GitHub 所有者
+          repo:
+            type: text
+            comment: 存储库
+          branch:
+            type: text
+            comment: 分支
+            instance_value: main
+      icon:
+        type: object
+        comment: Icon (Link)
+        _inputs:
+          alt:
+            type: text
+            comment: Alt 文本
+          src:
+            type: image   # 改成 image 类型
+            comment: 图标路径
+      buttons:
+        type: array
+        comment: 按钮
+        options:
+          structures: _structures.button
+
+  hero:
+    type: object
+    comment: SubHero 配置（仅当 type=subHero 时填写，其他忽略）
+    options:
+      collapsed: true
+    _inputs:
+      buttons:
+        type: array
+        comment: 按钮
+        options:
+          structures: _structures.button
+      icon:
+        type: object
+        comment: 图标 (Link)
+        _inputs:
+          alt:
+            type: text
+            comment: Alt 文本
+          src:
+            type: image
+            comment: 图标路径
+          
 timezone: Asia/Shanghai
+
 markdown:
   engine: commonmark
   options:
@@ -188,3 +299,43 @@ markdown:
     superscript: false
     heading_ids: false
     attributes: false
+
+_structures:
+  tag:
+    label: 标签
+    icon: label
+    value:
+      text: ""
+      icon: ""
+      variant: secondary
+    _inputs:
+      variant:
+        type: select
+        options:
+          values:
+            - outline
+            - ghost
+            - link
+            - default
+            - secondary
+            - destructive
+
+  button:
+    label: 按钮
+    icon: smart_button
+    value:
+      text: ""
+      href: ""
+      icon: ""
+      variant: default
+    _inputs:
+      variant:
+        type: select
+        options:
+          values:
+            - outline
+            - ghost
+            - link
+            - default
+            - secondary
+            - destructive
