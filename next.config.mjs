@@ -20,6 +20,7 @@ const config = {
             { protocol: 'https', hostname: 'youke1.picui.cn' },
             { protocol: 'https', hostname: 'cdn.jsdelivr.net' },
             { protocol: 'https', hostname: 'i0.hdslb.com' },
+            { protocol: 'https', hostname: 'blog.xiaofeng-furry.top' },
         ],
     },
     reactStrictMode: true,
