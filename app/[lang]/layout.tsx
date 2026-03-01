@@ -60,7 +60,7 @@ export default async function RootLayout({ params, children }: {
                 <Script
                     src="https://cloud.umami.is/script.js"
                     strategy="afterInteractive"
-                    data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+                    data-website-id={process.env.UMAMI_WEBSITE_ID}
                 />
             </body>
         </html>
