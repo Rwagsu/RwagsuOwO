@@ -41,6 +41,7 @@
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-icons": "^5.5.0",
+    "react-masonry-css": "^1.0.16",
     "reading-time": "^1.5.0",
     "rough-notation": "^0.5.1",
     "scroll-into-view-if-needed": "^3.1.0",

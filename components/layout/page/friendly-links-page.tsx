@@ -1,8 +1,11 @@
+'use client';
+
 import { Flex, Grid } from "@radix-ui/themes";
 import { DocsDescription, DocsTitle } from "fumadocs-ui/layouts/docs/page";
 import { BlurFade } from "@/components/ui/blur-fade"
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { ExpandTranslation } from "@/lib/i18n";
+import Masonry from 'react-masonry-css';
 import Link from "fumadocs-core/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ReactNode } from "react";
@@ -29,6 +32,14 @@ interface FriendlyLinksTag {
     title: string,
     icon: ReactNode | undefined
 }
+
+const breakpointColumnsObj = {
+    default: 3,   // Big: 3
+    1024: 3,      // lg: 3
+    768: 2,       // md: 2
+    640: 1,       // sm: 1
+    0: 1          // Default: 1
+};
 
 export default function FriendlyLinksPage({ title, description, links, tags, submitLink, lang, children }: {
     title: string,
@@ -103,7 +114,11 @@ export default function FriendlyLinksPage({ title, description, links, tags, sub
                     </div>
 
                     <TabsContent value="all">
-                        <Grid gap="4" columns={{ initial: "1", sm: "1", md: "2", lg: "3" }}>
+                        <Masonry
+                            breakpointCols={breakpointColumnsObj}
+                            className="flex gap-4"
+                            columnClassName="flex flex-col"
+                        >
                             {links.map((item, index) => (
                                 <LinkCard
                                     key={index}
@@ -117,13 +132,17 @@ export default function FriendlyLinksPage({ title, description, links, tags, sub
                                     backgroundType={item.backgroundType}
                                     background={item.background} />
                             ))}
-                        </Grid>
+                        </Masonry>
                     </TabsContent>
 
                     {tags.map(tag => {
                         return (
                             <TabsContent key={tag.id} value={tag.id}>
-                                <Grid gap="4" columns={{ initial: "1", sm: "1", md: "2", lg: "3" }}>
+                                <Masonry
+                                    breakpointCols={breakpointColumnsObj}
+                                    className="flex gap-4"
+                                    columnClassName="flex flex-col"
+                                >
                                     {links
                                         .filter(item => item.tag === tag.id)
                                         .map((item, index) => (
@@ -137,9 +156,9 @@ export default function FriendlyLinksPage({ title, description, links, tags, sub
                                                 cta={item.cta}
                                                 href={item.href}
                                                 backgroundType={item.backgroundType}
-                                                background={item.background}/>
+                                                background={item.background} />
                                         ))}
-                                </Grid>
+                                </Masonry>
                             </TabsContent>
                         );
                     })}

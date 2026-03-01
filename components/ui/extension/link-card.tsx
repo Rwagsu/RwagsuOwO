@@ -16,7 +16,7 @@ export default function LinkCard({ title, description, cta, href, iconSrc, iconF
     background: string
 }) {
     return (
-        <Box width={{ initial: "280px", sm: "300px", md: "320px", lg: "270px" }}>
+        <Box className="mb-4 w-full">
             <Card className="group relative overflow-hidden rounded-xl bg-background transform-gpu transition-all duration-300 hover:shadow-lg">
                 {/* Background */}
                 <Inset clip="padding-box" side="top" pb="current">
