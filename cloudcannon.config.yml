@@ -6,7 +6,7 @@ paths:
 _editables:
   mdx:
     input: mdx
-    allow_blocks: true     # 允许块级组件（如 Callout、Card）
+    allow_blocks: true
     allow_inline: true
 
 _snippets_imports:
