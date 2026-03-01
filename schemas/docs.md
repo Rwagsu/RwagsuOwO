@@ -1,0 +1,240 @@
+---
+name: Fumadocs Document
+file_path: .
+---
+
+## title
+- type: text
+- comment: Title
+- options:
+    required: true
+
+## description
+- type: text
+- comment: Description
+
+## icon
+- type: text
+- comment: Icon (Lucide Icon)
+
+## avatars
+- type: multiselect
+- comment: 作者 (ID)
+- options:
+    values:
+      - rwagsu
+      - drownedowo
+    values_labels:
+      rwagsu: "Rwagsu - 全能 Furry 控"
+      drownedowo: "DrownedOwO - 被绑架来的 QAQ"
+
+## time
+- type: date
+- comment:  创建时间
+
+## tags
+- type: array
+- comment: 标签
+- array_options:
+    type: object
+    fields:
+      text:
+        type: text
+        comment: 标签文字
+      icon:
+        type: text
+        comment: 标签图标 (Iconify)
+      variant:
+        type: select
+        comment: 样式
+        options:
+          values:
+            - outline
+            - ghost
+            - link
+            - default
+            - secondary
+            - destructive
+          default: secondary
+
+## headerImage
+- type: object
+- comment: Header 图片 (Link)
+- fields:
+    alt:
+      type: text
+      comment: Alt 文本
+    src:
+      type: text
+      comment: Link
+
+## type
+- type: select
+- comment: 文档类型
+- options:
+    values:
+      - base
+      - image
+      - video
+      - audio
+      - code
+      - subHero
+      - none
+    default: base
+
+<!-- ============ 条件字段：仅当 type 匹配时显示 ============ -->
+
+## image
+- type: object
+- comment: IMAGE 没写完 XD
+- visible: type == 'image'
+- fields:
+    alt:
+      type: text
+    src:
+      type: image
+      options:
+        width: 1200
+        resize_style: crop
+
+## video
+- type: object
+- comment: VIDEO 没写完 XD
+- visible: type == 'video'
+- fields:
+    alt:
+      type: text
+    src:
+      type: text
+      comment: 视频 URL 或相对路径
+
+## audio
+- type: object
+- comment: AUDIO 没写完 XDD
+- visible: type == 'audio'
+- fields:
+    alt:
+      type: text
+    src:
+      type: file
+      comment: 音频文件路径
+
+## code
+- type: object
+- comment: Code 配置
+- visible: type == 'code'
+- fields:
+    maintenanceLevel:
+      type: select
+      comment: 维护等级
+      options:
+        values:
+          - X0
+          - G1
+          - G2
+          - G3
+          - B4
+          - B5
+          - R6
+          - R7
+          - Q8
+          - Q9
+          - C10
+        default: G3
+    githubInfo:
+      type: object
+      comment: GitHub 信息
+      fields:
+        user:
+          type: text
+          comment: GitHub 所有者
+        repo:
+          type: text
+          comment: 存储库
+        branch:
+          type: text
+          comment: 分支
+          options:
+            default: main
+    icon:
+      type: object
+      comment: Icon (Link)
+      fields:
+        alt:
+          type: text
+          comment: Alt 文本
+        src:
+          type: text
+          comment: Link
+    buttons:
+      type: array
+      comment: 按钮
+      array_options:
+        type: object
+        fields:
+          text:
+            type: text
+            comment: 文本
+          href:
+            type: text
+            comment: Link
+          icon:
+            type: text
+            comment: Icon (Iconify)
+          variant:
+            type: select
+            comment: 样式
+            options:
+              values:
+                - outline
+                - ghost
+                - link
+                - default
+                - secondary
+                - destructive
+
+## hero
+- type: object
+- comment: SubHero 配置
+- visible: type == 'subHero'
+- fields:
+    buttons:
+      type: array
+      comment: 按钮
+      array_options:
+        type: object
+        fields:
+          text:
+            type: text
+            comment: 文本
+          href:
+            type: text
+            comment: Link
+          icon:
+            type: text
+            comment: Icon (Iconify)
+          variant:
+            type: select
+            comment: 样式
+            options:
+              values:
+                - outline
+                - ghost
+                - link
+                - default
+                - secondary
+                - destructive
+    icon:
+      type: object
+      comment: 图标 (Link)
+      fields:
+        alt:
+          type: text
+          comment: Alt 文本
+        src:
+          type: text
+          comment: Link
+
+## body
+- type: markdown
+- comment: MDX CONTENT
