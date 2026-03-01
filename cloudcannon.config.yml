@@ -2,6 +2,15 @@ paths:
   static: public
   uploads: public/images/docsImages
   collections: content
+
+_editables:
+  mdx:
+    input: mdx
+    allow_blocks: true     # 允许块级组件（如 Callout、Card）
+    allow_inline: true
+
+_snippets_imports:
+  mdx: true
   
 collections_config:
   docs_cn_about:
@@ -13,6 +22,9 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
+    schemas:
+      default:
+        path: schemas/default-frontmatter.mdx
 
   docs_cn_blog:
     path: content/docs/cn/blog
@@ -23,6 +35,9 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
+    schemas:
+      default:
+        path: schemas/default-frontmatter.mdx
 
   docs_cn_docs:
     path: content/docs/cn/docs
@@ -33,6 +48,9 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
+    schemas:
+      default:
+        path: schemas/default-frontmatter.mdx
  
   docs_cn_notebook:
     path: content/docs/cn/notebook
@@ -43,6 +61,9 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
+    schemas:
+      default:
+        path: schemas/default-frontmatter.mdx
 
   docs_cn_works:
     path: content/docs/cn/works
@@ -53,6 +74,9 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
+    schemas:
+      default:
+        path: schemas/default-frontmatter.mdx
 
   docs_en_about:
     path: content/docs/en/about
@@ -63,6 +87,9 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
+    schemas:
+      default:
+        path: schemas/default-frontmatter.mdx
 
   docs_en_blog:
     path: content/docs/en/blog
@@ -73,6 +100,9 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
+    schemas:
+      default:
+        path: schemas/default-frontmatter.mdx
 
   docs_en_docs:
     path: content/docs/en/docs
@@ -83,6 +113,9 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
+    schemas:
+      default:
+        path: schemas/default-frontmatter.mdx
 
   docs_en_notebook:
     path: content/docs/en/notebook
@@ -93,6 +126,9 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
+    schemas:
+      default:
+        path: schemas/default-frontmatter.mdx
 
   docs_en_works:
     path: content/docs/en/works
@@ -103,6 +139,9 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
+    schemas:
+      default:
+        path: schemas/default-frontmatter.mdx
 
 _inputs:
   title:
@@ -339,10 +378,6 @@ _structures:
             - default
             - secondary
             - destructive
-
-_editables:
-  mdx:                     # 如果你的文件后缀是 .mdx，用 mdx
-    input: mdx
       
 _snippets:
   # ── Fumadocs 核心 MDX 组件 ──
