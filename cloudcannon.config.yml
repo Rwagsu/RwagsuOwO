@@ -155,18 +155,6 @@ _inputs:
     comment: 标签
     options:
       structures: _structures.tag
-  headerImage:
-    type: object
-    comment: Header 图片 (Link)
-    options:
-      collapsed: true
-      subtype: object
-  "headerImage.alt":
-    type: text
-    comment: Alt 文本
-  "headerImage.src":
-    type: image
-    comment: 图片路径（建议用上传）
   type:
     type: select
     comment: 文档类型
@@ -180,111 +168,139 @@ _inputs:
         - subHero
         - none
       default: base
+
+  # ============== Object 使用 fields: 写法（彻底解决 empty 报错） ==============
+  headerImage:
+    type: object
+    comment: Header 图片 (Link)
+    options:
+      collapsed: true
+      subtype: object
+    fields:
+      alt:
+        type: text
+        comment: Alt 文本
+      src:
+        type: image
+        comment: 图片路径（建议用上传）
+
   image:
     type: object
     comment: IMAGE 配置（仅当 type=image 时填写，其他忽略）
     options:
       collapsed: true
       subtype: object
-  "image.alt":
-    type: text
-  "image.src":
-    type: image
-    options:
-      width: 1200
-      resize_style: crop
+    fields:
+      alt:
+        type: text
+      src:
+        type: image
+        options:
+          width: 1200
+          resize_style: crop
+
   video:
     type: object
     comment: VIDEO 配置（仅当 type=video 时填写，其他忽略）
     options:
       collapsed: true
       subtype: object
-  "video.alt":
-    type: text
-  "video.src":
-    type: text
-    comment: 视频 URL 或相对路径
+    fields:
+      alt:
+        type: text
+      src:
+        type: text
+        comment: 视频 URL 或相对路径
+
   audio:
     type: object
     comment: AUDIO 配置（仅当 type=audio 时填写，其他忽略）
     options:
       collapsed: true
       subtype: object
-  "audio.alt":
-    type: text
-  "audio.src":
-    type: file
-    comment: 音频文件路径
+    fields:
+      alt:
+        type: text
+      src:
+        type: file
+        comment: 音频文件路径
+
   code:
     type: object
     comment: Code 配置（仅当 type=code 时填写，其他忽略）
     options:
       collapsed: true
       subtype: object
-  "code.maintenanceLevel":
-    type: select
-    comment: 维护等级
-    options:
-      values:
-        - X0
-        - G1
-        - G2
-        - G3
-        - B4
-        - B5
-        - R6
-        - R7
-        - Q8
-        - Q9
-        - C10
-      default: G3
-  "code.githubInfo":
-    type: object
-    comment: GitHub 信息
-  "code.githubInfo.user":
-    type: text
-    comment: GitHub 所有者
-  "code.githubInfo.repo":
-    type: text
-    comment: 存储库
-  "code.githubInfo.branch":
-    type: text
-    comment: 分支
-    instance_value: main
-  "code.icon":
-    type: object
-    comment: Icon (Link)
-  "code.icon.alt":
-    type: text
-    comment: Alt 文本
-  "code.icon.src":
-    type: image
-    comment: 图标路径
-  "code.buttons":
-    type: array
-    comment: 按钮
-    options:
-      structures: _structures.button
+    fields:
+      maintenanceLevel:
+        type: select
+        comment: 维护等级
+        options:
+          values:
+            - X0
+            - G1
+            - G2
+            - G3
+            - B4
+            - B5
+            - R6
+            - R7
+            - Q8
+            - Q9
+            - C10
+          default: G3
+      githubInfo:
+        type: object
+        comment: GitHub 信息
+        fields:
+          user:
+            type: text
+            comment: GitHub 所有者
+          repo:
+            type: text
+            comment: 存储库
+          branch:
+            type: text
+            comment: 分支
+            instance_value: main
+      icon:
+        type: object
+        comment: Icon (Link)
+        fields:
+          alt:
+            type: text
+            comment: Alt 文本
+          src:
+            type: image
+            comment: 图标路径
+      buttons:
+        type: array
+        comment: 按钮
+        options:
+          structures: _structures.button
+
   hero:
     type: object
     comment: SubHero 配置（仅当 type=subHero 时填写，其他忽略）
     options:
       collapsed: true
       subtype: object
-  "hero.buttons":
-    type: array
-    comment: 按钮
-    options:
-      structures: _structures.button
-  "hero.icon":
-    type: object
-    comment: 图标 (Link)
-  "hero.icon.alt":
-    type: text
-    comment: Alt 文本
-  "hero.icon.src":
-    type: image
-    comment: 图标路径
+    fields:
+      buttons:
+        type: array
+        comment: 按钮
+        options:
+          structures: _structures.button
+      icon:
+        type: object
+        comment: 图标 (Link)
+        fields:
+          alt:
+            type: text
+            comment: Alt 文本
+          src:
+            type: image
+            comment: 图标路径
 
 markdown:
   engine: commonmark
@@ -384,7 +400,7 @@ _snippets:
       component: div
       props:
         className: "fd-steps [&_h2]:fd-step [&_h3]:fd-step"
-      children: "## 第一步\n\n描述内容...\n\n## 第二步\n\n更多描述..."
+      children: "## 第一步\n\n描述内容..."
   fumadocs_accordion:
     template: mdx_paired_component
     label: Accordion (Fumadocs)
@@ -425,32 +441,32 @@ _snippets:
       children: "```tsx twoslash\n你的代码在这里\n```"
   fumadocs_code_highlight:
     template: mdx_component
-    label: "[!code highlight]"
+    label: [!code highlight]
     icon: highlight
     value:
       component: text
-      children: "// [!code highlight]"
+      children: '// [!code highlight]'
   fumadocs_code_add:
     template: mdx_component
-    label: "[!code ++] 添加行"
+    label: [!code ++] 添加行
     icon: add
     value:
       component: text
-      children: "// [!code ++]"
+      children: '// [!code ++]'
   fumadocs_code_remove:
     template: mdx_component
-    label: "[!code --] 删除行"
+    label: [!code --] 删除行
     icon: remove
     value:
       component: text
-      children: "// [!code --]"
+      children: '// [!code --]'
   fumadocs_code_focus:
     template: mdx_component
-    label: "[!code focus] 聚焦行"
+    label: [!code focus] 聚焦行
     icon: center_focus_strong
     value:
       component: text
-      children: "// [!code focus]"
+      children: '// [!code focus]'
   fumadocs_files:
     template: mdx_paired_component
     label: Files / Folder Tree
@@ -490,18 +506,18 @@ _snippets:
         name: "YourTypeName"
   fumadocs_no_toc:
     template: mdx_component
-    label: No TOC "[!toc]"
+    label: No TOC [!toc]
     icon: toc
     value:
       component: text
-      children: "<[!toc]"
+      children: '<[!toc]'
   fumadocs_slug_anchor:
     template: mdx_component
     label: Custom Slug Anchor [#slug]
     icon: anchor
     value:
       component: text
-      children: "[#slug]"
+      children: '[#slug]'
   fumadocs_include:
     template: mdx_component
     label: Include File
