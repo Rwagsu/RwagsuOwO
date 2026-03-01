@@ -2,107 +2,189 @@ paths:
   static: public
   uploads: public/images/docsImages
   collections: content
-
-timezone: Asia/Shanghai
-
-markdown:
-  engine: commonmark
-  options: {}
-
 collections_config:
-  # CN
   docs_cn_about:
     path: content/docs/cn/about
-    icon: check_in_out
+    name: 关于 (cn)
+    icon: info
     url: /docs/about/[slug]
-    output: true
+    disable_url: false
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
     schemas:
       default:
         path: schemas/docs.md
-
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
   docs_cn_blog:
     path: content/docs/cn/blog
-    icon: docs_add_on
+    name: Blog (cn)
+    icon: videogame_asset
     url: /docs/blog/[slug]
-    output: true
+    disable_url: false
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
     schemas:
       default:
         path: schemas/docs.md
-
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
   docs_cn_docs:
     path: content/docs/cn/docs
-    icon: docs_add_on
+    name: 文档 (cn)
+    icon: docs
     url: /docs/docs/[slug]
-    output: true
+    disable_url: false
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
     schemas:
       default:
         path: schemas/docs.md
-
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
   docs_cn_notebook:
     path: content/docs/cn/notebook
-    icon: dock_to_bottom
+    name: Notebook (cn)
+    icon: book_4
     url: /docs/notebook/[slug]
-    output: true
+    disable_url: false
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
     schemas:
       default:
         path: schemas/docs.md
-
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
   docs_cn_works:
     path: content/docs/cn/works
-    icon: docs_add_on
+    name: Rwagsu 的作品 (cn)
+    icon: blender
     url: /docs/works/[slug]
-    output: true
+    disable_url: false
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
     schemas:
       default:
         path: schemas/docs.md
-
-  # EN
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
   docs_en_about:
     path: content/docs/en/about
-    icon: check_in_out
+    name: About (en)
+    icon: info
     url: /docs/about/[slug]
-    output: true
+    disable_url: false
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
     schemas:
       default:
         path: schemas/docs.md
-
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
   docs_en_blog:
     path: content/docs/en/blog
-    icon: docs_add_on
+    name: Blog (en)
+    icon: videogame_asset
     url: /docs/blog/[slug]
-    output: true
+    disable_url: false
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
     schemas:
       default:
         path: schemas/docs.md
-
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
   docs_en_docs:
     path: content/docs/en/docs
-    icon: docs_add_on
+    name: Docs (en)
+    icon: docs
     url: /docs/docs/[slug]
-    output: true
+    disable_url: false
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
     schemas:
       default:
         path: schemas/docs.md
-
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
   docs_en_notebook:
     path: content/docs/en/notebook
+    name: Notebook (en)
     icon: dock_to_bottom
     url: /docs/notebook/[slug]
-    output: true
+    disable_url: false
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
     schemas:
       default:
         path: schemas/docs.md
-
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
   docs_en_works:
     path: content/docs/en/works
-    icon: home_work
+    name: Rwagsu's Works
+    icon: blender
     url: /docs/works/[slug]
-    output: true
+    disable_url: false
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
     schemas:
       default:
         path: schemas/docs.md
-
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
 _inputs:
   date:
+    comment: 文档发布日期
     instance_value: now
-    comment: "文档发布日期"
+    cascade: true
+timezone: Asia/Shanghai
+markdown:
+  engine: commonmark
+  options:
+    xhtml: false
+    breaks: false
+    linkify: false
+    typographer: false
+    spaced_lists: false
+    sentence_per_line: false
+    gfm: false
+    code_block_fences: '```'
+    escape_snippets_in_code_blocks: false
+    treat_indentation_as_code: false
+    table: false
+    strikethrough: false
+    subscript: false
+    superscript: false
+    heading_ids: false
+    attributes: false
