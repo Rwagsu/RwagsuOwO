@@ -49,37 +49,23 @@ body:
         (带 * 的是必填项.)
 
         目前支持添加:
-        ┌─ *title (标题)
+        *title (标题)
 
-        │
+        *description (描述)
 
-        ├─ *description (描述)
+        cta (默认值: "访问此网站", 访问网站的链接的文本)
 
-        │
+        *最低二选一, 也可以全选:
 
-        ├─ cta (默认值: "访问此网站", 访问网站的链接的文本)
+            iconSrc: 图标, 需要是一个图片链接.
 
-        │
-
-        ├─ *最低二选一, 也可以全选:
-
-        │   ├─ iconSrc: 图标, 需要是一个图片链接.
-
-        │   │
+            iconFallBack: 默认值: 网站的标题的首个字符, 当 iconSrc 未指定或加载失败时显示, 可以是一个字符, 或者来自 [react-icons](https://react-icons.github.io/react-icons/) / [Lucide Icons](https://lucide.dev/) / [Iconify](https://icon-sets.iconify.design/) 的图标名称, 或者一个字符(Emoji 也可以), 甚至是一个图片链接也可以.
         
-        │   └─ iconFallBack: 默认值: 网站的标题的首个字符, 当 iconSrc 未指定或加载失败时显示, 可以是一个字符, 或者来自 [react-icons](https://react-icons.github.io/react-icons/) / [Lucide Icons](https://lucide.dev/) / [Iconify](https://icon-sets.iconify.design/) 的图标名称, 或者一个字符(Emoji 也可以), 甚至是一个图片链接也可以.
+                iconFallbackColor: 默认值: "blue", 前提是必须指定 iconFallBack, 表示 iconFallBack 的颜色. [查看支持的颜色](https://www.radix-ui.com/themes/docs/theme/color), 默认为蓝色.
 
-        │      │
-        
-        │      └─ iconFallbackColor: 默认值: "blue", 前提是必须指定 iconFallBack, 表示 iconFallBack 的颜色. [查看支持的颜色](https://www.radix-ui.com/themes/docs/theme/color), 默认为蓝色.
+        *tag: 标签, 你可以在友情链接页面看到现有的标签, 你也可以添加新的标签, 但当标签的意思与现有标签相似, 标签将被合并.
 
-        │
-
-        ├─ *tag: 标签, 你可以在友情链接页面看到现有的标签, 你也可以添加新的标签, 但当标签的意思与现有标签相似, 标签将被合并.
-        
-        │
-
-        └─ background: 默认值: "#0077FF 纯色背景", 你可以指定一个十六进制色号 (例如 #0077FF), 或者一个图片链接.
+        background: 默认值: "#0077FF 纯色背景", 你可以指定一个十六进制色号 (例如 #0077FF), 或者一个图片链接.
 
       placeholder: 祝你好运 ;)
     validations:
