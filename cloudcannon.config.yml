@@ -425,28 +425,28 @@ _snippets:
       children: "```tsx twoslash\n你的代码在这里\n```"
   fumadocs_code_highlight:
     template: mdx_component
-    label: [!code highlight]
+    label: "[!code highlight]"
     icon: highlight
     value:
       component: text
       children: "// [!code highlight]"
   fumadocs_code_add:
     template: mdx_component
-    label: [!code ++] 添加行
+    label: "[!code ++] 添加行"
     icon: add
     value:
       component: text
       children: "// [!code ++]"
   fumadocs_code_remove:
     template: mdx_component
-    label: [!code --] 删除行
+    label: "[!code --] 删除行"
     icon: remove
     value:
       component: text
       children: "// [!code --]"
   fumadocs_code_focus:
     template: mdx_component
-    label: [!code focus] 聚焦行
+    label: "[!code focus] 聚焦行"
     icon: center_focus_strong
     value:
       component: text
@@ -490,7 +490,7 @@ _snippets:
         name: "YourTypeName"
   fumadocs_no_toc:
     template: mdx_component
-    label: No TOC [!toc]
+    label: No TOC "[!toc]"
     icon: toc
     value:
       component: text
