@@ -61,21 +61,21 @@ export function DonateDialog({ lang, type }: { lang: string, type: "normal" | "i
                         {/* TODO: Donate button */}
                         {/* Bilibili */}
                         <Button disabled>
-                            <Link target="_blank" href="/" className="no-underline hover:no-underline">
+                            <Link rel="noopener noreferrer" target="_blank" href="/" className="no-underline hover:no-underline">
                                 {translations.dialogBiliBili}
                             </Link>
                         </Button>
 
                         {/* AFdian */}
                         <Button asChild>
-                            <Link target="_blank" href="https://afdian.com/a/Rwagsu" className="no-underline hover:no-underline">
+                            <Link target="_blank" rel="noopener noreferrer" href="https://afdian.com/a/Rwagsu" className="no-underline hover:no-underline">
                                 {translations.dialogAFdian}
                             </Link>
                         </Button>
 
                         {/* GitHub Sponsor */}
                         <Button disabled>
-                            <Link target="_blank" href="/" className="no-underline hover:no-underline">
+                            <Link target="_blank" rel="noopener noreferrer" href="/" className="no-underline hover:no-underline">
                                 {translations.dialogGitHubSponsor}
                             </Link>
                         </Button>

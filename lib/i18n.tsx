@@ -88,13 +88,13 @@ export const ExpandTranslation = {
                     <p>
                         Copyright © 2025 - {new Date().getFullYear()}
 
-                        {" "}<Link target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://space.bilibili.com/2123349162  ">
+                        {" "}<Link rel="noopener noreferrer" target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://space.bilibili.com/2123349162  ">
                             Rwagsu
                         </Link>{" "}
 
                         &
 
-                        {" "}<Link target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://space.bilibili.com/527675045  ">
+                        {" "}<Link rel="noopener noreferrer" target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://space.bilibili.com/527675045  ">
                             DrownedOwO
                         </Link>{" "}
 
@@ -103,7 +103,7 @@ export const ExpandTranslation = {
                     <p>
                         在没有特殊说明的情况下, 使用任何原创内容都记得遵守
 
-                        {" "}<Link target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans  ">
+                        {" "}<Link rel="noopener noreferrer" target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans  ">
                             CC BY-NC-SA 4.0
                         </Link>{" "}
 
@@ -112,7 +112,7 @@ export const ExpandTranslation = {
                     <p>
                         网站基于
 
-                        {" "}<Link target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://www.fumadocs.dev/  ">
+                        {" "}<Link rel="noopener noreferrer" target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://www.fumadocs.dev/  ">
                             Fumadocs
                         </Link>{" "}
 
@@ -252,13 +252,13 @@ export const ExpandTranslation = {
                     <p>
                         Copyright © 2025 - {new Date().getFullYear()}
 
-                        {" "}<Link target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://space.bilibili.com/2123349162  ">
+                        {" "}<Link rel="noopener noreferrer" target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://space.bilibili.com/2123349162  ">
                             Rwagsu
                         </Link>{" "}
 
                         &
 
-                        {" "}<Link target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://space.bilibili.com/527675045  ">
+                        {" "}<Link rel="noopener noreferrer" target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://space.bilibili.com/527675045  ">
                             DrownedOwO
                         </Link>{" "}
 
@@ -267,7 +267,7 @@ export const ExpandTranslation = {
                     <p>
                         Unless otherwise specified, please remember to comply with
 
-                        {" "}<Link target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans  ">
+                        {" "}<Link rel="noopener noreferrer" target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans  ">
                             CC BY-NC-SA 4.0
                         </Link>{" "}
 
@@ -276,7 +276,7 @@ export const ExpandTranslation = {
                     <p>
                         This website is built with
 
-                        {" "}<Link target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://www.fumadocs.dev/  ">
+                        {" "}<Link rel="noopener noreferrer" target="_blank" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="https://www.fumadocs.dev/  ">
                             Fumadocs
                         </Link>{" "}
 

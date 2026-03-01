@@ -1,5 +1,6 @@
 import { Flex, Avatar, Text, Card, Box } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
+import { Link } from "fumadocs-core/framework";
 
 export default function AvatarButton({ name, description, iconLink, link }: { name: string, description: string, iconLink: string, link: string }) {
     const iconFallBack: string = name.charAt(0);
@@ -7,7 +8,7 @@ export default function AvatarButton({ name, description, iconLink, link }: { na
     return (
         <Box maxWidth="240px">
             <Card asChild variant="ghost">
-                <a href={link} target="_blank" rel="noopener noreferrer">
+                <Link href={link} target={link.startsWith('http') ? "_blank" : "_self"} rel={link.startsWith('http') ? "noopener noreferrer" : undefined} className="no-underline hover:no-underline">
                     <Flex align="center" justify="center" gap="2" width="fit-content">
                         <Avatar
                             radius="full"
@@ -19,7 +20,7 @@ export default function AvatarButton({ name, description, iconLink, link }: { na
                             <Text className="leading-none" size="1">{description}</Text>
                         </Flex>
                     </Flex>
-                </a>
+                </Link>
             </Card>
         </Box>
     );

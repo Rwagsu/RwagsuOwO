@@ -212,7 +212,7 @@ export default function CodePage({ title, description, tags, avatars, time, read
                     {buttons && buttons.map((button, index) => {
                         return (
                             <Button size="lg" key={index} variant={button.variant} asChild>
-                                <Link className="no-underline hover:no-underline" href={button.href}>
+                                <Link target={button.href.startsWith('http') ? "_blank" : "_self"} rel={button.href.startsWith('http') ? "noopener noreferrer" : undefined} className="no-underline hover:no-underline" href={button.href}>
                                     {button.icon && <Icon icon={button.icon as any} className="mr-1" />}{button.text}
                                 </Link>
                             </Button>

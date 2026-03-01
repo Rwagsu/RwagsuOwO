@@ -73,13 +73,14 @@ export default function FriendlyLinksPage({ title, description, links, tags, sub
                 <Flex className="mt-12 flex-col sm:flex-row" gap="4" justify="center">
                     {/* Submit Link button */}
                     <RainbowButton variant="outline" asChild>
-                        <Link className="no-underline hover:no-underline" href={submitLink}>
+                        <Link target={submitLink.startsWith('http') ? "_blank" : "_self"} rel={submitLink.startsWith('http') ? "noopener noreferrer" : undefined} className="no-underline hover:no-underline" href={submitLink}>
                             {translations.submitLinkText}
                         </Link>
                     </RainbowButton>
 
+                    {/* Don't click button */}
                     <Button variant="destructive" size="lg" asChild>
-                        <Link className="no-underline hover:no-underline" href={goodLink}>
+                        <Link target={goodLink.startsWith('http') ? "_blank" : "_self"} rel={goodLink.startsWith('http') ? "noopener noreferrer" : undefined} className="no-underline hover:no-underline" href={goodLink}>
                             {translations.dontClickText}
                         </Link>
                     </Button>

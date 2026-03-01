@@ -52,7 +52,7 @@ export default function LinkCard({ title, description, cta, href, iconSrc, iconF
                         </p>
 
                         {/* Link */}
-                        <Link href={href} className="font-semibold text-xs mt-4 flex flex-row items-center hover:underline position: absolute">
+                        <Link target={href.startsWith('http') ? "_blank" : "_self"} rel={href.startsWith('http') ? "noopener noreferrer" : undefined} href={href} className="font-semibold text-xs mt-4 flex flex-row items-center hover:underline position: absolute">
                             {cta}
                             <ArrowRightIcon className="ms-2 h-4 w-4 rtl:rotate-180 transform-gpu transition-transform duration-300 group-hover:translate-x-1" />
                         </Link>
@@ -70,7 +70,7 @@ function CardBackground({type, src, alt}: {
 }) {
     if (type === "solid") {
         return (
-            <div  className="w-full h-full" style={{ backgroundColor: src }} />
+            <div className="w-full h-full" style={{ backgroundColor: src }} />
         );
     } 
     else if (type === "image") {

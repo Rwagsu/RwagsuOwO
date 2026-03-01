@@ -26,7 +26,7 @@ interface BlogFolder {
 interface ExpandButton {
     icon: ReactNode | undefined,
     title: string,
-    href: string,
+    href: string
 }
 
 export default function BlogMainPage({ title, description, blogFolders, blogPathBase, buttons, lang, children }: {
@@ -78,7 +78,7 @@ export default function BlogMainPage({ title, description, blogFolders, blogPath
                     {buttons && buttons.map((button, index) => {
                         return (
                             <RainbowButton key={index} variant="outline" asChild>
-                                <Link className="no-underline hover:no-underline" href={button.href}>
+                                <Link target={button.href.startsWith('http') ? "_blank" : "_self"} rel={button.href.startsWith('http') ? "noopener noreferrer" : undefined} className="no-underline hover:no-underline" href={button.href}>
                                     {button.icon ? button.icon : null}{button.title}
                                 </Link>
                             </RainbowButton>

@@ -51,7 +51,7 @@ export default async function HomePage(props: {
                             </RandomPageButton>
 
                             <Button size="lg" asChild>
-                                <Link href="https://space.bilibili.com/2123349162" className="no-underline hover:no-underline">
+                                <Link rel="noopener noreferrer" target="_blank" href="https://space.bilibili.com/2123349162" className="no-underline hover:no-underline">
                                     <FaBilibili />
                                     {translations.MainPage.bilibiliButtonText}
                                 </Link>

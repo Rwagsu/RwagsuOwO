@@ -19,7 +19,7 @@ import { useRouter } from "next/navigation";
 interface ExpandButton {
     icon: ReactNode | undefined,
     title: string,
-    href: string,
+    href: string
 }
 
 export default function CodeMainPage({ title, description, folderPath, buttons, lang, maintenanceLevel, children }: {
@@ -78,7 +78,7 @@ export default function CodeMainPage({ title, description, folderPath, buttons, 
                     {buttons && buttons.map((button, index) => {
                         return (
                             <Button size="lg" key={index} asChild>
-                                <Link className="no-underline hover:no-underline" href={button.href}>
+                                <Link target={button.href.startsWith('http') ? "_blank" : "_self"} rel={button.href.startsWith('http') ? "noopener noreferrer" : undefined} className="no-underline hover:no-underline" href={button.href}>
                                     {button.icon ? button.icon : null}{button.title}
                                 </Link>
                             </Button>
