@@ -1,0 +1,41 @@
+paths:
+  static: ''
+  uploads: uploads
+timezone: Asia/Shanghai
+markdown:
+  engine: commonmark
+  options: {}
+collections_config:
+  pages:
+    path: ''
+    icon: wysiwyg
+  docs_cn_about:
+    path: content/docs/cn/about
+    icon: check_in_out
+  docs_cn_blog:
+    path: content/docs/cn/blog
+    icon: docs_add_on
+  docs_cn_docs:
+    path: content/docs/cn/docs
+    icon: docs_add_on
+  docs_cn_notebook:
+    path: content/docs/cn/notebook
+    icon: dock_to_bottom
+  docs_cn_works:
+    path: content/docs/cn/works
+    icon: docs_add_on
+  docs_en_about:
+    path: content/docs/en/about
+    icon: check_in_out
+  docs_en_blog:
+    path: content/docs/en/blog
+    icon: docs_add_on
+  docs_en_docs:
+    path: content/docs/en/docs
+    icon: docs_add_on
+  docs_en_notebook:
+    path: content/docs/en/notebook
+    icon: dock_to_bottom
+  docs_en_works:
+    path: content/docs/en/works
+    icon: home_work
