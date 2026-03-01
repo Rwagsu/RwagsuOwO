@@ -186,13 +186,12 @@ _inputs:
 
   image:
     type: object
-    comment: IMAGE 配置（仅当 type=image 时填写，其他忽略）
+    comment: IMAGE 配置...
     options:
       collapsed: true
       subtype: object
     fields:
-      alt:
-        type: text
+      alt: { type: text }
       src:
         type: image
         options:
@@ -201,106 +200,69 @@ _inputs:
 
   video:
     type: object
-    comment: VIDEO 配置（仅当 type=video 时填写，其他忽略）
+    ...
     options:
       collapsed: true
       subtype: object
-    fields:
-      alt:
-        type: text
-      src:
-        type: text
-        comment: 视频 URL 或相对路径
+    fields: ...
 
   audio:
-    type: object
-    comment: AUDIO 配置（仅当 type=audio 时填写，其他忽略）
-    options:
-      collapsed: true
-      subtype: object
-    fields:
-      alt:
-        type: text
-      src:
-        type: file
-        comment: 音频文件路径
+    ...
 
   code:
     type: object
-    comment: Code 配置（仅当 type=code 时填写，其他忽略）
+    comment: Code 配置...
     options:
       collapsed: true
       subtype: object
     fields:
-      maintenanceLevel:
-        type: select
-        comment: 维护等级
-        options:
-          values:
-            - X0
-            - G1
-            - G2
-            - G3
-            - B4
-            - B5
-            - R6
-            - R7
-            - Q8
-            - Q9
-            - C10
-          default: G3
+      maintenanceLevel: ...
       githubInfo:
         type: object
         comment: GitHub 信息
+        options:
+          collapsed: true
+          subtype: object
         fields:
-          user:
-            type: text
-            comment: GitHub 所有者
-          repo:
-            type: text
-            comment: 存储库
+          user: { type: text }
+          repo: { type: text }
           branch:
             type: text
-            comment: 分支
             instance_value: main
       icon:
         type: object
         comment: Icon (Link)
+        options:
+          collapsed: true
+          subtype: object
         fields:
-          alt:
-            type: text
-            comment: Alt 文本
-          src:
-            type: image
-            comment: 图标路径
+          alt: { type: text }
+          src: { type: image }
       buttons:
         type: array
-        comment: 按钮
         options:
           structures: _structures.button
 
   hero:
     type: object
-    comment: SubHero 配置（仅当 type=subHero 时填写，其他忽略）
+    comment: SubHero 配置...
     options:
       collapsed: true
       subtype: object
     fields:
       buttons:
         type: array
-        comment: 按钮
         options:
           structures: _structures.button
       icon:
         type: object
         comment: 图标 (Link)
+        options:
+          collapsed: true
+          subtype: object
         fields:
-          alt:
-            type: text
-            comment: Alt 文本
-          src:
-            type: image
-            comment: 图标路径
+          alt: { type: text }
+          src: { type: image }
 
 markdown:
   engine: commonmark
