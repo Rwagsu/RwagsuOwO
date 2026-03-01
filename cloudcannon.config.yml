@@ -187,7 +187,7 @@ _inputs:
         type: text
         comment: Alt 文本
       src:
-        type: image
+        type: image   # 改用 image 类型，更方便选图
         comment: 图片路径（建议用上传）
 
   type:
@@ -287,7 +287,7 @@ _inputs:
             type: text
             comment: Alt 文本
           src:
-            type: image
+            type: image   # 改成 image 类型
             comment: 图标路径
       buttons:
         type: array
@@ -380,7 +380,7 @@ _structures:
             - destructive
       
 _snippets:
-
+  # ── Fumadocs 核心 MDX 组件 ──
 
   fumadocs_card:
     template: mdx_paired_component
@@ -389,10 +389,10 @@ _snippets:
     value:
       component: Card
       props:
-        icon: ""
+        icon: ""          # 可以是 <Icon /> 或字符串
         href: ""
         title: ""
-      children: ""
+      children: ""        # 内容占位
 
   fumadocs_callout:
     template: mdx_paired_component
@@ -402,7 +402,7 @@ _snippets:
       component: Callout
       props:
         title: ""
-        type: info
+        type: info        # info | warning | error | success | idea
       children: ""
 
   fumadocs_steps:
@@ -421,10 +421,10 @@ _snippets:
     value:
       component: Accordion
       props:
-        type: single
+        type: single       # single | multiple
         collapsible: true
         defaultValue: ""
-      children: ""
+      children: ""         # 里面放 <AccordionItem value="one">...</AccordionItem>
 
   fumadocs_tabs:
     template: markdown
@@ -439,6 +439,7 @@ _snippets:
       
       ```
 
+  # ── 代码块增强（Fumadocs 特殊语法） ──
 
   fumadocs_code_linenumbers:
     template: markdown
@@ -454,27 +455,29 @@ _snippets:
 
   fumadocs_code_highlight:
     template: markdown
-    label: [!code highlight]
+    label: "[!code highlight]"
     icon: highlight
     value: "// [!code highlight]"
 
   fumadocs_code_add:
     template: markdown
-    label: [!code ++] 添加行
+    label: "[!code ++] 添加行"
     icon: add
     value: "// [!code ++]"
 
   fumadocs_code_remove:
     template: markdown
-    label: [!code --] 删除行
+    label: "[!code --] 删除行"
     icon: remove
     value: "// [!code --]"
 
   fumadocs_code_focus:
     template: markdown
-    label: [!code focus] 聚焦行
+    label: "[!code focus] 聚焦行"
     icon: center_focus_strong
     value: "// [!code focus]"
+
+  # ── 其他 Fumadocs 实用组件 ──
 
   fumadocs_files:
     template: mdx_paired_component
@@ -497,6 +500,7 @@ _snippets:
       props:
         owner: "fuma-nama"
         repo: "fumadocs"
+        # token: process.env.GITHUB_TOKEN  # 可选，注释掉或留空
 
   fumadocs_type_table:
     template: mdx_component
@@ -505,6 +509,7 @@ _snippets:
     value:
       component: TypeTable
       props:
+        # 通常 children 是表格内容，或通过其他方式传入类型
       children: ""
 
   fumadocs_auto_type_table:
@@ -517,10 +522,11 @@ _snippets:
         path: "./path/to/your-file.ts"
         name: "YourTypeName"
 
+  # ── 其他你提到的简单标签 ──
 
   fumadocs_no_toc:
     template: markdown
-    label: No TOC [!toc]
+    label: "No TOC [!toc]"
     icon: toc
     value: "<[!toc]"
 
@@ -537,4 +543,4 @@ _snippets:
     value:
       component: include
       props: {}
-      children: "$1"
+      children: "$1"   # 文件路径
