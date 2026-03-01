@@ -207,7 +207,12 @@ _inputs:
     fields: ...
 
   audio:
+    type: object
     ...
+    options:
+      collapsed: true
+      subtype: object
+    fields: ...
 
   code:
     type: object
