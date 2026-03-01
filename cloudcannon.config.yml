@@ -170,6 +170,7 @@ _inputs:
       default: base
 
   # ============== Object 使用 fields: 写法（彻底解决 empty 报错） ==============
+
   headerImage:
     type: object
     comment: Header 图片 (Link)
@@ -186,7 +187,7 @@ _inputs:
 
   image:
     type: object
-    comment: IMAGE 配置...
+    comment: Image 配置...
     options:
       collapsed: true
       subtype: object
@@ -200,19 +201,31 @@ _inputs:
 
   video:
     type: object
-    ...
+    comment: Video 配置...
     options:
       collapsed: true
       subtype: object
-    fields: ...
+    fields:
+      alt: { type: text }
+      src:
+        type: image
+        options:
+          width: 1200
+          resize_style: crop
 
   audio:
     type: object
-    ...
+    comment: Audio 配置...
     options:
       collapsed: true
       subtype: object
-    fields: ...
+    fields:
+      alt: { type: text }
+      src:
+        type: image
+        options:
+          width: 1200
+          resize_style: crop
 
   code:
     type: object
