@@ -68,7 +68,7 @@ export function DonateDialog({ lang, type }: { lang: string, type: "normal" | "i
 
                         {/* AFdian */}
                         <Button asChild>
-                            <Link target="_blank" rel="noopener noreferrer" href="https://afdian.com/a/Rwagsu" className="no-underline hover:no-underline">
+                            <Link target="_blank" rel="noopener noreferrer" href="https://ifdian.net/a/Rwagsu" className="no-underline hover:no-underline">
                                 {translations.dialogAFdian}
                             </Link>
                         </Button>
