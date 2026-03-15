@@ -1,0 +1,211 @@
+---
+title: Rep02 - Mac 打游戏 / 疑难杂症, 网站框架和软件
+description: Rwagsu 买了个 Mac 打游戏.
+
+time: 2026-03-15
+avatars: ["rwagsu"]
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { FaApple } from "react-icons/fa";
+import LinkIcon from '@/components/ui/extension/link-icon';
+import { SiShadcnui } from "react-icons/si";
+
+Mac 打 Changed / Minecraft / Adofai 装 Mod / 302 (为什么这么多东西啊啊啊啊啊啊)
+
+那个...... 上个月在忙着迁移 Fumadocs, 然后电脑卡的要死, 就耽搁了 QAQ
+
+## 一些软件 / 工具
+
+### Creator Studio
+
+不多说了, 每月少喝俩瑞幸, 换来极致的体验, 值!
+
+包含以下软件:
+
+- Final Cut Pro
+- Apple Motion
+- Compressor
+- Logic Pro
+- Pages
+- Numbers
+- Keynote
+- Freeform (无边记)
+
+<Callout title="iWork 停更?" type="info">
+    把它想成 Bilibili UWP 和 Bilibili 客户端或者 Changed 和 Changed Special 的关系会好理解一些()
+
+    iWork 确实停更了, 随之而来的是 Creator Studio 包含的三件套, 基础功能免费, 你可以通过订阅 Creator Studio 来获得 AI 功能.
+
+    但是 Freeform 的话, Apple 好像还没想好功能, 所以 Freeform 目前还是原来那个版本()
+</Callout>
+
+<Callout title="新图标? 新软件? ProApp 教育套装?" type="info">
+    啊, 买断版没有新图标, Pixelmator Pro 也没有 Liquid Glass, 可以死心 / 放心了()
+
+    而且, Pro App 教育套装也下架了 (😭), 不过目前仍然能通过教育优惠购买 Mac 时在下单页面选购 Pro App 教育套装. ;)
+</Callout>
+
+<Card 
+    href="https://www.apple.com.cn/apple-creator-studio/" 
+    icon={ <FaApple /> } 
+    title="Creator Studio">
+    **全员创作高手，全随你调遣。**
+
+    **各类 app 一应俱全，满足各种创作所需。** 你可以通过 Final Cut Pro 以视频演绎精彩故事，借助 Pixelmator Pro 重构惊艳图像，或用 Logic Pro 制作动人音乐。Keynote 讲演、Pages 文稿、Numbers 表格和无边记 app 中的高级内容，助你生产力飙升1。一系列智能功能加持，让你做事顺畅如飞2。你还能通过家人共享功能，与最多五位亲友共享你的订阅服务。
+</Card>
+
+### shadcn-docs-nuxt
+
+虽然搬出去了, 但是依然是我非常喜欢的文档网站框架qwq
+
+✅ shadcn-docs-nuxt 拥有和 shadcn/ui 官方网站同款的 UI, 并且附带非常丰富的控件
+
+✅ 并且使用 MDC, 真的是个非常简洁的 Markdown 扩展语法()
+
+✅ 最主要的是, 它有超多超多的组件, 还有一大堆的预设 Frontmatter, 真的很不错 (o´▽`o)
+
+不过嘛......
+
+❌ shadcn-docs-nuxt 要求 **生成静态网站时** 每个页面都必须有对应的本地化页面文件, 也就是说你在 cn 写了一个文档, en 就必须有, 否则会在 `pnpm run generate` 阶段直接报错且不可忽略, 强制忽略能让整个网站都要崩掉 😭
+
+❌ 而且 shadcn-docs-nuxt 的文档部署在 Vercel 上, 用的 Vercel 的 `vercel.app` 域名, 差不多是...... 中国红()
+
+❌ 最主要的是, Nuxt 的字体会主动访问 Google 以获取字体和图标, 虽然你把这两个关掉, 但还会引发一个证书或超时问题(node.js 无法验证代理的证书导致, 如果你没代理就是超时), 目前还没有什么办法()
+
+❌ 因为一部分超时问题(大部分还是 Nuxt 自己的性能), 这会导致 shadcn-docs-nuxt 的构建速度是真的慢, 比 🐢 还慢 :(
+
+❌ 而且, 这么一个 MDC, 它不支持 WebStorm 😇
+
+总之, shadcn-docs-nuxt 适合不惧网络问题, 喜欢 shadcn/ui 又喜欢网站的预设组件的人, 且他还不用 WebStorm. ;)
+
+<Card 
+    href="https://github.com/ZTL-UwU/shadcn-docs-nuxt" 
+    icon={ <SiShadcnui /> } 
+    title="shadcn-docs-nuxt">
+    Effortless and beautiful docs template built with Nuxt Content & shadcn-vue.
+
+    (没放官网是因为中国红)
+</Card>
+
+### Fumadocs
+
+文档的王, 自定义的神.
+
+由地铁站级别的绿点子的作者制作.
+
+✅ Fumadocs 的官网至少能访问, 而且能随意添加任何东西, 虽然自带组件没 shadcn-docs-nuxt 多, 但是也挡不住它极致的自定义. ()
+
+✅ Fumadocs 基本上哪里都能自定义, 随便加俩 shadcn/ui 组件, 然后再来一 Taliwind CSS, 完事 CMS 随便用, Next.js 速度和生态随便造, React 随便玩()
+
+✅ 还有~~原神~~原生的语言 FallBack! 也就是说你只要写一个语言, 其它语言也不会显示 404, 完事你还能加个提示说明不支持该语言, 和 RadixUI 的布局神助力, 什么东西不能造()
+
+✅ 以及非常容易的自定义, 什么都露出来, 想要自己加, 完全没有别的文档框架那样封闭, 自定义容易程度前所未有的流畅 (´• ω •`) ♡
+
+当然, 它的缺点嘛......
+
+❌ 如果想要使用 Next Image / ImageZoom, 必须要带高度 / 宽度属性, 否则自己定. (什么烂设计啊 (*`0´)θ☆(メ°皿°)ﾉ )
+
+❌ 过于极致的自定义导致我把俩月的时间全放在网站上 ┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻
+
+❌ 预设组件不如 shadcn-docs-nuxt, 想要? 可以啊, 自己写 ψ(｀∇´)ψ
+
+❌ 更新过于勤快导致你以前写的代码可能一个没注意库 👖 更新了就直接报错了(已经部署的没事)
+
+❌ 我现在还没搞懂如何在 Next.js Static 上搞多语言还能处理根目录问题的QAQ
+
+总之, 如果你想要极致的自定义, 且能接受一堆时间全在自定义上 (累死我了QAQ), 你非常适合这个框架()
+
+或者说, 你直接套我的网站, 也可以啊XD
+
+<Card 
+    href="https://fumadocs.dev" 
+    icon={ <LinkIcon link="https://www.fumadocs.dev/icon.png" alt="Fumadocs Icon" size={24}/> } 
+    title="Fumadocs">
+    Build excellent documentations, your style.
+
+    (中国不红, 英语渣要红)
+</Card>
+
+## 问题帮助
+
+### CrossOver 游玩 Changed 不显示
+
+这游戏的 RPGMaker 老得都在 CrossOver 过期了, 肯定不行了()
+
+不过还有个邪门的解决方法:
+
+打开 Changed 目录下的 `Game.ini`, 修改这些内容:
+
+```ini
+[Game]
+Library=RGSS202E.dll
+Scripts=Data\Scripts.rvdata
+Title=Changed
+RTP=
+[Fullscreen++]
+Fullscreen=0
+FullscreenRatio=0
+WindowedRatio=1 # [!code focus]
+```
+
+<Callout type="info">
+    对了, Changed Special 不受影响, 还没过期()
+</Callout>
+
+### Whisky 死活无法启动 Steam
+
+我也不知道 QAQ
+
+你有解决方案吗qwq
+
+### PlayCover 游玩 Minecraft Bedrock
+
+<Steps>
+    <Step>
+        从 PlayCover 下载 **Nightly 版本** 的 PlayCover
+
+        <Callout title="NIGHTLY!" type="warn">
+            不听话就等着吃报错吧 ( ` ω ´ )
+
+            还有本文不管什么附加属性问题或 App 信任问题, 如果遇到拒绝安装记得自己 Bing()
+        </Callout>
+    </Step>
+
+    <Step>
+        在 [MineBBS 版本库](https://mc.minebbs.com/version/) 下载一个 Minecraft 的 `.ipa` 文件.
+
+        <Callout type="warn">
+            可别下成 Android (`.apk`) 的啊 😰
+        </Callout>
+    </Step>
+
+    <Step>
+        将 `.ipa` 文件拖入到 PlayCover 中, 然后双击运行.
+
+        <Callout type="info">
+            你憋直接打开, 装不上的()
+        </Callout>
+    </Step>
+</Steps>
+
+<Callout type="warn">
+    如果发现点击打开后没有任何反应 (出现报错不算, 必须是没有任何反应), 记得在活动监视器查看有没有一个 Minecraft 的进程.
+    如果有, 终止掉它, 然后应该就能启动了. ;)
+</Callout>
+
+<Callout type="idea">
+    目前无论我怎么登录都会因为溺尸报错无法登录, 仍无解决方案, 如果你有, 记得评论qwq
+</Callout>
+
+### Steamcommunity 302 不会用
+
+你只需要把程序放到一个稳妥的位置 (我习惯放到 Users/\<user\>/BashApps 里), 然后运行脚本, 勾选好需要的东西后, 在设置选择开机启动服务 (无 UI), 然后要授权的授权, 重启之后就不用再管了()
+
+或者, 你可以使用我的[快捷指令(没一点技术含量)](https://www.icloud.com/shortcuts/359fe680b22043038b2318a2b6567ca2), 这样就可以优雅♂的启动应用 UI, 不过我的快捷指令说用的绝对路径(就是 Users/\<user\>/BashApps), 别忘了改用户名()
+
+<Callout type="warn">
+    如果你在运行 cli 的情况下运行了应用 UI, 那么在你关掉 UI 后, cli 貌似也会跟着关掉, 这点需要注意(￣▽￣)
+
+    一定要放稳妥, 开机启动设置好之后这个文件夹就不能动了, 否则代理直接消失, 又要重来一遍. (QAQ)
+</Callout>

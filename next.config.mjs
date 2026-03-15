@@ -21,6 +21,7 @@ const config = {
             { protocol: 'https', hostname: 'cdn.jsdelivr.net' },
             { protocol: 'https', hostname: 'i0.hdslb.com' },
             { protocol: 'https', hostname: 'blog.xiaofeng-furry.top' },
+            { protocol: 'https', hostname: 'www.fumadocs.dev' }
         ],
     },
     reactStrictMode: true,
