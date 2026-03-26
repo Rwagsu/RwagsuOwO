@@ -1,0 +1,48 @@
+---
+title: Logi 大战(冲突) CSP
+description: 我谢谢你啊
+
+time: 2026-03-25
+avatars: ["rwagsu"]
+---
+
+如果你的 Clip Studio Paint 启动就崩溃, 且在 Clip Studio 点啥就发出杂音然后崩溃, 而且你还装了 **Logi Options+**, 那么你可以试试这个()
+
+<Callout type="info">
+    谁能想到一个鼠标驱动能和绘画软件打起来了啊 ◡ ヽ(`Д´)ﾉ ┻━┻
+</Callout>
+
+<Callout type="warn">
+    只在 Mac 上测试过qwq
+</Callout>
+
+## 怎么回事😭
+
+简单来说就是 Clip Studio Paint / Clip Studio 貌似和 Logi Options+ 的 Smart Action 冲突, 导致 Clip Studio Paint 当场发癫把自己给点了()
+
+## 怎么崩的😰
+
+当你给电脑开机 (休眠不算) 时, Clip Studio Paint 和 Clip Studio 都正常运行, 直到你点击了设置了 Logi Options+ 的 Smart Action 的鼠标按键.
+
+此时, Clip Studio Paint 和 Clip Studio 就会和 Logi Options+ 打架, 甚至不用重启 Clip Studio Paint 就能崩溃, 这种情况将一直持续到电脑重启.
+
+合理怀疑在点击带有 Smart Action 的鼠标按键时, Logi Options+ 会初始化什么东西 (比如开了个新线程, 或者调了个什么重启还原的东西), 初始化的这个东西正好是 Clip Studio Paint 要用的, 或者正好连锁反应到  Clip Studio Paint, 然后导致的崩溃()
+
+## 如何解决?🧐
+
+别点 Smart Action 那个键就行, 就算点了重启电脑也行()
+
+## 修复了吗?
+
+已经把问题报告给了两大公司了()
+
+- CELSYS 表示会记录此复现步骤, 以后有类似反馈时拿出来用
+- Logitech 表示已经把问题反馈给了相关部门.
+
+<Callout type="warn">
+    在 2026 年 3 月 16 日, Logitech 推送了一个更新! 🥳🥳🥳
+
+    但显然, 谁家好消息是用 warning 标注的, 这个更新压根就没修 Clip Studio Paint 的冲突问题 (￣▽￣)
+
+    你还是赶快重启吧()
+</Callout>
