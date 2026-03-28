@@ -30,6 +30,9 @@ export default function NotFound() {
     const { resolvedTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
 
+    // 到底是谁不看提示啊啊啊
+    const smppCount = process.env.NEXT_PUBLIC_SMPP_COUNT;
+
     useEffect(() => {
         setMounted(true);
     }, []);
@@ -58,13 +61,6 @@ export default function NotFound() {
     return (
         <Theme accentColor="blue" appearance={currentTheme} scaling="100%">
             <div className="flex flex-col items-center justify-center min-h-screen gap-4 ml-6 mr-6">
-                <Image width={3508} height={2481} src="/images/NoFile.png" alt={translations.tempImageLicense} className="rounded-xl w-full max-w-[600px] h-auto" />
-                <p className="text-muted-foreground mb-12">
-                    {translations.tempImageLicense}
-                </p>
-
-                <h1 className="text-6xl font-bold text-primary">ERROR 404 (ﾉД`) </h1>
-                <h2 className="text-2xl font-semibold mt-4">{translations.description}</h2>
                 <Alert className="border-amber-200 bg-amber-50 text-amber-900 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-50 max-w-3xl mt-6">
                     <InfoIcon />
                     <AlertTitle>{translations.tempLinkTipTitle}</AlertTitle>
@@ -77,8 +73,17 @@ export default function NotFound() {
                         {/* Delete tip */}
                         <h2 className="text-1xl font-semibold mt-4">{translations.deleteTip}</h2>
                         <h2 className="text-1xl font-semibold">{translations.tempTip}</h2>
+                        <h2 className="text-1xl mt-4">现在总能看见了吧, 再看不见我要闹了 ♪(^∇^*💢)</h2>
+                        <h2 className="text-1xl">现在都有 {smppCount} 人不看提示了啊😭</h2>
                     </AlertDescription>
                 </Alert>
+                <Image width={3508} height={2481} src="/images/NoFile.png" alt={translations.tempImageLicense} className="rounded-xl w-full max-w-[600px] h-auto" />
+                <p className="text-muted-foreground mb-12">
+                    {translations.tempImageLicense}
+                </p>
+
+                <h1 className="text-6xl font-bold text-primary">ERROR 404 (ﾉД`) </h1>
+                <h2 className="text-2xl font-semibold mt-4">{translations.description}</h2>
             </div>
         </Theme>
     );

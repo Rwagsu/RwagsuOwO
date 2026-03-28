@@ -25,3 +25,7 @@ yarn-error.log*
 .vercel
 next-env.d.ts
 .env
+
+# ide
+.idea
+.vscode
