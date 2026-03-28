@@ -77,13 +77,13 @@ export default function NotFound() {
                         <h2 className="text-1xl">现在都有 {smppCount} 人不看提示了啊😭</h2>
                     </AlertDescription>
                 </Alert>
-                <Image width={3508} height={2481} src="/images/NoFile.png" alt={translations.tempImageLicense} className="rounded-xl w-full max-w-[600px] h-auto" />
+                <Image width={3508} height={2481} src="/images/NoFile.png" alt={translations.tempImageLicense} className="rounded-xl w-full max-w-150 h-auto" />
                 <p className="text-muted-foreground mb-12">
                     {translations.tempImageLicense}
                 </p>
 
                 <h1 className="text-6xl font-bold text-primary">ERROR 404 (ﾉД`) </h1>
-                <h2 className="text-2xl font-semibold mt-4">{translations.description}</h2>
+                <h2 className="text-2xl font-semibold mt-4 mb-12">{translations.description}</h2>
             </div>
         </Theme>
     );
