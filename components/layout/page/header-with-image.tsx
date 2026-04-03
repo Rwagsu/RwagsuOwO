@@ -9,6 +9,7 @@ import { Flex } from '@radix-ui/themes';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Icon } from '@iconify/react';
+import PageActions from "@/components/layout/page-actions";
 
 // Header components with different image options
 export interface HeaderWithImageProps {
@@ -81,23 +82,7 @@ export function HeaderWithImage({
             {avatars && <AvatarsView avatarIds={avatars} className="mb-2 pl-3" />}
 
             {/* Page Infos and Actions - Responsive layout */}
-            <Flex direction={{ initial: 'column', md: 'row' }} justify={{ initial: 'start', md: 'between' }} gap={{ initial: '3', md: '4' }} align={{ initial: 'start', md: 'center' }} width="100%" className="border-b pb-4 pt-2">
-                {/* Page Infos - Left side on desktop, top on mobile */}
-                <Flex direction="row" gap="8" align="center" className="pb-0 pl-1">
-                    {time && <LastUpdate time={time} lang={lang} />}
-                    {readingTime && <ReadingTime stats={readingTime} lang={lang} />}
-                </Flex>
-
-                {/* Page Actions - Right side on desktop, left on mobile */}
-                <Flex direction="row" gap="2" align="center" width={{ initial: '100%', md: 'auto' }}>
-                    <LLMCopyButton markdownUrl={`${url}.mdx`} />
-                    <ViewOptions
-                        markdownUrl={`${url}.mdx`}
-                        // update it to match your repo
-                        githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${lang}/${url.replace('/docs/', '')}`}
-                    />
-                </Flex>
-            </Flex>
+            <PageActions time={time} readingTime={readingTime} url={url} lang={lang} gitConfig={gitConfig} />
         </>
     );
 }

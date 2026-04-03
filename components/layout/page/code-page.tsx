@@ -21,6 +21,7 @@ import { toast } from "sonner";
 import { ExpandTranslation } from "@/lib/i18n";
 import { useEffect, useState } from "react";
 import { Spinner } from "@/components/ui/spinner";
+import PageActions from "@/components/layout/page-actions";
 
 interface RepositoryInfo {
     forks: number;
@@ -271,23 +272,7 @@ export default function CodePage({ title, description, tags, avatars, time, read
                 )}
 
                 {/* Page Infos and Actions - Responsive layout */}
-                <Flex direction={{ initial: 'column', md: 'row' }} justify={{ initial: 'start', md: 'between' }} gap={{ initial: '3', md: '4' }} align={{ initial: 'start', md: 'center' }} width="100%" className="border-b pb-4 pt-2">
-                    {/* Page Infos - Left side on desktop, top on mobile */}
-                    <Flex direction="row" gap="8" align="center" className="pb-0 pl-1">
-                        {time && <LastUpdate time={time} lang={lang} />}
-                        {readingTime && <ReadingTime stats={readingTime} lang={lang} />}
-                    </Flex>
-
-                    {/* Page Actions - Right side on desktop, left on mobile */}
-                    <Flex direction="row" gap="2" align="center" width={{ initial: '100%', md: 'auto' }}>
-                        <LLMCopyButton markdownUrl={`${url}.mdx`} />
-                        <ViewOptions
-                            markdownUrl={`${url}.mdx`}
-                            // update it to match your repo
-                            githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${lang}/${url.replace('/docs/', '')}`}
-                        />
-                    </Flex>
-                </Flex>
+                <PageActions time={time} readingTime={readingTime} url={url} lang={lang} gitConfig={gitConfig} />
             </BlurFade>
         </Flex>
     );

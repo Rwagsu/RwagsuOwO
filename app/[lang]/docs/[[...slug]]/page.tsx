@@ -60,7 +60,7 @@ export default async function Page({ params }: {
         pageLang = "cn";
     }
 
-    // 4. 检测是否发生了 fallback
+    // FallBack check
     const isFallback = lang !== pageLang;
 
     var currentPageComponent: React.ReactNode | null = null;
@@ -76,7 +76,7 @@ export default async function Page({ params }: {
                     tags={page.data.tags}
                     readingTime={readingTime}
                     lang={lang}
-                    url={page.url}
+                    url={page.path}
                     gitConfig={gitConfig}
                     imageInfo={page.data.headerImage}
                 />
@@ -93,7 +93,7 @@ export default async function Page({ params }: {
                     readingTime={readingTime}
                     lang={lang}
                     tags={page.data.tags}
-                    url={page.url}
+                    url={page.path}
                     gitConfig={gitConfig}
                     imageInfo={page.data.headerImage}
                     iconInfo={page.data.hero?.icon}
@@ -111,7 +111,7 @@ export default async function Page({ params }: {
                     buttons={page.data.code?.buttons}
                     readingTime={readingTime}
                     lang={lang}
-                    url={page.url}
+                    url={page.path}
                     gitConfig={gitConfig}
                     repositoryConfig={page.data.code?.githubInfo}
                     maintenanceLevel={page.data.code?.maintenanceLevel}
