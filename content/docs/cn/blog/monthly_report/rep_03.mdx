@@ -1,0 +1,152 @@
+---
+title: Rep03 - Stretchly 调整提醒时间 / AE 替代品, Logic Pro / CSP 新功能
+description: 祝我生日快乐🥳
+
+time: 2026-04-18
+avatars: ["rwagsu"]
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Icon } from '@iconify/react';
+import LinkIcon from '@/components/ui/extension/link-icon';
+import { SiShadcnui } from "react-icons/si";
+
+Stretchly 调整休息前提醒时间 / After Effect 的两个新的替代品 / Logic Pro 12 和 Clip Studio Paint 5.0 最亮眼的功能.
+
+好吧, 纯粹是懒得写()
+
+对了, 今天是我生日! 🥳
+
+你猜我想说什么()
+
+想要兽装 (｡･ω･｡)ﾉ
+
+不过还是要个数位屏吧, 希望它能拯救我的绘画, 以及我的小屏幕 (￣▽￣)
+
+(毕竟兽装几千一万的我暂时也买不起啊 ( ´Д`)y━･~~)
+
+## 一些软件 / 工具
+
+### Cavalry
+
+在 Bilibili 看到它做的动画, 感觉非常不错()
+
+而且被 Canva 收购后还免费! (追平达芬奇吗这是)
+
+只是你需要一个国际版 Canva 账号, 而且没有中文qwq
+
+还没用过, 这两天在折腾 Blender, 没法给出评级, 不过考虑到它实现的动画, 我感觉还是很不错的()
+
+不过 Qwen 说它更像 Davinci Resolve 的 Fusion 模块, 谁知道呢......()
+
+<Card 
+    href="https://cavalry.studio/en/" 
+    icon={ <Icon icon="bxl:canva" width="24" height="24" /> } 
+    title="Cavalry">
+    **Motion design reinvented**
+
+    Professional, real-time animation software. For free.
+</Card>
+
+### Autograph
+
+又是个 After Effect 的替代品, 而且还是免费的! Σ（ﾟдﾟlll）
+
+(不是你们俩合起伙来搞我是吧, 害我愁 Fusion 和 Apple Motion 好久)
+
+这次 Maxon 亲自下场整了个大活, 直接整了个 Autograph, 定价...... 也是免费 (｡･ω･｡)ﾉ
+
+我也没用过, 但看它的界面, 它应该更像 After Effect 😇
+
+<Callout type="idea" title="不是哥们">
+    这俩是来做慈善了吗, 前脚 Canva 宣布 Affinity 和 Cavalry 免费, 后脚 Maxon 整了个 Autograph 还免费, 又说年底 iPad 的 Cinema 4D 也要免费😰
+
+    这还等什么! 冲就完了🥳🥳🥳
+</Callout>
+
+这时候就不得不吐槽一下 Maxon 的安装程序了, 虽然我知道你用的是 Java, 感情你是和 Windows 有特别关系是吧(雾)
+
+![Autograph Installer](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/Autograph_Installer.png)
+
+<Card 
+    href="https://www.maxon.net/zh/autograph" 
+    title="Autograph">
+    免费2D/3D
+    运动图形与VFX软件
+</Card>
+
+## 问题帮助
+
+### 调整 Stretchly 的休息提醒时间
+
+Stretchly 是一个开源的休息提醒软件.
+
+但其实, 它的 10 秒后进入休息的提醒是可以改的()
+
+你只需要更改它的配置文件即可 :)
+
+macOS 可以在这里找到它的配置文件: `/Users/rwagsu/Library/Application Support/Stretchly/config.json`
+
+Windows 我不知道, 但你可以在 Everything 搜索 Stretchly 文件夹, 不出意外的话它应该在 AppData 里面, 并且里面应该有个 `config.json`.
+
+打开 `config.json`, 找到这两个属性, 改掉它就好了()
+
+- `breakNotificationInterval`, 它代表长休息前剩余多少时间提醒你, 10000 为 1 秒.
+- `microbreakNotificationInterval`, 它代表短休息前剩余多少时间提醒你, 10000 为 1 秒.
+
+就像这样更改它:
+
+```json
+{
+    "breakNotificationInterval": 30000, // [!code --]
+    "microbreakNotificationInterval": 30000, // [!code --]
+
+    ...
+
+    "breakNotificationInterval": 600000, // [!code ++]
+    "microbreakNotificationInterval": 600000, // [!code ++]
+}
+```
+
+这样, 你就会在休息前 1 分钟提醒你, 而不是 10 秒了 :)
+
+## 其它
+
+### Logic Pro 12 中我认为最有用的新功能
+
+### # 大分轨拆乐器.
+首先就是大分轨拆乐器.
+
+它会将你的一段音频的各个乐器通过分析拆成多个轨道, 可以拆成: 人声, 鼓, 贝斯, 吉他, 钢琴, 其它.
+
+这个功能简直绝了! 以后你扒谱再也不用费力气听力 (喜)
+
+你只需要右键音频段落, 右键 > 处理 > 大分轨拆乐器, 等它分析完就好了 (｡･ω･｡)
+
+图片展示不如自己尝试(反正一个图片又不能展示什么), 推荐自己去看看awa
+
+### # 分析和弦.
+
+其次就是分析和弦.
+
+也是一个非常好的功能, 这样你就不用费力气听和弦力 (喜)
+
+这样的话, 轻松学习不是梦 x)
+
+你只需要右键音频段落 > 和弦 > 分析和弦, 就可以坐和放宽了 (雾)
+
+或者你直接把音频拖拽到和弦轨道上, 也可以实现同样的效果()
+
+不过毕竟是 AI 分析, 不一定 100% 准确, 但是达到个 80% 以上还是没问题的()
+
+### Clip Studio Paint 5.0 中我认为最有用的新功能
+
+那一定是智慧笔画了!
+
+现在画出一条线, 画到末尾不要动, 停留个两秒, 你的线就会被矫正, 并跳出了编辑选项, 此时你就可以随意的调整你的笔画啦, 而且还 100% 还原你的笔刷!
+
+那岂不是要拯救好多 “圆形战士” 了 (≧▽≦) (比如我 😭)
+
+当然还有中文, 现在不需要购买更新套餐力, 总算有简体中文了()
+
+唯一的缺点是它让我多花了 100 多 (つД`)ノ
