@@ -91,20 +91,20 @@ Windows 我不知道, 但你可以在 Everything 搜索 Stretchly 文件夹, 不
 
 打开 `config.json`, 找到这两个属性, 改掉它就好了()
 
-- `breakNotificationInterval`, 它代表长休息前剩余多少时间提醒你, 10000 为 1 秒.
-- `microbreakNotificationInterval`, 它代表短休息前剩余多少时间提醒你, 10000 为 1 秒.
+- `breakNotificationInterval`, 它代表长休息前剩余多少时间提醒你, 1000 为 1 秒.
+- `microbreakNotificationInterval`, 它代表短休息前剩余多少时间提醒你, 1000 为 1 秒.
 
 就像这样更改它:
 
 ```json
 {
-    "breakNotificationInterval": 30000, // [!code --]
-    "microbreakNotificationInterval": 30000, // [!code --]
+    "breakNotificationInterval": 3000, // [!code --]
+    "microbreakNotificationInterval": 3000, // [!code --]
 
-    ...
+    // TO
 
-    "breakNotificationInterval": 600000, // [!code ++]
-    "microbreakNotificationInterval": 600000, // [!code ++]
+    "breakNotificationInterval": 60000, // [!code ++]
+    "microbreakNotificationInterval": 60000, // [!code ++]
 }
 ```
 
