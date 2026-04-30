@@ -28,7 +28,7 @@ export default function PageActions({ time, readingTime, url, lang, gitConfig }:
                 <ViewOptions
                     markdownUrl={`${url}.mdx`}
                     // update it to match your repo
-                    githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${lang}/${url.replace('/docs/', '')}`}
+                    githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${url.replace('/docs/', '')}`}
                 />
             </Flex>
         </Flex>
