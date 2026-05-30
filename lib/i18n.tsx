@@ -76,7 +76,8 @@ export const ExpandTranslation = {
                     </span>
 
                     <p>
-                        所以那个 MacBook Pro 到底啥时候出啊急死我了QAQ 我的网站还是频道啥也没有就是因为那个啊, 电脑坏了啊 (ﾉД`)
+                        MacBook Pro 倒是出了但是我跑去学 Cavalry 和 Clip Studio Paint 和 Logic Pro 和 Blender 了 x)
+                        那等等再改吧()
                     </p>
                 </>
             ),
@@ -241,7 +242,8 @@ export const ExpandTranslation = {
                     </span>
 
                     <p>
-                        So when is that MacBook Pro coming out already, I'm dying of anxiety QAQ My website and channel have nothing on them because of that — my computer broke (ﾉД`)
+                        The MacBook Pro is out now, but I’ve been busy learning Cavalry and Clip Studio Paint and Logic Pro and Blender x)
+                        I’ll edit it later, then()
                     </p>
                 </>
             ),
