@@ -1,0 +1,27 @@
+---
+title: 关闭 Edge 向左右滑动时返回/前进的功能 (Mac)
+description: Mac ONLY(主要我也不知道 Windows 怎么关)
+
+time: 2026-06-08
+avatars: ["rwagsu"]
+---
+
+真离谱啊, 今天我的会话就被这破玩意搞没 5 次...... 必须把你关了🤬
+
+在终端输入这行指令, 然后重启 Edge, 就不会有这个功能了 ;)
+
+```zsh
+defaults write com.microsoft.edgemac AppleEnableSwipeNavigateWithScrolls -bool false
+```
+
+想要再开起来(真的假的(´･Д･)」), 只需输入这行指令:
+
+```zsh
+defaults write com.microsoft.edgemac AppleEnableSwipeNavigateWithScrolls -bool true
+# 就是把 false 改成 true 了
+```
+
+对 Edge 的好感度又下降了 0.05964861106 分. (*｀へ´*)
+
+# Questions!
+当 `[文本已屏蔽]` x 1919810 时, 会发生什么?
