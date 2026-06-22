@@ -1,10 +1,7 @@
 ﻿import { Highlighter } from '@/components/ui/highlighter';
-import { Flex, Text } from '@radix-ui/themes';
 import { Link } from 'fumadocs-core/framework';
 import { defineI18n } from 'fumadocs-core/i18n';
 import { Translations } from 'fumadocs-ui/i18n';
-import { title } from 'node:process';
-import { de } from 'zod/v4/locales';
 
 export const i18n = defineI18n({
     defaultLanguage: 'cn',
@@ -127,17 +124,9 @@ export const ExpandTranslation = {
         NotFound: {
             tempImageLicense: "Source Not Finished - By Rwagsu, 图片将在以后添加到 Works 区块，现在使用 CC BY-NC-SA 4.0 作为图片许可.",
             description: "呼呼 (-ω-、) 这里什么也没有 (´-ω-`)",
-            tempLinkTipTitle: "你在寻找 Home Assistant / Astral 常见问题 / Astral_ServerChecker?",
-            tempLinkTipDescription: "现在 RwagsuOwO 基于 Fumadocs, 看起来在 2026-02-23 之前的链接已经全部失效 ()",
-            tempTip: "希望你可以到发现链接的地方提醒一下路人QAQ",
-            toPageDialogButton: "导航到新页面",
-            toPageDialogTitle: "要导航到哪里?",
-            toPageDialogDescription: "不要选错哦 ψ(｀∇´)ψ",
-            toPageDialogCancel: "取消",
-            toPageDialogHomeAssistant: "Home Assistant",
-            toPageDialogAstralQnA: "Astral 常见问题",
-            toPageDialogAstral_ServerChecker: "Astral_ServerChecker",
-            deleteTip: "这个 404 提醒还能存在到 2026-05-13()"
+            tempLinkTipTitle: "啊哈哈哈让提示消失吧 ψ(｀∇´)ψ o(｀ω´ )o",
+            tempLinkTipDescription: "抱歉啦, 这一天终究还是来了() 你可以自己去 rwagsu.top 找找, 或者看看评论区吧, 我有留了个评论的 x)",
+            tempLinkDeleteTip: "啊对这个提示也要在 7 月 10 日彻底移除啦()"
         },
         ReadingTime: {
             lessThanOneMinute: '不到 1 分钟',
@@ -292,17 +281,9 @@ export const ExpandTranslation = {
         NotFound: {
             tempImageLicense: "Source Not Finished - By Rwagsu. Images will be added to the Works section later; currently using CC BY-NC-SA 4.0 as the image license.",
             description: "Oops (-ω-、) There's nothing here (´-ω-`)",
-            tempLinkTipTitle: "Are you looking for Home Assistant / Astral FAQ / Astral_ServerChecker?",
-            tempLinkTipDescription: "RwagsuOwO is now based on Fumadocs. It seems all links before 2026-02-23 are broken now ()",
-            tempTip: "I hope you can remind passersby to check the links when you find them QAQ",
-            toPageDialogButton: "Navigate to new page",
-            toPageDialogTitle: "Where to navigate?",
-            toPageDialogDescription: "Don't choose the wrong one ψ(｀∇´)ψ",
-            toPageDialogCancel: "Cancel",
-            toPageDialogHomeAssistant: "Home Assistant",
-            toPageDialogAstralQnA: "Astral FAQ",
-            toPageDialogAstral_ServerChecker: "Astral_ServerChecker",
-            deleteTip: "This 404 reminder will exist until 2026-05-13 ()"
+            tempLinkTipTitle: "Ahahaha let the prompt disappear ψ(｀∇´)ψ o(｀ω´ )o",
+            tempLinkTipDescription: "Sorry, this day has finally come() You can go rwagsu.top for yourself or check the comment section, I left a comment x)",
+            tempLinkDeleteTip: "Ah, yes, this prompt will be completely removed on July 10()"
         },
         ReadingTime: {
             lessThanOneMinute: 'Less than 1 min',
