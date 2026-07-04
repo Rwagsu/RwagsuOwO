@@ -1,0 +1,196 @@
+---
+title: 在 Safari (Mac) 上安装 BewlyCat
+description: 如果给我赞助一台 iPhone 的话我也可以出个 iPhone 的(雾)
+
+time: 2026-07-04
+avatars: ["rwagsu"]
+---
+
+import { Icon } from '@iconify/react';
+import {Card} from "fumadocs-ui/components/card";
+
+现在我的主力浏览器换成 Safari 了, 所以很多插件都不能拿过来用啦 (悲)
+
+# 来源
+
+<Card href="https://www.worable.top/archives/build-bewlycat-safari-extension-tutorial/" title="BewlyCat Safari | 构建并安装 BewlyCat Safari 浏览器插件"> 教程很不错, 网站也很好看() </Card>
+
+在原教程的基础上做了一些精简并做了一些改进()
+
+# 必要安装
+
+必须安装这些东西才能正常安装插件 (要不然报错别怪我(｡･ω･｡))
+
+## Xcode
+
+在 App Store 就能搜到, 当然, 你也可以在 [Apple Developer](https://developer.apple.com/cn/xcode/) 下载.
+
+## Node.js
+
+直接在 [Node.js](https://nodejs.org/zh-cn) 官网下载.
+
+<div className='fd-steps [&_h1]:fd-step'>
+
+    ## 允许 Safari 加载外部插件
+
+    - 在 Safari 菜单栏中, 点击设置.
+
+    ![Safari > 设置](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/Safari_BewlyCat-Safari_MenuBar.png)
+
+    - 在**高级**中, 勾选**显示网页开发者功能**.
+
+    ![高级 > 显示网页开发者功能](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/Safari_BewlyCat-Safari_Settings.png)
+
+    - 切换到开发者设置, 勾选允许未签名的扩展,
+
+    ![开发者设置 > 允许未签名的扩展](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/Safari_BewlyCat-Safari_DeveloperSettings.png)
+
+    <Callout type="info"> 我知道你很聪明, 但别点下面那个. (￣▽￣) </Callout>
+
+    ## 克隆 BewlyCat 仓库
+
+    BewlyCat 本身并不能安装到 Safari 中, 你需要一个针对 Safari 进行优化的分支:
+
+    <Card icon={ <Icon icon="mdi:github" />} href="https://github.com/shiinayane/BewlyCat-Safari" title="BewlyCat-Safari">
+        针对 Safari 进行修改的 BewlyCat.
+    </Card>
+
+    你可以直接访问网站, 点击 **Code**, 然后点击 **Download**.
+    ![Code > Download](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/BewlyCat_Safari-GitHub_Download.png)
+
+    这个会下载一个压缩包, 你需要把它解压.
+
+    或者, 如果你安装了 Git, 你可以用这个命令克隆 (这将把下载的文件夹放到终端当前所在的位置):
+
+    ```zsh
+    git clone https://github.com/shiinayane/BewlyCat-Safari.git
+    ```
+
+    当然, Xcode 也能克隆, 流程也差不多, 还能指定文件夹位置.
+
+    <Callout type="info">
+        善用 https://gh-proxy.com 和 https://github.akams.cn 来加速你的下载 ;)
+
+        这种网址转换后就只能克隆了, 直接访问会 404 的()
+    </Callout>
+
+    ## 构建仓库
+
+    打开终端, 输入 `cd `(不要忘记空格), 然后将下载的文件夹拖入终端.
+
+    或者, 选中下载的文件夹, 右键路径栏, 选择**在终端中打开**.
+
+    ![右键路径 > 终端](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/BewlyCat_Safari-Finder_Terminal.png)
+
+    然后, 更换镜像源(这会加快下载速度)
+
+    ```zsh tab="如果你用的是 npm (一般都是这个)"
+    npm config set registry https://registry.npmmirror.com
+    ```
+
+    ```zsh tab="如果你用的是 pnpm (推荐, 但教程里没给你装)"
+    pnpm config set registry https://registry.npmmirror.com
+    ```
+
+    你也可以换成别的镜像源.
+
+    接下来, 安装项目依赖:
+
+    ```zsh tab="如果你用的是 npm (一般都是这个)"
+    npm install
+    ```
+
+    ```zsh tab="如果你用的是 pnpm (推荐, 但教程里没给你装)"
+    pnpm install
+    ```
+
+    构建, 然后转换为 Xcode 项目(依次输入命令, 每输完一行后回车):
+
+    ```zsh tab="如果你用的是 npm (一般都是这个)"
+    npm build-safari
+
+    npm convert-safari
+    ```
+
+    ```zsh tab="如果你用的是 pnpm (推荐, 但教程里没给你装)"
+    pnpm build-safari
+
+    pnpm convert-safari
+    ```
+
+    <Callout type="info" title="报错了?">
+        类似这样吗?
+
+        ```zsh
+        xcrun: error: unable to find utility "safari-web-extension-converter", not a developer tool or in PATH
+        ELIFECYCLE  Command failed with exit code 72.
+        ```
+
+        如果是, 运行这行命令:
+
+        ```
+        sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+        # 然后输入密码(密码不会显示).
+        ```
+
+        现在应该可以了 ;)
+
+        当然, 也有可能是你下载了 Xcode 但没同意它的协议, 进去同意一下就行啦()
+    </Callout>
+
+    ## 运行与安装
+
+    命令执行完毕后, Xcode 窗口应该会弹出, 什么都不用管(代码也不用看), 直接点击左上角的小三角形.
+
+    ![Xcode > Run](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/BewlyCat_Safari-Xcode_Run.png)
+
+    出现这个界面后, 点击下方的 **Quit and Open Safari Settings...**
+    ![BewlyCat](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/BewlyCat_Safari-BewlyCat.png)
+
+    它会弹出 Safari 扩展设置, 点击 BewlyCat 旁边的框框, 启用这个插件.
+    ![Safari Plugins](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/BewlyCat_Safari_Plugins.png)
+
+    ## 大功告成!
+
+    现在你可以享用你的 BewlyCat 啦()
+</div>
+
+# 更新 BewlyCat
+
+更新也需要用到 Xcode 和 Node.js, 幸好你没删()
+
+啊? 删了吗? 😰
+
+那快下回来吧 o(｀ω´ )o
+
+如果你之前是克隆下来的:
+
+1. 用之前的方法, 打开终端, 定位到插件所在的目录, 输入 `git pull`
+2. 重新运行这些命令:
+
+```zsh tab="如果你用的是 npm (一般都是这个)"
+    # 一般来说不用运行 install, 写在这里是因为万一有更新的呢()
+    npm install
+
+    npm build-safari
+
+    npm convert-safari
+  ```
+
+```zsh tab="如果你用的是 pnpm (推荐, 但教程里没给你装)"
+    # 一般来说不用运行 install, 写在这里是因为万一有更新的呢()
+    pnpm install
+
+    pnpm build-safari
+
+    pnpm convert-safari
+```
+
+然后, Xcode 又会弹出来, 运行, 点击, 还是那一套流程, 不过现在插件不用你手动启用, 只要你刚装上的时候启用了就没事()
+
+然后继续享用新版本吧! ( ´▽｀)
+
+<Callout type="info">
+    你应该不至于傻到把代码里的注释都当代码写终端里面还怨我的代码有问题的对吧😜
+</Callout>
