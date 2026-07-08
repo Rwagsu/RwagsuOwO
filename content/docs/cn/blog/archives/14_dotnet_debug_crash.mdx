@@ -6,6 +6,8 @@ time: 2026-04-30
 avatars: ["rwagsu"]
 ---
 
+import { Icon } from "@iconify/react";
+
 适用范围:
 - macOS (特别是 Apple Silicon) 开发者
 - 所有 IDE
@@ -16,7 +18,7 @@ avatars: ["rwagsu"]
 
 具体参考这个:
 
-<Card href="https://devblogs.microsoft.com/dotnet/dotnet-10-0-5-oob-release-macos-debugger-fix/" title=".NET 10.0.5 Out-of-Band Release – macOS Debugger Fix">
+<Card icon={<Icon icon="tabler:link" />} href="https://devblogs.microsoft.com/dotnet/dotnet-10-0-5-oob-release-macos-debugger-fix/" title=".NET 10.0.5 Out-of-Band Release – macOS Debugger Fix">
 </Card>
 
 所以当你的 Uno Platform 项目调试崩溃时, 不是 Uno Platform 的问题, 也不是 Rider 的问题, 是 .NET Debugger 的问题 ()
@@ -26,11 +28,11 @@ avatars: ["rwagsu"]
 顺便附上两个来自 .NET 的 issue:
 
 <Cards>
-    <Card href="https://github.com/dotnet/sdk/issues/53382" title="dotnet/sdk#53382">
+    <Card icon={<Icon icon="mdi:github" />} href="https://github.com/dotnet/sdk/issues/53382" title="dotnet/sdk#53382">
         Debugger crashes on macOS with 10.0.104/10.0.200
     </Card>
 
-    <Card href="https://github.com/dotnet/runtime/issues/125405" title="dotnet/runtime#125405">
+    <Card icon={<Icon icon="mdi:github" />} href="https://github.com/dotnet/runtime/issues/125405" title="dotnet/runtime#125405">
         Debugger crash on `10.0.200`
     </Card>
 </Cards>

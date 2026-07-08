@@ -1,0 +1,40 @@
+---
+title: 解决 每次关掉 Safari 把 BewlyCat 也搞没了的问题
+description: 好你个 Safari 差点让我回到 Microsoft Edge()
+time: 2026-07-08
+avatars: ["rwagsu"]
+---
+
+<Callout type="warn" title="需要一个 Apple Developer 账号. (不是 Apple ID)">
+    如果没有, 你可以使用你的 Apple ID 注册一个.
+
+    在 [Apple Developer](https://developer.apple.com) 注册.
+</Callout>
+
+沿着上一个教程, 你应该已经安装好了 BewlyCat.
+
+现在, 打开访达, 找到插件所在的目录, 进入 `extension-safari-macos/BewlyCat`, 然后打开 `BewlyCat.xcodeproj`.
+
+接着, 在左边的文件栏中, 点击最上面的 `BewlyCat` (旁边是个蓝色图标的那个)
+
+<Callout type="info" title="什么设计啊">
+    苹果你特 [哔] 怎么让 Xcode 把项目挡住了我@#*&(¥#(&*
+
+    算了, 无伤大雅, 切换到最后一个选项卡再切换回去就好了()
+
+    ![挡住了](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/BewlyCat_Signing-Bad_Xcode.png)
+</Callout>
+
+然后, 确保 TARGETS 为 BewlyCat, 切换到 Signing & Capabilities, 你会看到 Team 选项.
+
+![Xcode](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/BewlyCat_Signing-Xcode_Signing.png)
+
+选择你的 Developer 账号, 如果没有, 点击 "Add an Account..." 以登录你的 Developer 账号.
+
+然后, 将 TARGET 切换为 BewlyCat Extension, 重复上一步的操作.
+
+![切换 TARGET](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/BewlyCat_Signing-Xcode_TARGETpng)
+
+然后和平常一样, 点击运行, 此时, 这个扩展将不再受 "允许未签名的扩展" 的影响.
+
+终于不用天天改配置啦! ()

@@ -7,13 +7,13 @@ avatars: ["rwagsu"]
 ---
 
 import { Icon } from '@iconify/react';
-import {Card} from "fumadocs-ui/components/card";
+import { Card } from "fumadocs-ui/components/card";
 
 现在我的主力浏览器换成 Safari 了, 所以很多插件都不能拿过来用啦 (悲)
 
 # 来源
 
-<Card href="https://www.worable.top/archives/build-bewlycat-safari-extension-tutorial/" title="BewlyCat Safari | 构建并安装 BewlyCat Safari 浏览器插件"> 教程很不错, 网站也很好看() </Card>
+<Card icon={ <Icon icon="mdi:github" />} href="https://www.worable.top/archives/build-bewlycat-safari-extension-tutorial/" title="BewlyCat Safari | 构建并安装 BewlyCat Safari 浏览器插件"> 教程很不错, 网站也很好看() </Card>
 
 在原教程的基础上做了一些精简并做了一些改进()
 
@@ -190,6 +190,18 @@ import {Card} from "fumadocs-ui/components/card";
 然后, Xcode 又会弹出来, 运行, 点击, 还是那一套流程, 不过现在插件不用你手动启用, 只要你刚装上的时候启用了就没事()
 
 然后继续享用新版本吧! ( ´▽｀)
+
+哦对了, 如果你想手动打开 Xcode 而不是运行命令, 你可以直接进入 `extension-safari-macos/BewlyCat`, 然后打开 `BewlyCat.xcodeproj`.
+
+<Callout type="info" title="退出 Safari 之后扩展不见了?">
+    Safari 在关闭后, 会自动把 "允许未签名的扩展" 取掉, 所以, 你还得启用这个选项()
+
+    只是...... 嗯, 重新配置一遍你的扩展吧(｡･ω･｡)
+
+    嘿嘿, 当然有解决方案啦, 看这个吧()
+
+    <Card icon={ <Icon icon="tabler:link" />} href="./18_bewlycat_signing" title="解决 每次关掉 Safari 把 BewlyCat 也搞没了的问题"> 好你个 Safari 差点让我回到 Microsoft Edge() </Card>
+</Callout>
 
 <Callout type="info">
     你应该不至于傻到把代码里的注释都当代码写终端里面还怨我的代码有问题的对吧😜

@@ -7,6 +7,7 @@ avatars: ["rwagsu"]
 ---
 
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Icon } from "@iconify/react";
 import { Box } from 'lucide-react';
 
 <Callout type="info">
@@ -31,14 +32,14 @@ import { Box } from 'lucide-react';
 
 你可以去 CurseForge 官网下载.
 
-<Card href="https://www.curseforge.com/minecraft/mc-mods/lan-server-properties/files/all?page=1&pageSize=20&showAlphaFiles=hide" title="自定义局域网联机的 CurseForge 页面"/>
+<Card icon={<Icon icon="tabler:link" />} href="https://www.curseforge.com/minecraft/mc-mods/lan-server-properties/files/all?page=1&pageSize=20&showAlphaFiles=hide" title="自定义局域网联机的 CurseForge 页面"/>
 
 <Callout type="info" title="停更了?">
     今天一进 MC 百科就看见停更了😰
   
     看评论区貌似有一个替代品: **更高级联机设置 (LAN World Plug-n-Play)**
 
-    <Card href="https://www.mcmod.cn/class/4498.html" title="更高级联机设置的 MC 百科页面"/>
+    <Card icon={<Icon icon="tabler:link" />} href="https://www.mcmod.cn/class/4498.html" title="更高级联机设置的 MC 百科页面"/>
 </Callout>
 
 ## Q: 为什么联机时看不到对方皮肤?
@@ -174,7 +175,7 @@ Astral 看起来只支持 Windows 10 以上.
     <Accordion title="对于想要知道根本原因的人准备...... (高级)">
         从 Microsoft 文档中可以看到, `GetHostNameW` 函数仅支持 Windows 8 / Windows Server 2012 以上, 这也是这个报错的原因.
 
-        <Card href="https://learn.microsoft.com/zh-cn/windows/win32/api/winsock2/nf-winsock2-gethostnamew" title="GetHostNameW 函数"/>
+        <Card icon={<Icon icon="tabler:link" />} href="https://learn.microsoft.com/zh-cn/windows/win32/api/winsock2/nf-winsock2-gethostnamew" title="GetHostNameW 函数"/>
 
         但也不建议在 Windows 8 / 8.1 使用, 我翻了第一个提交(怎么中文代码文件啊😰), 暂时还没确定是否能勉强兼容 Windows 8 / 8.1()
 
