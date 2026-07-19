@@ -85,7 +85,7 @@ Stretchly 调整休息前提醒时间 / After Effect 的两个新的替代品 / 
 并且还支持 Alac!
 
 <Callout type="info">
-    部分格式需要安装额外编码器.
+    部分格式需要额外安装编码器.
 </Callout>
 
 <Card 
@@ -96,6 +96,36 @@ Stretchly 调整休息前提醒时间 / After Effect 的两个新的替代品 / 
 
     使用 iCloud 分享.
 </Card>
+
+### 去除 macOS 的应用的附加属性 (快捷指令)
+
+实在受不了硬研究出来的快捷指令()
+
+右键 App, 在快捷操作菜单中就能用
+
+或者直接运行也可以 (｡･ω･｡)ﾉ
+
+<Card 
+    href="https://www.icloud.com/shortcuts/1a5cc4852d224c09b47789bbaa7ac9d7"
+    icon={<Icon icon="tabler:link" />}
+    title="移除附加指令">
+    Rwagsu 气出来的快捷指令.
+
+    使用 iCloud 分享.
+</Card>
+
+顺便在这里说一下, 如果应用提示的是未验证的开发者, 你需要打开 macOS 设置中的 "任何来源" 选项, 你可以在终端输入 `sudo spctl --master-disable` 来启用它, 也需要输入密码()
+
+<Callout type="info" title="还要找传统方法?">
+    
+    ```zsh
+sudo xattr -rd com.apple.quarantine <你的 App 路径, 你可以将 App 拖拽到终端窗口来生成路径>
+    ```
+
+    此时你需要输入你的 Mac 的密码, 输入的字符不会显示, 你尽管打就好 😇
+
+    不过还是建议大家在去除附加属性时使用 `sudo xattr -rd com.apple.quarantine` 而不是 `sudo xattr -cr`, 要是清除个有用的属性, 那不完了 😰
+</Callout>
 
 ## 问题帮助
 
@@ -131,28 +161,6 @@ Windows 我不知道, 但你可以在 Everything 搜索 Stretchly 文件夹, 不
 ```
 
 这样, 你就会在休息前 1 分钟提醒你, 而不是 10 秒了 :)
-
-### 去除 macOS 的应用的附加属性
-
-很简单的, 一条命令搞定()
-
-```zsh
-sudo xattr -rd com.apple.quarantine <你的 App 路径, 你可以将 App 拖拽到终端窗口来生成路径>
-```
-
-此时你需要输入你的 Mac 的密码, 输入的字符不会显示, 你尽管打就好 😇
-
-此时你大概就能直接打开你的应用了()
-
-顺便在这里说一下, 如果你需要打开 macOS 设置中的 "任何来源" 选项, 你可以在终端输入 `sudo spctl --master-disable` 来启用它, 也需要输入密码()
-
-<Callout type="info" title="为什么没有去除附加属性的快捷指令?">
-    啊做不出来呗 ()
-
-    即使以管理员运行且使用了 `sudo`, 也会拒绝访问 ()
-
-    不过还是建议大家在去除附加属性时使用 `sudo xattr -rd com.apple.quarantine` 而不是 `sudo xattr -cr`, 要是清除个有用的属性, 那不完了 😰
-</Callout>
 
 ## 其它
 
