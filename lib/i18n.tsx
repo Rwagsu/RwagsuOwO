@@ -120,7 +120,7 @@ export const ExpandTranslation = {
             ),
         },
 
-        BannerTitle: "RwagsuOwO 现在基于 Fumadocs! (ﾉ≧∀≦)ﾉ  页面路径现在有很大变化，希望提醒一下老链接的评论之类的 XD",
+        BannerTitle: "网站可能会被推翻重建. (了解更多还没写完)",
         NotFound: {
             tempImageLicense: "Source Not Finished - By Rwagsu, 图片将在以后添加到 Works 区块，现在使用 CC BY-NC-SA 4.0 作为图片许可.",
             description: "呼呼 (-ω-、) 这里什么也没有 (´-ω-`)",
@@ -277,7 +277,7 @@ export const ExpandTranslation = {
             ),
         },
 
-        BannerTitle: "RwagsuOwO is now based on Fumadocs! (ﾉ≧∀≦)ﾉ  The page paths have changed significantly, so I hope to give a heads-up about comments on the old links and such XD",
+        BannerTitle: "The website may be overhauled and rebuilt. (Learn more—this section isn't finished yet.)",
         NotFound: {
             tempImageLicense: "Source Not Finished - By Rwagsu. Images will be added to the Works section later; currently using CC BY-NC-SA 4.0 as the image license.",
             description: "Oops (-ω-、) There's nothing here (´-ω-`)",
