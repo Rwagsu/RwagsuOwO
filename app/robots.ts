@@ -14,7 +14,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: [
           '/admin/',
           '/api/',
-          '/_next/',
         ],
       },
       // 禁止各类 AI 爬虫
