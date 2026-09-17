@@ -49,7 +49,7 @@ interface IconImageProps {
 function IconImage({ name, size }: IconImageProps) {
     return (
         <NextImage
-            src={`/icons/${name}.png`}
+            src={`/icons/OrbitIcons/${name}.png`}
             alt={name}
             width={size}
             height={size}

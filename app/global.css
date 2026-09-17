@@ -52,13 +52,13 @@
 }
 
 @theme {
-  --color-fd-background: #FFFFFF; /* Background color */
-  --color-fd-foreground: #1F2328; /* Text Color */
+  --color-fd-background: #0070e6; /* Background color */
+  --color-fd-foreground: #ffffff; /* Text Color */
   --color-fd-muted: #EFF1F3; /* Code block background color */
   --color-fd-muted-foreground: #1F2328; /* Subtext and icon color */
   --color-fd-popover: #FFFFFF; /* Popup color */
   --color-fd-popover-foreground: #0077FF; /* Sidebar folder list item color */
-  --color-fd-card: #F6F8FA; /* Sidebar and Card color */
+  --color-fd-card: #0070e6; /* Sidebar and Card color */
   --color-fd-card-foreground: #1F2328; /* Inline TOC text color */
   --color-fd-border: #D1D9E0; /* Divider color */
   --color-fd-primary: #0077FF; /* Accent color */
@@ -81,7 +81,7 @@
   --color-fd-card-foreground: #F0F6FC; /* Inline TOC text color */
   --color-fd-border: #3D444D; /* Divider color */
   --color-fd-primary: #278CFF; /* Accent Color */
-  --color-fd-primary-foreground: #FFFFFF; /* Accent foreground color */
+  --color-fd-primary-foreground: #000000; /* Accent foreground color */
   --color-fd-secondary: #212830; /* Control background color */
   --color-fd-secondary-foreground: #F0F6FC; /* Control foreground color */
   --color-fd-accent: #278CFF30; /* color when the button is pressed and the color of the theme switcher */
