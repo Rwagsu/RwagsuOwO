@@ -44,7 +44,7 @@ export const ExpandTranslation = {
                         {" "}<Highlighter action="underline" color="#FF0000">
                             Furry 控
                         </Highlighter>{" "}
-                        制作 (｀・ω・´)"
+                        制作 (｀・ω・´)
                     </p>
                     
                     <p>
@@ -120,7 +120,12 @@ export const ExpandTranslation = {
             ),
         },
 
-        BannerTitle: "网站可能会被推翻重建. (了解更多还没写完)",
+        BannerTitle: () => (
+            <>
+            <p>RwagsuOwO 将要被推翻重建. </p>
+            <Link rel="noopener noreferrer" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="/docs/blog/archives/19_web_rebuild">了解更多</Link>
+            </>
+        ),
         NotFound: {
             tempImageLicense: "Source Not Finished - By Rwagsu, 图片将在以后添加到 Works 区块，现在使用 CC BY-NC-SA 4.0 作为图片许可.",
             description: "呼呼 (-ω-、) 这里什么也没有 (´-ω-`)",
@@ -203,11 +208,11 @@ export const ExpandTranslation = {
                         {" "}<Highlighter action="underline" color="#FF0000">
                             Furry enthusiasts
                         </Highlighter>{" "}
-                        (｀・ω・´)"
+                        (｀・ω・´)
                     </p>
                     
                     <p>
-                        Including videos / audio / code (I'm exhausted, not writing anymore QAQ) /
+                        Including videos / audio / code (I{"'"}m exhausted, not writing anymore QAQ) /
                         {" "}<Highlighter action="highlight" color="#87CEFA">
                             Art / 3D
                         </Highlighter>{" "}
@@ -223,7 +228,7 @@ export const ExpandTranslation = {
             notSourceDescription: () => (
                 <>
                     <span>
-                        Well... as you know, Rwagsu's computer has run into
+                        Well... as you know, Rwagsu{"'"}s computer has run into
                         {" "}<Highlighter action="highlight" color="#FFB0B0">
                             a teensy-weensy little problem
                         </Highlighter>
@@ -277,7 +282,12 @@ export const ExpandTranslation = {
             ),
         },
 
-        BannerTitle: "The website may be overhauled and rebuilt. (Learn more—this section isn't finished yet.)",
+        BannerTitle: () => (
+            <>
+            <p>RwagsuOwO is about to be demolished and rebuilt. </p>
+            <Link rel="noopener noreferrer" className="ml-1 mr-1 font-bold underline decoration-2 decoration-primary" href="/docs/blog/archives/19_web_rebuild">Learn more(Chinese)</Link>
+            </>
+        ),
         NotFound: {
             tempImageLicense: "Source Not Finished - By Rwagsu. Images will be added to the Works section later; currently using CC BY-NC-SA 4.0 as the image license.",
             description: "Oops (-ω-、) There's nothing here (´-ω-`)",

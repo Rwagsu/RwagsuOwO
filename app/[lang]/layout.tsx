@@ -43,7 +43,7 @@ export default async function RootLayout({ params, children }: {
                                 '#FF0000'
                             ]}
                         >
-                            {translations.BannerTitle}
+                            {translations.BannerTitle()}
                         </Banner>
 
                         {/* Toast */}
