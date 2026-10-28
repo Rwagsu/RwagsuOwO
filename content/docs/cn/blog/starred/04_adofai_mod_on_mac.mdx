@@ -1,0 +1,151 @@
+---
+title: 为原生 Mac 版本的 ADOFAI 安装 UMM Mod.
+description: 感谢 DeepSeek 大佬!()
+
+time: 2026-10-28
+avatars: ["rwagsu"]
+---
+
+import { Icon } from "@iconify/react";
+
+目前, Mod 在 ADOFAI 中几乎成了不可缺少的一个必要扩展, 可以说, 十个玩家里面有 9.9 个都装着 Mod()
+
+但是 Mac 嘛...... UnityModManager 倒是支持 macOS, 但是不仅特别麻烦, 当你装上之后, 你会发现就跟没装一样, 还不如没装()
+
+但是, 天无绝人之路, DeepSeek 大佬好一顿折腾, 终于研究出来了完美兼容的办法! 🥳
+
+(我 7 块钱的 Token 啊(ノД`) 成本巨大啊😭 拜托给个[关注](https://space.bilibili.com/2123349162?)和 [Star](https://github.com/Rwagsu/RwagsuOwO) 啊 QAQ)
+
+# 必要条件
+- 你需要拥有一台 Apple Silicion 的 Mac 电脑(Rosetta 没试过, 自己试())
+- 你需要能上 GitHub (嗯 (｡･ω･｡))
+
+
+<div className='fd-steps [&_h1]:fd-step'>
+# 安装 MelonLoader
+
+我知道你很聪明, 但憋乱搜, 是这个:
+
+<Card icon={<Icon icon="tabler:link" />} href="https://github.com/kkorenn/MelonLoader/releases" title="MelonLoader (kkorenn 的分支)" >
+因为 MelonLoader 原项目不支持 Arm()
+</Card>
+
+下载其中的 `MelonLoader.macOS.arm64.zip`.
+
+<Callout type="info" title="下载太慢了?">
+    [你知道我在说什么的, 对吧? ψ(｀∇´)ψ](https://gh-proxy.com)
+</Callout>
+
+然后, 将压缩包的几个文件夹和文件全部解压到 ADOFAI 的安装目录下(`~/Library/Application Support/Steam/steamapps/common/A Dance of Fire and Ice`).
+
+# 安装 UMMCompat
+<Card icon={<Icon icon="tabler:link" />} href="https://github.com/modlist-org/UMMCompat/releases" title="UMMCompat (神秘的项目)" />
+
+直接下载 `UMMCompat.zip`.
+
+<Callout type="info" title="下载太慢了?">
+    你&@#（💢＾∇＾）
+</Callout>
+
+打开 UMMCompat.zip, 将其中的 `Plugins` 文件夹和`UserLibs` 也全部解压到 ADOFAI 的安装目录下.
+
+然后, 新建两个空文件夹:
+
+- UMMMods(存放 UnityModManager 的 Mod)
+- Mods (存放 MelonLoader 的 Mod)
+
+# 修改启动脚本
+
+用文本编辑器打开 `melonloader-launch.sh` (憋直接双击运行了啊)
+
+修改下面的内容:
+
+```bash
+set -e
+
+if [ "${MELON_ARCH_SET:-}" != "1" ] && [ "$(/usr/sbin/sysctl -in hw.optional.arm64 2>/dev/null)" = "1" ]; then # [!code ++]
+    export MELON_ARCH_SET=1 # [!code ++]
+    exec /usr/bin/arch -arm64 /bin/bash "$0" "$@" # [!code ++]
+fi # [!code ++]
+# [!code ++]
+export MELONLOADER_NO_TERMINAL="${MELONLOADER_NO_TERMINAL:-1}" # 添加这行代码后, 启动 ADOFAI 时将不会显示终端窗口 (日志), 如果想要显示日志, 删掉它或把值从 -1 改成 0. [!code ++]
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BOOTSTRAP_PATH="$SCRIPT_DIR/MelonLoader.Bootstrap.dylib"
+
+...
+
+# Both the dylib and the managed MelonLoader/ folder live in SCRIPT_DIR
+# alongside the .app; point DYLD_LIBRARY_PATH there so the managed side's
+# bare-filename NativeLibrary.Load("MelonLoader.Bootstrap.dylib") resolves.
+export DYLD_LIBRARY_PATH="$SCRIPT_DIR"
+
+# [!code --]
+# Prepend the bootstrap to Steam's own injected dylibs (overlay, steamloader) # [!code --]
+# rather than replacing them, so the Steam overlay keeps working. # [!code --]
+if [ -n "$STEAM_DYLD_INSERT_LIBRARIES" ]; then # [!code --]
+    export DYLD_INSERT_LIBRARIES="$BOOTSTRAP_PATH:$STEAM_DYLD_INSERT_LIBRARIES" # [!code --]
+else # [!code --]
+    export DYLD_INSERT_LIBRARIES="$BOOTSTRAP_PATH" # [!code --]
+fi # [!code --]
+
+export DYLD_INSERT_LIBRARIES="$BOOTSTRAP_PATH" # [!code ++]
+
+open_melonloader_terminal
+
+exec "$@"
+```
+
+# 设置 Steam 启动选项
+
+找到 ADOFAI 游戏, 点击齿轮图标 , 选择属性.
+![打开 Steam 的属性](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/20261028205344867.png)
+
+然后, 点击通用, 找到启动选项那一栏.
+![](https://cdn.jsdmirror.com/gh/DrownedOwO/PublicImages@main/images/%E6%88%AA%E5%B1%8F%202026-10-28%20at%2020.58.20.png)
+
+在启动选项中输入:
+```bash
+"/Users/你的用户名/Library/Application Support/Steam/steamapps/common/A Dance of Fire and Ice/melonloader-launch.sh" %command%
+```
+
+<Callout type="warn">
+    憋拿 `~/` 取巧, 行不通的()
+</Callout>
+
+# 运行游戏
+
+从 Steam 启动游戏.
+
+当你看到 UnityModManager 弹出来, 就说明安装成功了 ;)
+
+如果不想从 Steam 启动游戏, 只需打开终端, 把 `melonloader-launch.sh` 拖进去, 拍个空格, 再把 `ADanceOfFireAndIce.app` 拖进去, 然后回车, 就能以 ModLoader 形式启动了 ;)
+
+<Callout type="info" title="崩溃了?">
+    打开终端, 按照上面的方法运行, 应该会输出日志.
+
+    你可以交给 AI, 但最好先看完这个:
+
+    如果遇到的是类似
+
+    ```
+    System.UnauthorizedAccessException: Access to the path '/Users/<你的用户名>/Library/Application Support/Steam/steamapps/common/A Dance of Fire and Ice/MelonLoader/Logs' is denied.
+    ``` 
+
+    的异常, 不建议使用 `sudo`, 这样会把一堆文件全给弄 sudo, 后面很麻烦, 而且 Steam 也不支持 sudo.
+
+    你应该依次运行以下代码:
+    ```bash
+    GAME="$HOME/Library/Application Support/Steam/steamapps/common/A Dance of Fire and Ice"
+    sudo chown -R "$(id -u):$(id -g)" "$GAME"
+    sudo chown -R "$(id -u):$(id -g)" ~/Library/Logs/7th\ Beat\ Games 2>/dev/null || true
+    find "$GAME" -user root | head # 如果此命令运行后没有任何输出, 那么就说明你成功了.
+    ```
+</Callout>
+</div>
+
+好啦, 加 Mod 去吧()
+哦对了, Mod 记得加 UMMMods 文件夹里哦, 别加到 Mods 里了()
+比较就没个 ADOFAI Mod 用 MelonLoader 吧 XDD
+
+> 所以我那几天测的 MelonLoader 运行起来跟没运行似的完全是没拿脚本运行是吧 (╬ಠ益ಠ)
